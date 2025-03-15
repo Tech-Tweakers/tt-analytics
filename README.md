@@ -26,6 +26,7 @@ Crie um arquivo **.env** e defina as seguintes variáveis:
 GITHUB_TOKEN=seu_token_aqui
 OWNER=seu_usuario_ou_organizacao
 REPO=nome_do_repositorio
+THRESHOLD=3
 ```
 
 ### **2️⃣ Instalar dependências**
@@ -124,6 +125,11 @@ jobs:
         run: pip install requests pandas matplotlib
 
       - name: 🚀 Rodar análise
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: "seu_usuario_ou_organizacao"
+          REPO: "nome_do_repositorio"
+          THRESHOLD: "3"
         run: python main.py
 
       - name: 💾 Commit e Push dos resultados
