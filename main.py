@@ -185,79 +185,90 @@ def analyze_rework(commits):
         print("⚠️ Nenhum commit foi analisado.")
 
 
-# def load_json(filename):
-#     """Carrega os dados do JSON."""
-#     with open(filename, "r") as f:
-#         return json.load(f)
+def load_json(filename):
+    """Carrega os dados do JSON."""
+    with open(filename, "r") as f:
+        return json.load(f)
 
 
-# def generate_graph():
-#     """Gera um gráfico com base no JSON existente."""
-#     rework_data = load_json(json_file)
+def generate_graph():
+    """Gera dois gráficos separados para rework_rate_total e rework_rate_recent, além de incluir um box com métricas."""
+    rework_data = load_json(json_file)
 
-#     # 📌 Criar um DataFrame a partir dos dados
-#     df = pd.DataFrame(rework_data)
+    # 📌 Criar um DataFrame a partir dos dados
+    df = pd.DataFrame(rework_data)
 
-#     # 📌 Converter a data para formato datetime e ordenar
-#     df["data"] = pd.to_datetime(df["data"])
-#     df = df.sort_values("data")
+    # 📌 Converter a data para formato datetime e ordenar
+    df["data"] = pd.to_datetime(df["data"])
+    df = df.sort_values("data")
 
-#     # 📌 Remover duplicatas mantendo o último valor registrado para cada data
-#     df = df.drop_duplicates(subset="data", keep="last")
+    # 📌 Remover duplicatas mantendo o último valor registrado para cada data
+    df = df.drop_duplicates(subset="data", keep="last")
 
-#     # 📌 Criar um intervalo contínuo de datas desde o primeiro commit até hoje
-#     date_range = pd.date_range(
-#         start=df["data"].min(), end=datetime.utcnow().strftime("%Y-%m-%d")
-#     )
+    # 📌 Gerar métricas finais
+    total_commits = len(df)
+    total_lines_analyzed = df["total_changes"].sum()
+    total_lines_rework = df["rework_changes_total"].sum()
+    total_lines_rework_recent = df["rework_changes_recent"].sum()
+    average_rework_rate = df["rework_rate_total"].mean()
+    average_rework_rate_recent = df["rework_rate_recent"].mean()
 
-#     # 📌 Preencher dias vazios com o último valor conhecido
-#     df = df.set_index("data").reindex(date_range, method="ffill").reset_index()
-#     df.rename(columns={"index": "data"}, inplace=True)
-#     df["data"] = df["data"].dt.strftime("%Y-%m-%d")
+    # 📊 Criando gráficos separados
+    fig, axes = plt.subplots(2, 1, figsize=(12, 10), sharex=True)
 
-#     # 📌 Aplicar média móvel para suavizar oscilações extremas
-#     df["rework_rate_total"] = (
-#         df["rework_rate_total"].rolling(window=3, min_periods=1).mean()
-#     )
-#     df["rework_rate_recent"] = (
-#         df["rework_rate_recent"].rolling(window=3, min_periods=1).mean()
-#     )
+    # 📌 Gráfico 1: Rework Rate Total
+    axes[0].plot(df["data"], df["rework_rate_total"], marker="o", linestyle="-", color="b", label="Rework Rate Geral")
+    axes[0].set_ylabel("Rework Rate (%)")
+    axes[0].set_title("Evolução do Rework Rate Geral")
+    axes[0].grid()
+    axes[0].legend()
 
-#     # 📊 Criar o gráfico
-#     plt.figure(figsize=(12, 6))
-#     plt.plot(
-#         df["data"],
-#         df["rework_rate_total"],
-#         marker="o",
-#         linestyle="-",
-#         color="b",
-#         label="Rework Rate Geral",
-#     )
-#     plt.plot(
-#         df["data"],
-#         df["rework_rate_recent"],
-#         marker="o",
-#         linestyle="--",
-#         color="r",
-#         label="Rework Rate (Últimos 21 dias)",
-#     )
+    # 📌 Gráfico 2: Rework Rate Recent (Últimos 21 dias)
+    axes[1].plot(df["data"], df["rework_rate_recent"], marker="o", linestyle="--", color="r", label="Rework Rate (Últimos 21 dias)")
+    axes[1].set_xlabel("Data")
+    axes[1].set_ylabel("Rework Rate (%)")
+    axes[1].set_title(f"Evolução do Rework Rate nos últimos {REWORK_DAYS} dias")
+    axes[1].grid()
+    axes[1].legend()
 
-#     # 📌 Melhorar visualização do eixo X
-#     plt.xticks(rotation=45, ticks=df["data"][:: max(1, len(df) // 10)])
+    # 📌 Melhorar visualização do eixo X
+    axes[1].set_xticks(df["data"][:: max(1, len(df) // 10)])
+    plt.xticks(rotation=45)
 
-#     # 📌 Labels e título
-#     plt.xlabel("Data")
-#     plt.ylabel("Rework Rate (%)")
-#     plt.title("Evolução do Rework Rate ao longo do tempo")
-#     plt.grid()
-#     plt.legend()
+    # 📌 Adicionar box com métricas
+    metrics_text = (
+        f"🔹 Total de Commits: {total_commits}\n"
+        f"🔹 Total de Linhas Analisadas: {total_lines_analyzed}\n"
+        f"🔹 Total de Linhas de Retrabalho: {total_lines_rework}\n"
+        f"🔹 Linhas de Retrabalho (Últimos {REWORK_DAYS} dias): {total_lines_rework_recent}\n"
+        f"🔹 Rework Rate Geral: {average_rework_rate:.2f}%\n"
+        f"🔹 Rework Rate (Últimos {REWORK_DAYS} dias): {average_rework_rate_recent:.2f}%"
+    )
 
-#     # 📌 Salvar gráfico
-#     plt.savefig("rework_rate.png", dpi=300)
-#     print("📊 Gráfico salvo como rework_rate.png")
+    plt.gcf().text(0.15, 0.02, metrics_text, fontsize=10, bbox=dict(facecolor="white", alpha=0.8, edgecolor="black"))
+
+    # 📌 Destacar picos de retrabalho
+    max_total_idx = df["rework_rate_total"].idxmax()
+    max_recent_idx = df["rework_rate_recent"].idxmax()
+
+    if not df.empty:
+        axes[0].annotate(f"{df['rework_rate_total'].max():.2f}%", 
+                         xy=(df["data"][max_total_idx], df["rework_rate_total"].max()), 
+                         xytext=(df["data"][max_total_idx], df["rework_rate_total"].max() + 5),
+                         arrowprops=dict(facecolor='blue', arrowstyle='->'))
+        
+        axes[1].annotate(f"{df['rework_rate_recent'].max():.2f}%", 
+                         xy=(df["data"][max_recent_idx], df["rework_rate_recent"].max()), 
+                         xytext=(df["data"][max_recent_idx], df["rework_rate_recent"].max() + 5),
+                         arrowprops=dict(facecolor='red', arrowstyle='->'))
+
+    # 📌 Salvar gráficos
+    plt.tight_layout()
+    plt.savefig("rework_rate_analysis.png", dpi=300)
+    print("📊 Gráficos salvos como rework_rate_analysis.png")
 
 
 if __name__ == "__main__":
     commits = get_commits(OWNER, REPO, "main")
     analyze_rework(commits)
-    # generate_graph()
+    generate_graph()
