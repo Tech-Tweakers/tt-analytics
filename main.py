@@ -17,21 +17,31 @@ json_file = f"rework_analysis_{REPO}.json"
 
 
 def load_json(filename):
-    """Carrega JSON existente ou cria um novo como uma lista vazia."""
-    if os.path.exists(filename) and os.path.getsize(filename) > 0:
-        with open(filename, "r") as f:
-            try:
-                data = json.load(f)
-                if isinstance(data, list):
-                    return data  
-                else:
-                    print(f"⚠️ {filename} estava no formato errado. Recriando...")
-            except json.JSONDecodeError:
-                print(f"⚠️ Erro ao carregar {filename}, recriando arquivo...")
+    """Carrega JSON existente e verifica se o THRESHOLD mudou. Se não existir, cria um novo arquivo."""
+    if not os.path.exists(filename):
+        print(f"⚠️ Arquivo {filename} não encontrado. Criando novo JSON...")
+        save_json(filename, {"threshold": int(THRESHOLD), "data": []})  # Criar JSON vazio
+        return {"threshold": int(THRESHOLD), "data": []}  
 
-    with open(filename, "w") as f:
-        json.dump([], f, indent=4)
-    return []  
+    if os.path.getsize(filename) == 0:
+        print(f"⚠️ {filename} está vazio. Criando novo JSON...")
+        save_json(filename, {"threshold": int(THRESHOLD), "data": []})  
+        return {"threshold": int(THRESHOLD), "data": []}  
+
+    with open(filename, "r") as f:
+        try:
+            data = json.load(f)
+            if isinstance(data, dict) and "threshold" in data:
+                if data["threshold"] != int(THRESHOLD):
+                    print(f"⚠️ THRESHOLD mudou ({data['threshold']} → {THRESHOLD}). Reprocessando dados...")
+                    return {"threshold": int(THRESHOLD), "data": []}  
+                return data
+            else:
+                print(f"⚠️ JSON no formato incorreto. Recriando...")
+        except json.JSONDecodeError:
+            print(f"⚠️ Erro ao carregar {filename}, recriando arquivo...")
+
+    return {"threshold": int(THRESHOLD), "data": []}  
 
 
 def save_json(filename, data):
