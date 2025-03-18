@@ -105,7 +105,8 @@ def get_commit_changes(owner, repo, sha):
 
 def analyze_rework(commits):
     """Analisa commits e salva no JSON."""
-    rework_data = load_json(json_file)  # Agora sempre retorna uma lista
+    json_data = load_json(json_file)  # Agora retorna um dicionário com 'threshold' e 'data'
+    rework_data = json_data["data"]  # Pegamos apenas a lista de commits
     existing_data = {entry["sha"]: entry for entry in rework_data}  # Dict de commits já analisados
 
     total_rework_rate = 0
