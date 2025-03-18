@@ -196,7 +196,8 @@ def analyze_rework(commits):
         total_lines_rework += commit_data["rework_changes_total"]
         total_lines_rework_recent += commit_data["rework_changes_recent"]
 
-    save_json(json_file, rework_data)
+    save_json(json_file, {"threshold": int(THRESHOLD), "data": rework_data})
+
     print(f"📊 JSON atualizado com histórico completo de commits: {json_file}")
 
     # Exibir as métricas no final
