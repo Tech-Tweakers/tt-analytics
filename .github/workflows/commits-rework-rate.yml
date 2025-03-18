@@ -34,9 +34,9 @@ jobs:
 
       - name: 🚀 Rodar análise de retrabalho
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          export GITHUB_TOKEN=${{ secrets.GH_PAT }}
           export OWNER="Tech-Tweakers"
           export REPO=${{ github.event.inputs.repo }}
           export THRESHOLD=${{ github.event.inputs.threshold }}
