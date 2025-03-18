@@ -7,6 +7,12 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 import os
 
+START_DATE = os.getenv("START_DATE", "2000-01-01")  # Padrão: pega tudo
+END_DATE = os.getenv("END_DATE", datetime.utcnow().strftime("%Y-%m-%d"))  # Padrão: hoje
+
+START_DATE = datetime.strptime(START_DATE, "%Y-%m-%d")
+END_DATE = datetime.strptime(END_DATE, "%Y-%m-%d")
+
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 OWNER = os.getenv("OWNER")
 REPO = os.getenv("REPO")
@@ -36,7 +42,9 @@ def load_json(filename):
 
             if isinstance(data, dict) and "threshold" in data and "data" in data:
                 if data["threshold"] != int(THRESHOLD):
-                    print(f"⚠️ THRESHOLD mudou ({data['threshold']} → {THRESHOLD}). Reprocessando dados...")
+                    print(
+                        f"⚠️ THRESHOLD mudou ({data['threshold']} → {THRESHOLD}). Reprocessando dados..."
+                    )
                     return {"threshold": int(THRESHOLD), "data": []}
                 return data
             else:
@@ -57,7 +65,6 @@ def save_json(filename, data):
     with open(filename, "w") as f:
         json.dump(data, f, indent=4)
     print(f"✅ JSON salvo com sucesso em {filename}")
-
 
 
 def get_commits(owner, repo, branch):
@@ -139,6 +146,10 @@ def analyze_rework(commits):
         sha = commit["sha"]
         date = commit["commit"]["author"]["date"]
         commit_date = datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
+
+        # 📌 Filtrar commits fora do período desejado
+        if not (START_DATE <= commit_date <= END_DATE):
+            continue  # Pula commits fora do intervalo
 
         if sha in existing_data:
             print(f"🔄 Commit {sha[:7]} já existe no JSON. Usando dados armazenados...")
@@ -230,26 +241,52 @@ def generate_graph():
 
     # 📌 Verificar se há dados válidos
     if df.empty or "total_changes" not in df.columns:
-        print("⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico.")
+        print(
+            "⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico."
+        )
         return
 
-    # 📌 Converter a data para formato datetime e ordenar
+    # 📌 Converter a data para formato datetime
     df["data"] = pd.to_datetime(df["data"])
+
+    # 📌 Filtrar os dados no período desejado
+    df = df[(df["data"] >= START_DATE) & (df["data"] <= END_DATE)]
+
+    # 📌 Verificar se há dados após o filtro
+    if df.empty:
+        print(
+            f"⚠️ Nenhum commit encontrado no período de {START_DATE.date()} a {END_DATE.date()}."
+        )
+        return
+
+    # 📌 Ordenar os dados por data
     df = df.sort_values("data")
 
     # 📌 Gráfico 1: Rework Rate Total
-    fig1 = px.line(df, x="data", y="rework_rate_total", markers=True,
-                   title="Evolução do Rework Rate Geral",
-                   labels={"data": "Data", "rework_rate_total": "Rework Rate (%)"})
+    fig1 = px.line(
+        df,
+        x="data",
+        y="rework_rate_total",
+        markers=True,
+        title="Evolução do Rework Rate Geral",
+        labels={"data": "Data", "rework_rate_total": "Rework Rate (%)"},
+    )
     fig1.write_html("rework_rate_total.html")  # 📌 Salva o gráfico como HTML
 
     # 📌 Gráfico 2: Rework Rate Recent (Últimos 21 dias)
-    fig2 = px.line(df, x="data", y="rework_rate_recent", markers=True,
-                   title=f"Evolução do Rework Rate nos últimos {REWORK_DAYS} dias",
-                   labels={"data": "Data", "rework_rate_recent": "Rework Rate (%)"})
+    fig2 = px.line(
+        df,
+        x="data",
+        y="rework_rate_recent",
+        markers=True,
+        title=f"Evolução do Rework Rate nos últimos {REWORK_DAYS} dias",
+        labels={"data": "Data", "rework_rate_recent": "Rework Rate (%)"},
+    )
     fig2.write_html("rework_rate_recent.html")  # 📌 Salva o gráfico como HTML
 
-    print("📊 Gráficos salvos como HTML interativos para análise.")
+    print(
+        f"📊 Gráficos gerados para o período {START_DATE.date()} a {END_DATE.date()} e salvos como HTML."
+    )
 
 
 if __name__ == "__main__":
