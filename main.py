@@ -20,28 +20,32 @@ def load_json(filename):
     """Carrega JSON existente e verifica se o THRESHOLD mudou. Se não existir, cria um novo arquivo."""
     if not os.path.exists(filename):
         print(f"⚠️ Arquivo {filename} não encontrado. Criando novo JSON...")
-        save_json(filename, {"threshold": int(THRESHOLD), "data": []})  # Criar JSON vazio
-        return {"threshold": int(THRESHOLD), "data": []}  
+        save_json(
+            filename, {"threshold": int(THRESHOLD), "data": []}
+        )  # Criar JSON vazio
+        return {"threshold": int(THRESHOLD), "data": []}
 
     if os.path.getsize(filename) == 0:
         print(f"⚠️ {filename} está vazio. Criando novo JSON...")
-        save_json(filename, {"threshold": int(THRESHOLD), "data": []})  
-        return {"threshold": int(THRESHOLD), "data": []}  
+        save_json(filename, {"threshold": int(THRESHOLD), "data": []})
+        return {"threshold": int(THRESHOLD), "data": []}
 
     with open(filename, "r") as f:
         try:
             data = json.load(f)
             if isinstance(data, dict) and "threshold" in data:
                 if data["threshold"] != int(THRESHOLD):
-                    print(f"⚠️ THRESHOLD mudou ({data['threshold']} → {THRESHOLD}). Reprocessando dados...")
-                    return {"threshold": int(THRESHOLD), "data": []}  
+                    print(
+                        f"⚠️ THRESHOLD mudou ({data['threshold']} → {THRESHOLD}). Reprocessando dados..."
+                    )
+                    return {"threshold": int(THRESHOLD), "data": []}
                 return data
             else:
                 print(f"⚠️ JSON no formato incorreto. Recriando...")
         except json.JSONDecodeError:
             print(f"⚠️ Erro ao carregar {filename}, recriando arquivo...")
 
-    return {"threshold": int(THRESHOLD), "data": []}  
+    return {"threshold": int(THRESHOLD), "data": []}
 
 
 def save_json(filename, data):
@@ -93,9 +97,13 @@ def get_commit_changes(owner, repo, sha):
         if patch:
             changed_lines = set()
             for line in patch.split("\n"):
-                if line.startswith("+") and not line.startswith("+++"):  # Linhas adicionadas
+                if line.startswith("+") and not line.startswith(
+                    "+++"
+                ):  # Linhas adicionadas
                     changed_lines.add(line)
-                elif line.startswith("-") and not line.startswith("---"):  # Linhas removidas
+                elif line.startswith("-") and not line.startswith(
+                    "---"
+                ):  # Linhas removidas
                     changed_lines.add(line)
 
             changes[filename] = changed_lines
@@ -105,9 +113,13 @@ def get_commit_changes(owner, repo, sha):
 
 def analyze_rework(commits):
     """Analisa commits e salva no JSON."""
-    json_data = load_json(json_file)  # Agora retorna um dicionário com 'threshold' e 'data'
+    json_data = load_json(
+        json_file
+    )  # Agora retorna um dicionário com 'threshold' e 'data'
     rework_data = json_data["data"]  # Pegamos apenas a lista de commits
-    existing_data = {entry["sha"]: entry for entry in rework_data}  # Dict de commits já analisados
+    existing_data = {
+        entry["sha"]: entry for entry in rework_data
+    }  # Dict de commits já analisados
 
     total_rework_rate = 0
     total_rework_rate_recent = 0
@@ -152,11 +164,13 @@ def analyze_rework(commits):
                 (rework_changes_total / total_changes) * 100 if total_changes > 0 else 0
             )
             rework_rate_recent = (
-                (rework_changes_recent / total_changes) * 100 if total_changes > 0 else 0
+                (rework_changes_recent / total_changes) * 100
+                if total_changes > 0
+                else 0
             )
 
             commit_data = {
-                "data": date[:10],  
+                "data": date[:10],
                 "sha": sha,
                 "total_changes": total_changes,
                 "rework_changes_total": rework_changes_total,
@@ -189,25 +203,34 @@ def analyze_rework(commits):
         print(f"🔹 Total de Commits analisados: {total_commits}")
         print(f"🔹 Total de Linhas Analisadas: {total_lines_analyzed}")
         print(f"🔹 Total de Linhas de Retrabalho: {total_lines_rework}")
-        print(f"🔹 Total de Linhas de Retrabalho nos últimos {REWORK_DAYS} dias: {total_lines_rework_recent}")
+        print(
+            f"🔹 Total de Linhas de Retrabalho nos últimos {REWORK_DAYS} dias: {total_lines_rework_recent}"
+        )
         print(f"🔹 Rework Rate Geral: {average_rework_rate:.2f}%")
-        print(f"🔹 Rework Rate nos últimos {REWORK_DAYS} dias: {average_rework_rate_recent:.2f}%")
+        print(
+            f"🔹 Rework Rate nos últimos {REWORK_DAYS} dias: {average_rework_rate_recent:.2f}%"
+        )
     else:
         print("⚠️ Nenhum commit foi analisado.")
 
 
 def generate_graph():
-    """Gera dois gráficos separados para rework_rate_total e rework_rate_recent, além de incluir um box com métricas."""
+    """Gera gráficos para análise de retrabalho."""
     rework_data = load_json(json_file)
 
-    # 📌 Criar um DataFrame a partir dos dados
-    df = pd.DataFrame(rework_data)
-
-    # 📌 Verificar se a estrutura do JSON está correta antes de gerar os gráficos
-    if df.empty or "total_changes" not in df.columns:
-        print("⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico.")
+    # 📌 Verificar se os dados estão corretamente estruturados
+    if not rework_data or "data" not in rework_data or not rework_data["data"]:
+        print(
+            "⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico."
+        )
         return
 
+    # 📌 Criar um DataFrame a partir dos dados corretos
+    df = pd.DataFrame(rework_data["data"])
+
+    if df.empty or "total_changes" not in df.columns:
+        print("⚠️ O JSON não contém dados válidos para análise.")
+        return
 
     # 📌 Converter a data para formato datetime e ordenar
     df["data"] = pd.to_datetime(df["data"])
@@ -228,14 +251,28 @@ def generate_graph():
     fig, axes = plt.subplots(2, 1, figsize=(12, 10), sharex=True)
 
     # 📌 Gráfico 1: Rework Rate Total
-    axes[0].plot(df["data"], df["rework_rate_total"], marker="o", linestyle="-", color="b", label="Rework Rate Geral")
+    axes[0].plot(
+        df["data"],
+        df["rework_rate_total"],
+        marker="o",
+        linestyle="-",
+        color="b",
+        label="Rework Rate Geral",
+    )
     axes[0].set_ylabel("Rework Rate (%)")
     axes[0].set_title("Evolução do Rework Rate Geral")
     axes[0].grid()
     axes[0].legend()
 
     # 📌 Gráfico 2: Rework Rate Recent (Últimos 21 dias)
-    axes[1].plot(df["data"], df["rework_rate_recent"], marker="o", linestyle="--", color="r", label="Rework Rate (Últimos 21 dias)")
+    axes[1].plot(
+        df["data"],
+        df["rework_rate_recent"],
+        marker="o",
+        linestyle="--",
+        color="r",
+        label="Rework Rate (Últimos 21 dias)",
+    )
     axes[1].set_xlabel("Data")
     axes[1].set_ylabel("Rework Rate (%)")
     axes[1].set_title(f"Evolução do Rework Rate nos últimos {REWORK_DAYS} dias")
@@ -256,22 +293,32 @@ def generate_graph():
         f"🔹 Rework Rate (Últimos {REWORK_DAYS} dias): {average_rework_rate_recent:.2f}%"
     )
 
-    plt.gcf().text(0.15, 0.02, metrics_text, fontsize=10, bbox=dict(facecolor="white", alpha=0.8, edgecolor="black"))
+    plt.gcf().text(
+        0.15,
+        0.02,
+        metrics_text,
+        fontsize=10,
+        bbox=dict(facecolor="white", alpha=0.8, edgecolor="black"),
+    )
 
     # 📌 Destacar picos de retrabalho
     max_total_idx = df["rework_rate_total"].idxmax()
     max_recent_idx = df["rework_rate_recent"].idxmax()
 
     if not df.empty:
-        axes[0].annotate(f"{df['rework_rate_total'].max():.2f}%", 
-                         xy=(df["data"][max_total_idx], df["rework_rate_total"].max()), 
-                         xytext=(df["data"][max_total_idx], df["rework_rate_total"].max() + 5),
-                         arrowprops=dict(facecolor='blue', arrowstyle='->'))
-        
-        axes[1].annotate(f"{df['rework_rate_recent'].max():.2f}%", 
-                         xy=(df["data"][max_recent_idx], df["rework_rate_recent"].max()), 
-                         xytext=(df["data"][max_recent_idx], df["rework_rate_recent"].max() + 5),
-                         arrowprops=dict(facecolor='red', arrowstyle='->'))
+        axes[0].annotate(
+            f"{df['rework_rate_total'].max():.2f}%",
+            xy=(df["data"][max_total_idx], df["rework_rate_total"].max()),
+            xytext=(df["data"][max_total_idx], df["rework_rate_total"].max() + 5),
+            arrowprops=dict(facecolor="blue", arrowstyle="->"),
+        )
+
+        axes[1].annotate(
+            f"{df['rework_rate_recent'].max():.2f}%",
+            xy=(df["data"][max_recent_idx], df["rework_rate_recent"].max()),
+            xytext=(df["data"][max_recent_idx], df["rework_rate_recent"].max() + 5),
+            arrowprops=dict(facecolor="red", arrowstyle="->"),
+        )
 
     # 📌 Salvar gráficos
     plt.tight_layout()
