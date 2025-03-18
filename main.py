@@ -185,12 +185,6 @@ def analyze_rework(commits):
         print("⚠️ Nenhum commit foi analisado.")
 
 
-def load_json(filename):
-    """Carrega os dados do JSON."""
-    with open(filename, "r") as f:
-        return json.load(f)
-
-
 def generate_graph():
     """Gera dois gráficos separados para rework_rate_total e rework_rate_recent, além de incluir um box com métricas."""
     rework_data = load_json(json_file)
@@ -264,8 +258,8 @@ def generate_graph():
 
     # 📌 Salvar gráficos
     plt.tight_layout()
-    plt.savefig("rework_rate_analysis.png", dpi=300)
-    print("📊 Gráficos salvos como rework_rate_analysis.png")
+    plt.savefig(f"rework_rate_{REPO}.png", dpi=300)
+    print(f"📊 Gráficos salvos como rework_rate_{REPO}.png")
 
 
 if __name__ == "__main__":
