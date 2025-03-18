@@ -17,12 +17,10 @@ json_file = f"rework_analysis_{REPO}.json"
 
 
 def load_json(filename):
-    """Carrega JSON existente e verifica se o THRESHOLD mudou. Se não existir, cria um novo arquivo."""
+    """Carrega JSON existente e verifica se o THRESHOLD mudou."""
     if not os.path.exists(filename):
         print(f"⚠️ Arquivo {filename} não encontrado. Criando novo JSON...")
-        save_json(
-            filename, {"threshold": int(THRESHOLD), "data": []}
-        )  # Criar JSON vazio
+        save_json(filename, {"threshold": int(THRESHOLD), "data": []})
         return {"threshold": int(THRESHOLD), "data": []}
 
     if os.path.getsize(filename) == 0:
@@ -33,15 +31,16 @@ def load_json(filename):
     with open(filename, "r") as f:
         try:
             data = json.load(f)
-            if isinstance(data, dict) and "threshold" in data:
+            print("📂 JSON carregado:", data)  # <-- Verifique os dados carregados
+
+            if isinstance(data, dict) and "threshold" in data and "data" in data:
                 if data["threshold"] != int(THRESHOLD):
-                    print(
-                        f"⚠️ THRESHOLD mudou ({data['threshold']} → {THRESHOLD}). Reprocessando dados..."
-                    )
+                    print(f"⚠️ THRESHOLD mudou ({data['threshold']} → {THRESHOLD}). Reprocessando dados...")
                     return {"threshold": int(THRESHOLD), "data": []}
                 return data
             else:
                 print(f"⚠️ JSON no formato incorreto. Recriando...")
+
         except json.JSONDecodeError:
             print(f"⚠️ Erro ao carregar {filename}, recriando arquivo...")
 
@@ -50,8 +49,14 @@ def load_json(filename):
 
 def save_json(filename, data):
     """Salva os dados no JSON."""
+    if not isinstance(data, dict) or "threshold" not in data or "data" not in data:
+        print(f"⚠️ Tentativa de salvar JSON inválido: {data}")
+        return
+
     with open(filename, "w") as f:
         json.dump(data, f, indent=4)
+    print(f"✅ JSON salvo com sucesso em {filename}")
+
 
 
 def get_commits(owner, repo, branch):
@@ -218,14 +223,10 @@ def generate_graph():
     """Gera gráficos para análise de retrabalho."""
     rework_data = load_json(json_file)
 
-    # 📌 Verificar se os dados estão corretamente estruturados
-    if not rework_data or "data" not in rework_data or not rework_data["data"]:
-        print(
-            "⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico."
-        )
+    if not rework_data or "data" not in rework_data or not isinstance(rework_data["data"], list):
+        print("⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico.")
         return
 
-    # 📌 Criar um DataFrame a partir dos dados corretos
     df = pd.DataFrame(rework_data["data"])
 
     if df.empty or "total_changes" not in df.columns:
