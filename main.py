@@ -203,6 +203,12 @@ def generate_graph():
     # 📌 Criar um DataFrame a partir dos dados
     df = pd.DataFrame(rework_data)
 
+    # 📌 Verificar se a estrutura do JSON está correta antes de gerar os gráficos
+    if df.empty or "total_changes" not in df.columns:
+        print("⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico.")
+        return
+
+
     # 📌 Converter a data para formato datetime e ordenar
     df["data"] = pd.to_datetime(df["data"])
     df = df.sort_values("data")
