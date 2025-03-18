@@ -1,6 +1,7 @@
 import requests
 import json
 import pandas as pd
+import plotly.express as px
 import matplotlib.pyplot as plt
 from collections import defaultdict
 from datetime import datetime, timedelta
@@ -221,111 +222,34 @@ def analyze_rework(commits):
 
 
 def generate_graph():
-    """Gera gráficos para análise de retrabalho."""
+    """Gera gráficos interativos usando Plotly e salva em arquivos HTML."""
     rework_data = load_json(json_file)
 
-    if not rework_data or "data" not in rework_data or not isinstance(rework_data["data"], list):
-        print("⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico.")
-        return
-
+    # 📌 Criar DataFrame a partir dos dados
     df = pd.DataFrame(rework_data["data"])
 
+    # 📌 Verificar se há dados válidos
     if df.empty or "total_changes" not in df.columns:
-        print("⚠️ O JSON não contém dados válidos para análise.")
+        print("⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico.")
         return
 
     # 📌 Converter a data para formato datetime e ordenar
     df["data"] = pd.to_datetime(df["data"])
     df = df.sort_values("data")
 
-    # 📌 Remover duplicatas mantendo o último valor registrado para cada data
-    df = df.drop_duplicates(subset="data", keep="last")
-
-    # 📌 Gerar métricas finais
-    total_commits = len(df)
-    total_lines_analyzed = df["total_changes"].sum()
-    total_lines_rework = df["rework_changes_total"].sum()
-    total_lines_rework_recent = df["rework_changes_recent"].sum()
-    average_rework_rate = df["rework_rate_total"].mean()
-    average_rework_rate_recent = df["rework_rate_recent"].mean()
-
-    # 📊 Criando gráficos separados
-    fig, axes = plt.subplots(2, 1, figsize=(12, 10), sharex=True)
-
     # 📌 Gráfico 1: Rework Rate Total
-    axes[0].plot(
-        df["data"],
-        df["rework_rate_total"],
-        marker="o",
-        linestyle="-",
-        color="b",
-        label="Rework Rate Geral",
-    )
-    axes[0].set_ylabel("Rework Rate (%)")
-    axes[0].set_title("Evolução do Rework Rate Geral")
-    axes[0].grid()
-    axes[0].legend()
+    fig1 = px.line(df, x="data", y="rework_rate_total", markers=True,
+                   title="Evolução do Rework Rate Geral",
+                   labels={"data": "Data", "rework_rate_total": "Rework Rate (%)"})
+    fig1.write_html("rework_rate_total.html")  # 📌 Salva o gráfico como HTML
 
     # 📌 Gráfico 2: Rework Rate Recent (Últimos 21 dias)
-    axes[1].plot(
-        df["data"],
-        df["rework_rate_recent"],
-        marker="o",
-        linestyle="--",
-        color="r",
-        label="Rework Rate (Últimos 21 dias)",
-    )
-    axes[1].set_xlabel("Data")
-    axes[1].set_ylabel("Rework Rate (%)")
-    axes[1].set_title(f"Evolução do Rework Rate nos últimos {REWORK_DAYS} dias")
-    axes[1].grid()
-    axes[1].legend()
+    fig2 = px.line(df, x="data", y="rework_rate_recent", markers=True,
+                   title=f"Evolução do Rework Rate nos últimos {REWORK_DAYS} dias",
+                   labels={"data": "Data", "rework_rate_recent": "Rework Rate (%)"})
+    fig2.write_html("rework_rate_recent.html")  # 📌 Salva o gráfico como HTML
 
-    # 📌 Melhorar visualização do eixo X
-    axes[1].set_xticks(df["data"][:: max(1, len(df) // 10)])
-    plt.xticks(rotation=45)
-
-    # 📌 Adicionar box com métricas
-    metrics_text = (
-        f"🔹 Total de Commits: {total_commits}\n"
-        f"🔹 Total de Linhas Analisadas: {total_lines_analyzed}\n"
-        f"🔹 Total de Linhas de Retrabalho: {total_lines_rework}\n"
-        f"🔹 Linhas de Retrabalho (Últimos {REWORK_DAYS} dias): {total_lines_rework_recent}\n"
-        f"🔹 Rework Rate Geral: {average_rework_rate:.2f}%\n"
-        f"🔹 Rework Rate (Últimos {REWORK_DAYS} dias): {average_rework_rate_recent:.2f}%"
-    )
-
-    plt.gcf().text(
-        0.15,
-        0.02,
-        metrics_text,
-        fontsize=10,
-        bbox=dict(facecolor="white", alpha=0.8, edgecolor="black"),
-    )
-
-    # 📌 Destacar picos de retrabalho
-    max_total_idx = df["rework_rate_total"].idxmax()
-    max_recent_idx = df["rework_rate_recent"].idxmax()
-
-    if not df.empty:
-        axes[0].annotate(
-            f"{df['rework_rate_total'].max():.2f}%",
-            xy=(df["data"][max_total_idx], df["rework_rate_total"].max()),
-            xytext=(df["data"][max_total_idx], df["rework_rate_total"].max() + 5),
-            arrowprops=dict(facecolor="blue", arrowstyle="->"),
-        )
-
-        axes[1].annotate(
-            f"{df['rework_rate_recent'].max():.2f}%",
-            xy=(df["data"][max_recent_idx], df["rework_rate_recent"].max()),
-            xytext=(df["data"][max_recent_idx], df["rework_rate_recent"].max() + 5),
-            arrowprops=dict(facecolor="red", arrowstyle="->"),
-        )
-
-    # 📌 Salvar gráficos
-    plt.tight_layout()
-    plt.savefig(f"rework_rate_{REPO}.png", dpi=300)
-    print(f"📊 Gráficos salvos como rework_rate_{REPO}.png")
+    print("📊 Gráficos salvos como HTML interativos para análise.")
 
 
 if __name__ == "__main__":
