@@ -30,7 +30,7 @@ jobs:
           python-version: '3.9'
 
       - name: 📦 Instalar dependências
-        run: pip install requests pandas matplotlib
+        run: pip install requests pandas matplotlib plotly
 
       - name: 🚀 Rodar análise de retrabalho
         env:
