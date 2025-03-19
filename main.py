@@ -325,7 +325,7 @@ def generate_graph():
     fig1.update_xaxes(nticks=10)
 
     # 📌 Salvar como HTML
-    fig1.write_html(f"rework_rate_total-{REPO}.html")
+    fig1.write_html(f"data/graphs/rework_rate_total-{REPO}.html")
 
     # 📊 Gráfico 2: Rework Rate Recent (Últimos 21 dias)
     fig2 = px.line(df, x="data", y="rework_rate_recent", markers=True,
@@ -360,7 +360,7 @@ def generate_graph():
     fig2.update_xaxes(nticks=10)
 
     # 📌 Salvar como HTML
-    fig2.write_html(f"rework_rate_recent-{REPO}.html")
+    fig2.write_html(f"data/graphs/rework_rate_recent-{REPO}.html")
 
     print(f"📊 Gráficos interativos ultra detalhados gerados e salvos!")
 
