@@ -36,7 +36,7 @@ jobs:
           python-version: '3.9'
 
       - name: 📦 Instalar dependências
-        run: pip install requests pandas matplotlib plotly kaleido
+        run: pip install requests pandas plotly kaleido
 
       - name: 🚀 Rodar análise de retrabalho
         env:

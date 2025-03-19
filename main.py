@@ -2,6 +2,8 @@ import requests
 import json
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 from datetime import datetime, timedelta
 import os
 
@@ -90,15 +92,19 @@ def get_commits(owner, repo, branch):
 
 
 def get_commit_changes(owner, repo, sha):
-    """Obtém os arquivos e linhas modificadas em um commit."""
+    """Obtém os arquivos e linhas modificadas em um commit, capturando o autor."""
     url = f"https://api.github.com/repos/{owner}/{repo}/commits/{sha}"
     response = requests.get(url, headers=HEADERS)
 
     if response.status_code != 200:
         print(f"⚠️ Falha ao buscar detalhes do commit {sha}")
-        return None
+        return None, None  # Retorna None para evitar erro
 
     data = response.json()
+
+    # 📌 Garante que sempre haverá um autor, mesmo se o dado não estiver disponível
+    author = data.get("commit", {}).get("author", {}).get("name", "Desconhecido")
+
     files = data.get("files", [])
 
     changes = {}
@@ -109,18 +115,14 @@ def get_commit_changes(owner, repo, sha):
         if patch:
             changed_lines = set()
             for line in patch.split("\n"):
-                if line.startswith("+") and not line.startswith(
-                    "+++"
-                ):  # Linhas adicionadas
+                if line.startswith("+") and not line.startswith("+++"):  
                     changed_lines.add(line)
-                elif line.startswith("-") and not line.startswith(
-                    "---"
-                ):  # Linhas removidas
+                elif line.startswith("-") and not line.startswith("---"):
                     changed_lines.add(line)
 
             changes[filename] = changed_lines
 
-    return changes
+    return author, changes  # Retorna o autor junto com as mudanças
 
 
 def analyze_rework(commits):
@@ -156,7 +158,7 @@ def analyze_rework(commits):
         else:
             print(f"\n🔹 [{i}/{len(commits)}] Processando commit {sha[:7]} ({date})")
 
-            changes = get_commit_changes(OWNER, REPO, sha)
+            author, changes = get_commit_changes(OWNER, REPO, sha)
             if not changes:
                 continue
 
@@ -188,6 +190,7 @@ def analyze_rework(commits):
             commit_data = {
                 "data": date[:10],
                 "sha": sha,
+                "autor": author,
                 "total_changes": total_changes,
                 "rework_changes_total": rework_changes_total,
                 "rework_rate_total": rework_rate_total,
@@ -325,6 +328,26 @@ def generate_graph():
     # 📌 Ajustar eixo X
     fig1.update_xaxes(nticks=10)
 
+    # 📌 Criar dataframe de ranking por autor
+    df_authors = df.groupby("autor").agg({"rework_changes_total": "sum"}).reset_index()
+    df_authors = df_authors.sort_values("rework_changes_total", ascending=False).head(10)
+
+    # 📋 Adicionar tabela interativa abaixo do gráfico
+    fig1.add_trace(go.Table(
+        header=dict(
+            values=["Autor", "Total de Linhas de Retrabalho"],
+            fill_color="lightgrey",
+            align="left"
+        ),
+        cells=dict(
+            values=[
+                df_authors["autor"],
+                df_authors["rework_changes_total"]
+            ],
+            align="left"
+        )
+    ), row=2, col=1)  # 🔥 Insere a tabela abaixo do gráfico
+
     # 📌 Salvar como HTML
     fig1.write_html(f"data/graphs/rework_rate_total-{REPO}.html")
 
@@ -332,7 +355,7 @@ def generate_graph():
     fig2 = px.line(df, x="data", y="rework_rate_recent", markers=True,
                    title=f"📊 Rework Rate nos últimos {REWORK_DAYS} dias - {REPO}",
                    labels={"data": "Data", "rework_rate_recent": "Rework Rate (%)"},
-                   hover_data={"tooltip": True})
+                   hover_data={"tooltip": True, "autor": True}
     fig2.update_traces(marker=dict(size=6), hovertemplate=df["tooltip"])
 
     # # 📌 Adicionar anotações para os top 3 picos recentes
