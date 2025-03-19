@@ -1,0 +1,1418 @@
+{
+    "threshold": 10,
+    "data": [
+        {
+            "data": "2024-01-16",
+            "sha": "682f524a466070fbe6767f75015f65f967456699",
+            "total_changes": 28,
+            "rework_changes_total": 25,
+            "rework_rate_total": 89.28571428571429,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "internal/infrastructure/api/api.go",
+                "internal/infrastructure/environment/environment.go"
+            ]
+        },
+        {
+            "data": "2024-01-15",
+            "sha": "2304022e8af2ec364896bb1b1477c1d0c68946c7",
+            "total_changes": 9,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-15",
+            "sha": "5b4069cf273ee000f0804d25ebd29a8160e60504",
+            "total_changes": 9,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-14",
+            "sha": "3a5c254df1368b2d630c1f0618fae59ecb1782fe",
+            "total_changes": 10,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-14",
+            "sha": "404b04d13c31dbf12b2ad5fc6279573b353f789e",
+            "total_changes": 10,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-14",
+            "sha": "12c70c500f6152c00f3cb93de431a352198822dd",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2024-01-14",
+            "sha": "792d8f56e877b3b9c091b133ef69a4503d0f33da",
+            "total_changes": 5,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md",
+                "internal/infrastructure/api/api.go"
+            ]
+        },
+        {
+            "data": "2024-01-14",
+            "sha": "b3baee51cd7e156a9b04925a603d9c2aec55f15b",
+            "total_changes": 5,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md",
+                "internal/infrastructure/api/api.go"
+            ]
+        },
+        {
+            "data": "2024-01-14",
+            "sha": "8b89a35b799c3bbe32d121da8a011a8c1fe827a5",
+            "total_changes": 1,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2024-01-14",
+            "sha": "b9dac26f075317bf1a986581492299bc38918050",
+            "total_changes": 63,
+            "rework_changes_total": 63,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "ssl-certs/polaris.crt",
+                "ssl-certs/polaris.csr",
+                "ssl-certs/polaris.key"
+            ]
+        },
+        {
+            "data": "2024-01-14",
+            "sha": "8fe90dc8949b7141886dcc0e6012ce31c7479d5e",
+            "total_changes": 75,
+            "rework_changes_total": 67,
+            "rework_rate_total": 89.33333333333333,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "README.md",
+                "internal/infrastructure/api/api.go",
+                "ssl-certs/ecatrom2099.crt",
+                "ssl-certs/ecatrom2099.csr",
+                "ssl-certs/ecatrom2099.key"
+            ]
+        },
+        {
+            "data": "2024-01-14",
+            "sha": "e0d9583a167388d015c6858e0904a7a4ece761b2",
+            "total_changes": 4,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "614d42389239d9b5d80663bf98d339dccc352e32",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "9b44714d26059ad2a3c7dfa4608afaa4673aae9a",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "badeeff48fdbc9b190618b96afe805818f8eec21",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "14178eb213025b5e92caa43a5aa0d75796bfce23",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "8cfe352492040b9d744f027319ab8ad6757af6ab",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "7c864ceaf1020ea19ff960f8aa26daf4dd29a5a8",
+            "total_changes": 8,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "29cb153696c75f84e5e51edf10c447f7e292d004",
+            "total_changes": 8,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "134fc6fe3eed0f9afcce5758af7c274739ac4af6",
+            "total_changes": 4,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md",
+                "go.mod"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "f87c2d2c43538cd3dabbcf154e9e70e9aec2c78a",
+            "total_changes": 416,
+            "rework_changes_total": 367,
+            "rework_rate_total": 88.22115384615384,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                ".gitignore",
+                ".vscode/settings.json",
+                "README.md",
+                "check-new-logs.sh",
+                "cmd/main.go",
+                "compose-mongodb.yml",
+                "go.mod",
+                "go.sum",
+                "internal/domain/appcontext/appcontext.go",
+                "internal/domain/ecatrom/entry_loader.go",
+                "internal/domain/polaris/entity.go",
+                "internal/domain/polaris/entry_create.go",
+                "internal/domain/polaris/entry_listall.go",
+                "internal/domain/polaris/entry_loader.go",
+                "internal/domain/polaris/entry_starter.go",
+                "internal/domain/polaris/exception.go",
+                "internal/domain/polaris/main.go",
+                "internal/domain/polaris/repository.go",
+                "internal/infrastructure/api/api.go",
+                "internal/infrastructure/api/middlewares/context.go",
+                "internal/infrastructure/api/middlewares/logger.go",
+                "internal/infrastructure/api/middlewares/recovery.go",
+                "internal/infrastructure/api/routes/entryapi.go",
+                "internal/infrastructure/api/routes/health.go",
+                "internal/infrastructure/database/memory.go",
+                "internal/infrastructure/database/mongodb.go",
+                "internal/infrastructure/environment/environment.go",
+                "internal/infrastructure/logger/logger.go",
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "05cb3441ee8649c2667e6fbdadd1701bfd09ffb0",
+            "total_changes": 10,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "go.mod",
+                "go.sum"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "590d55c8b5f86fbf7a0ee9e3fb3a3dd5e6582f77",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "2c4abb35129abef6a414fdbd6e0fafa11e2ed549",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "df41368f5ac8e1edd24e6ce55c3e41080f764d15",
+            "total_changes": 147,
+            "rework_changes_total": 109,
+            "rework_rate_total": 74.14965986394559,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "README.md",
+                "cmd/main.go",
+                "compose-mongodb.yml",
+                "internal/domain/polaris/entity.go",
+                "internal/domain/polaris/entry_create.go",
+                "internal/domain/polaris/entry_listall.go",
+                "internal/domain/polaris/entry_loader.go",
+                "internal/domain/polaris/entry_starter.go",
+                "internal/domain/polaris/exception.go",
+                "internal/domain/polaris/main.go",
+                "internal/domain/polaris/repository.go",
+                "internal/infrastructure/api/api.go",
+                "internal/infrastructure/api/routes/entryapi.go",
+                "internal/infrastructure/database/memory.go",
+                "internal/infrastructure/database/mongodb.go"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "0f23ae7a01119f5b3aed9e92c2e8be5ae0b6573c",
+            "total_changes": 8,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "internal/infrastructure/environment/environment.go",
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2024-01-13",
+            "sha": "0702e3fc3772b1cd10111f5660982f7162447a12",
+            "total_changes": 119,
+            "rework_changes_total": 75,
+            "rework_rate_total": 63.02521008403361,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "cmd/main.go",
+                "go.mod",
+                "go.sum",
+                "internal/domain/appcontext/appcontext.go",
+                "internal/domain/ecatrom/entry_create.go",
+                "internal/domain/ecatrom/entry_listall.go",
+                "internal/domain/ecatrom/entry_loader.go",
+                "internal/domain/ecatrom/entry_starter.go",
+                "internal/domain/ecatrom/main.go",
+                "internal/infrastructure/api/api.go",
+                "internal/infrastructure/api/middlewares/context.go",
+                "internal/infrastructure/api/middlewares/logger.go",
+                "internal/infrastructure/api/middlewares/recovery.go",
+                "internal/infrastructure/api/routes/entryapi.go",
+                "internal/infrastructure/api/routes/health.go",
+                "internal/infrastructure/database/memory.go",
+                "internal/infrastructure/database/mongodb.go",
+                "internal/infrastructure/logger/logger.go",
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2024-01-12",
+            "sha": "94272bd9f789d32fbc866fc471f136e95a23f65d",
+            "total_changes": 42,
+            "rework_changes_total": 25,
+            "rework_rate_total": 59.523809523809526,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "README.md",
+                "check-new-logs.sh",
+                "internal/domain/ecatrom/entry_create.go",
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2024-01-09",
+            "sha": "24407a41375b2cd31afab8b6b4629bc0c1e6e0cf",
+            "total_changes": 52,
+            "rework_changes_total": 43,
+            "rework_rate_total": 82.6923076923077,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                ".gitignore",
+                "internal/infrastructure/environment/environment.go",
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2024-01-07",
+            "sha": "32071179e4fb385ec519572da0346d3818f5dc41",
+            "total_changes": 17,
+            "rework_changes_total": 15,
+            "rework_rate_total": 88.23529411764706,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "internal/domain/ecatrom/entry_create.go",
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2024-01-07",
+            "sha": "fa76a22f96726720f41dddd006b0e7c6f59df924",
+            "total_changes": 81,
+            "rework_changes_total": 49,
+            "rework_rate_total": 60.49382716049383,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                ".vscode/settings.json",
+                "cmd/main.go",
+                "internal/domain/ecatrom/entry_create.go",
+                "internal/domain/ecatrom/entry_loader.go",
+                "internal/infrastructure/api/routes/entryapi.go",
+                "internal/infrastructure/environment/environment.go",
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2023-12-29",
+            "sha": "9878c5cadf71b6e44918f571b42f50bfd357525b",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-29",
+            "sha": "4b266dad9ddea1521d8ae9366186569f277e48d0",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-29",
+            "sha": "b4e96d5bdfe590505ebfbb4120a33f52acd84851",
+            "total_changes": 4,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-29",
+            "sha": "60df752b5ab0bbb92e81efbefa300f8c38cbeda0",
+            "total_changes": 4,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-29",
+            "sha": "4c827a47684a5e51bdce62e5d068c310e9210ba8",
+            "total_changes": 6,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-29",
+            "sha": "65cbdbc0b7d88833986cafbee82e401b4025f071",
+            "total_changes": 6,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-28",
+            "sha": "f5978f527e489b1c51d8b2a7819ccde9669ff1ab",
+            "total_changes": 24,
+            "rework_changes_total": 18,
+            "rework_rate_total": 75.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                ".vscode/settings.json",
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-28",
+            "sha": "c09f2fa8a030bfe2e5d2f7d926d02da07944d3f4",
+            "total_changes": 24,
+            "rework_changes_total": 18,
+            "rework_rate_total": 75.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                ".vscode/settings.json",
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-26",
+            "sha": "61fc57e69de47f3cd124fe54a890c87e973cebfa",
+            "total_changes": 18,
+            "rework_changes_total": 12,
+            "rework_rate_total": 66.66666666666666,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "go.mod",
+                "go.sum"
+            ]
+        },
+        {
+            "data": "2023-12-26",
+            "sha": "93be95260a5244602a97bb33f2bea229598ab60c",
+            "total_changes": 18,
+            "rework_changes_total": 12,
+            "rework_rate_total": 66.66666666666666,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "go.mod",
+                "go.sum"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "8d9028d666a54a8b00c3e4e2e144e3040b6ae5df",
+            "total_changes": 4,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".vscode/launch.json",
+                ".vscode/settings.json"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "a85ac4e0e320303dc190355a008049cb16637ef3",
+            "total_changes": 4,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".vscode/launch.json",
+                ".vscode/settings.json"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "315d932fa88228b0cd4c0d8f2a026296a644113d",
+            "total_changes": 534,
+            "rework_changes_total": 521,
+            "rework_rate_total": 97.56554307116106,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                ".gitignore",
+                ".vscode/settings.json",
+                "Makefile",
+                "Makefile.dynamodb.mk",
+                "README.md",
+                "cmd/main.go",
+                "compose-mongodb.yml",
+                "docker-compose.yml",
+                "go.mod",
+                "go.sum",
+                "internal/domain/ecatrom/entity.go",
+                "internal/domain/ecatrom/entry_starter.go",
+                "internal/infrastructure/aws/auth.go",
+                "internal/infrastructure/database/dynamodb.go",
+                "internal/infrastructure/database/mongodb.go",
+                "internal/infrastructure/environment/environment.go",
+                "run-api.sh"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "b70a637de2cc03c5cfa7cedd05b904d81b315700",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "d69a9a08f98396b98be71000ad1bbf25ffa50145",
+            "total_changes": 58,
+            "rework_changes_total": 58,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "cmd/main.go"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "0ba24e248e068607cb1b7a15b8cf4afcc27a5d1e",
+            "total_changes": 62,
+            "rework_changes_total": 58,
+            "rework_rate_total": 93.54838709677419,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md",
+                "cmd/ecatrom2000/main.go",
+                "run-api.sh"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "2bdc8cddcc122dc795ffef2a76ed34e421bd1347",
+            "total_changes": 4,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "cc5478b5b2527ae9c44806427e60ecadabbf9324",
+            "total_changes": 3,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".gitignore"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "c1cd077e71c9cfc34354ea19bdf5364b32fe6f51",
+            "total_changes": 33,
+            "rework_changes_total": 22,
+            "rework_rate_total": 66.66666666666666,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "internal/domain/ecatrom/entry_starter.go",
+                "internal/infrastructure/environment/environment.go"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "ae05d20542baf9e28ebaa035a2110c90b3652a15",
+            "total_changes": 13,
+            "rework_changes_total": 13,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "f0973ccf866a40e6f9dbad980aa9ddc10d607c30",
+            "total_changes": 26,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "README.md",
+                "cmd/ecatrom2000/main.go",
+                "internal/infrastructure/environment/environment.go"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "e7d26d0b2e743968325c72d69ea188869389a452",
+            "total_changes": 10,
+            "rework_changes_total": 10,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-23",
+            "sha": "6b243263310e38dc5ae672a4e9a6efaa8f36ee3e",
+            "total_changes": 477,
+            "rework_changes_total": 474,
+            "rework_rate_total": 99.37106918238993,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                ".vscode/settings.json",
+                "Makefile",
+                "Makefile.dynamodb.mk",
+                "cmd/ecatrom2000/main.go",
+                "compose-mongodb.yml",
+                "docker-compose.yml",
+                "go.mod",
+                "go.sum",
+                "internal/domain/ecatrom/entity.go",
+                "internal/infrastructure/aws/auth.go",
+                "internal/infrastructure/database/dynamodb.go",
+                "internal/infrastructure/database/mongodb.go",
+                "internal/infrastructure/environment/environment.go"
+            ]
+        },
+        {
+            "data": "2023-12-22",
+            "sha": "956680ffbe8df61ff6fa15be056c06ba3468d735",
+            "total_changes": 554,
+            "rework_changes_total": 554,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "LICENSE"
+            ]
+        },
+        {
+            "data": "2023-12-22",
+            "sha": "eab1dffca07997571312308d66d0b43089d967e3",
+            "total_changes": 1,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "CONTRIBUTING.md"
+            ]
+        },
+        {
+            "data": "2023-12-22",
+            "sha": "ba9046cbf790f259ace6ab24c1a8e505ab2adb17",
+            "total_changes": 94,
+            "rework_changes_total": 94,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "CODE_OF_CONDUCT.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "d3e03e18958c18abadaae3ae74d4c14405007bcb",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "c573bb949362d9761b109c8b7b395fafa644df99",
+            "total_changes": 13,
+            "rework_changes_total": 13,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "482dc1e3721460ec6292ab41da647727acf9ce86",
+            "total_changes": 1,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "3a51dab2ab6b417f39091f4e309403744bbd12ed",
+            "total_changes": 8,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "5b75dbd2a94afb4c7bc9bb0c63a92920fa2ff038",
+            "total_changes": 8,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "f171c86f025412448569c474d6875efa02931059",
+            "total_changes": 3,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "3ab8910f1d22a1c0ea3a21e280ebbe128d8bb997",
+            "total_changes": 1,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "bb10049ffee13322cf1fda670d2eedd3433792b7",
+            "total_changes": 24,
+            "rework_changes_total": 17,
+            "rework_rate_total": 70.83333333333334,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "Makefile",
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "14df48e7e25a1115bce9802d18c039913d301be3",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "9b4ed620ef73f2f42f2dbe8309e74f8813a76e46",
+            "total_changes": 12,
+            "rework_changes_total": 12,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "f6bbd6305dc02a98f173d1efe82f90459e6e53bc",
+            "total_changes": 51,
+            "rework_changes_total": 51,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "98db349a9719bc83dac78f91ba3232f46e0562df",
+            "total_changes": 54,
+            "rework_changes_total": 54,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "Dockerfile"
+            ]
+        },
+        {
+            "data": "2023-12-21",
+            "sha": "aebd25a02d747645fd36620fbb4b6df537e72d77",
+            "total_changes": 19,
+            "rework_changes_total": 13,
+            "rework_rate_total": 68.42105263157895,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.docker.local",
+                ".env.local",
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "ae6b9fb1db0edc4873e2cade002c591d4fddbde9",
+            "total_changes": 18,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.docker.local",
+                ".env.local",
+                ".gitignore",
+                "internal/infrastructure/environment/environment.go",
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "9b037a56a66a3143b0af4ee3cca26e2c035451a4",
+            "total_changes": 203,
+            "rework_changes_total": 193,
+            "rework_rate_total": 95.07389162561576,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.docker.local",
+                ".env.local",
+                "cmd/ecatrom2000/main.go",
+                "docs/ecatrom2000.puml"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "a9eb358e58651e9663eea49490934f41b17cb5ac",
+            "total_changes": 234,
+            "rework_changes_total": 234,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "go.mod",
+                "go.sum"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "ce2d73a7c1b7e927dcc958077c1e6f9b99df747b",
+            "total_changes": 287,
+            "rework_changes_total": 287,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "go.mod",
+                "go.sum"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "9ab8b565c63dff80517a49a4f3dc0ea1be2ed685",
+            "total_changes": 598,
+            "rework_changes_total": 536,
+            "rework_rate_total": 89.63210702341136,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.docker.local",
+                ".env.local",
+                ".gitignore",
+                ".gitmodules",
+                ".vscode/settings.json",
+                "Dockerfile",
+                "Makefile.dynamodb.mk",
+                "README.md",
+                "cmd/ecatrom2000/main.go",
+                "go-llama.cpp",
+                "go.mod",
+                "go.sum",
+                "internal/domain/ecatrom/entity.go",
+                "internal/domain/ecatrom/entry_create.go",
+                "internal/domain/ecatrom/entry_loader.go",
+                "internal/domain/ecatrom/entry_starter.go",
+                "internal/domain/ecatrom/main.go",
+                "internal/infrastructure/api/api.go",
+                "internal/infrastructure/aws/auth.go",
+                "internal/infrastructure/environment/environment.go",
+                "internal/infrastructure/queryapi/main.go",
+                "internal/infrastructure/structx/transfer-objects.go",
+                "run-api.sh",
+                "run-dynamodb.sh"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "0d3f84fe141523143fb1c724ed213a0d268a0711",
+            "total_changes": 18,
+            "rework_changes_total": 12,
+            "rework_rate_total": 66.66666666666666,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "go.mod",
+                "go.sum"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "4433280f3bc84fead1674ad2002a3e4e1d9dddde",
+            "total_changes": 5,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "internal/infrastructure/api/api.go"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "bf32b5f6ead62f551c0545cf714b325ebd6d92e2",
+            "total_changes": 18,
+            "rework_changes_total": 18,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "907728fbdaac50bd8cd632d785e5ef1291037a3c",
+            "total_changes": 24,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.docker.local",
+                ".env.local",
+                "Dockerfile",
+                "Makefile.dynamodb.mk",
+                "README.md",
+                "internal/infrastructure/queryapi/main.go",
+                "run-api.sh",
+                "run-dynamodb.sh"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "2e71b2df4a2531583f5ec3872533a647f1500a43",
+            "total_changes": 19,
+            "rework_changes_total": 19,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2023-12-20",
+            "sha": "492459c8689f5e52dc11a47065635de350206798",
+            "total_changes": 1,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "go-llama.cpp"
+            ]
+        },
+        {
+            "data": "2023-12-18",
+            "sha": "c5caa477dd06859bed35c4922e3387a8f1f38344",
+            "total_changes": 18,
+            "rework_changes_total": 12,
+            "rework_rate_total": 66.66666666666666,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "go.mod",
+                "go.sum"
+            ]
+        },
+        {
+            "data": "2023-12-14",
+            "sha": "7819e7cfbfe9b8733bb3fd8c02e1365bf3dcf508",
+            "total_changes": 4,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".gitmodules"
+            ]
+        },
+        {
+            "data": "2023-12-14",
+            "sha": "417038027a78f335404f5f8665a9d3873ce6a14b",
+            "total_changes": 1,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "go-llama.cpp"
+            ]
+        },
+        {
+            "data": "2023-12-14",
+            "sha": "da7b605af60509d57304715e66ad114dc5bdf258",
+            "total_changes": 14,
+            "rework_changes_total": 14,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".gitignore"
+            ]
+        },
+        {
+            "data": "2023-12-14",
+            "sha": "f1d364673a539900ff91f0d27d0e6b8fde8238eb",
+            "total_changes": 3,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".vscode/settings.json"
+            ]
+        },
+        {
+            "data": "2023-12-14",
+            "sha": "fcb7d8236a0e6b8102408c15e0b69fbc28c5de97",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".gitmodules"
+            ]
+        },
+        {
+            "data": "2023-12-14",
+            "sha": "e42aeebd7697fae828463b78fbef065cd86991e6",
+            "total_changes": 724,
+            "rework_changes_total": 677,
+            "rework_rate_total": 93.50828729281768,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.docker.local",
+                ".env.local",
+                ".gitignore",
+                ".gitmodules",
+                "cmd/ecatrom2000/main.go",
+                "go-llama.cpp",
+                "go.mod",
+                "go.sum",
+                "internal/domain/ecatrom/entry_create.go",
+                "internal/domain/ecatrom/entry_loader.go",
+                "internal/domain/ecatrom/entry_starter.go",
+                "internal/domain/ecatrom/main.go",
+                "internal/infrastructure/api/api.go",
+                "internal/infrastructure/queryapi/main.go",
+                "run-api.sh"
+            ]
+        },
+        {
+            "data": "2023-12-06",
+            "sha": "b4c531e06382aa06680cb607ae063f6d8b5da158",
+            "total_changes": 6,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md",
+                "internal/infrastructure/queryapi/main.go"
+            ]
+        },
+        {
+            "data": "2023-12-04",
+            "sha": "80cdba60c2b5e785d85545f8d5ea53317bc4f83c",
+            "total_changes": 18,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.docker.local",
+                ".env.local",
+                "cmd/ecatrom2000/main.go"
+            ]
+        },
+        {
+            "data": "2023-12-04",
+            "sha": "ce05e506e0daae641d1033acac33e2eb12effdf4",
+            "total_changes": 71,
+            "rework_changes_total": 59,
+            "rework_rate_total": 83.09859154929578,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.local",
+                "cmd/ecatrom2000/main.go",
+                "internal/infrastructure/api/api.go",
+                "internal/infrastructure/environment/environment.go",
+                "run-api.sh"
+            ]
+        },
+        {
+            "data": "2023-11-25",
+            "sha": "76ab03337c6380d89907720c44dcdc2770d46c60",
+            "total_changes": 25,
+            "rework_changes_total": 21,
+            "rework_rate_total": 84.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "internal/domain/ecatrom/entry_create.go",
+                "internal/infrastructure/aws/auth.go",
+                "run-dynamodb.sh"
+            ]
+        },
+        {
+            "data": "2023-10-17",
+            "sha": "d0eee27a66b643eeedcf05403b2d1dd4c1eebb2d",
+            "total_changes": 3,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".gitignore"
+            ]
+        },
+        {
+            "data": "2023-10-17",
+            "sha": "3e2eb0d7802aa7c7c07ff5d100b3c6f5bc4cb6b5",
+            "total_changes": 39,
+            "rework_changes_total": 26,
+            "rework_rate_total": 66.66666666666666,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "cmd/ecatrom2000/main.go",
+                "internal/domain/ecatrom/entity.go",
+                "internal/domain/ecatrom/entry_create.go",
+                "internal/domain/ecatrom/entry_starter.go",
+                "internal/domain/ecatrom/main.go",
+                "internal/infrastructure/structx/transfer-objects.go"
+            ]
+        },
+        {
+            "data": "2023-10-17",
+            "sha": "336bc1c95d607f263f7e2a13eb0485c07de924fb",
+            "total_changes": 48,
+            "rework_changes_total": 48,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "go.mod",
+                "go.sum"
+            ]
+        },
+        {
+            "data": "2023-10-17",
+            "sha": "8a9c63be21d6932b82c4d0d4109f27104fff1585",
+            "total_changes": 2292,
+            "rework_changes_total": 2280,
+            "rework_rate_total": 99.47643979057592,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".env.docker.local",
+                ".env.local",
+                ".gitignore",
+                ".vscode/launch.json",
+                "Dockerfile",
+                "Makefile",
+                "Makefile.dynamodb.mk",
+                "README.md",
+                "cmd/ecatrom2000/main.go",
+                "docker-compose.yml",
+                "docs/ecatrom2000.puml",
+                "go.mod",
+                "go.sum",
+                "internal/domain/appcontext/appcontext.go",
+                "internal/domain/ecatrom/entity.go",
+                "internal/domain/ecatrom/entry_create.go",
+                "internal/domain/ecatrom/entry_listall.go",
+                "internal/domain/ecatrom/entry_loader.go",
+                "internal/domain/ecatrom/entry_starter.go",
+                "internal/domain/ecatrom/exception.go",
+                "internal/domain/ecatrom/main.go",
+                "internal/domain/ecatrom/repository.go",
+                "internal/infrastructure/api/api.go",
+                "internal/infrastructure/api/middlewares/context.go",
+                "internal/infrastructure/api/middlewares/cors.go",
+                "internal/infrastructure/api/middlewares/logger.go",
+                "internal/infrastructure/api/middlewares/recovery.go",
+                "internal/infrastructure/api/middlewares/trace.go",
+                "internal/infrastructure/api/routes/entryapi.go",
+                "internal/infrastructure/api/routes/health.go",
+                "internal/infrastructure/api/routes/metric.go",
+                "internal/infrastructure/database/dynamodb.go",
+                "internal/infrastructure/database/memory.go",
+                "internal/infrastructure/environment/environment.go",
+                "internal/infrastructure/logger/logger.go",
+                "internal/infrastructure/logger/logwrapper/logWrapper.go",
+                "internal/infrastructure/logger/logwrapper/mock.go",
+                "internal/infrastructure/logger/logwrapper/span.go",
+                "internal/infrastructure/logger/logwrapper/zap.go",
+                "internal/infrastructure/queryapi/main.go",
+                "internal/infrastructure/structx/transfer-objects.go",
+                "run-api.sh",
+                "run-dynamodb.sh",
+                "ssl-certs/cert.pem",
+                "ssl-certs/ecatrom2099.crt",
+                "ssl-certs/ecatrom2099.csr",
+                "ssl-certs/ecatrom2099.key"
+            ]
+        }
+    ]
+}
