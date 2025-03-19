@@ -237,6 +237,10 @@ def analyze_rework(commits):
 import plotly.express as px
 import pandas as pd
 
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import plotly.express as px
+
 def generate_graph():
     """Gera gráficos interativos usando Plotly com informações detalhadas para a gestão."""
     rework_data = load_json(json_file)
@@ -291,12 +295,46 @@ def generate_graph():
         🔥 Retrabalho: {row['rework_changes_total']} ({row['rework_rate_total']:.2f}%)<br>
     """, axis=1)
 
-    # 📊 Gráfico 1: Rework Rate Total
-    fig1 = px.line(df, x="data", y="rework_rate_total", markers=True,
-                   title=f"📊 Rework Rate Geral - {REPO}",
-                   labels={"data": "Data", "rework_rate_total": "Rework Rate (%)"},
-                   hover_data={"tooltip": True})
-    fig1.update_traces(marker=dict(size=6), hovertemplate=df["tooltip"])
+    # 📌 Criar dataframe de ranking por autor
+    df_authors = df.groupby("autor").agg({"rework_changes_total": "sum"}).reset_index()
+    df_authors = df_authors.sort_values("rework_changes_total", ascending=False).head(10)
+
+    # 📊 Criando um layout com 2 linhas (1 para gráficos, 1 para tabela)
+    fig1 = make_subplots(
+        rows=2, cols=1,  # 🔥 Agora temos espaço para os gráficos e a tabela
+        shared_xaxes=True,
+        vertical_spacing=0.1,  # Ajuste para melhorar espaçamento entre gráficos e tabelas
+        subplot_titles=[f"📊 Rework Rate Geral - {REPO}", "📋 Top 10 Desenvolvedores com Maior Retrabalho"]
+    )
+
+    # 📊 Criando o gráfico principal (Rework Rate Total)
+    fig1.add_trace(
+        go.Scatter(
+            x=df["data"], 
+            y=df["rework_rate_total"],
+            mode="lines+markers",
+            name="Rework Rate (%)",
+            hoverinfo="text",
+            text=df["tooltip"]
+        ),
+        row=1, col=1  # ✅ Garante que está no primeiro gráfico
+    )
+
+    # 📋 Criando a tabela com os TOP 10 desenvolvedores que mais geraram retrabalho
+    fig1.add_trace(
+        go.Table(
+            header=dict(
+                values=["Autor", "Total Linhas de Retrabalho"],
+                fill_color="lightgrey",
+                align="left"
+            ),
+            cells=dict(
+                values=[df_authors["autor"], df_authors["rework_changes_total"]],
+                align="left"
+            )
+        ),
+        row=2, col=1  # ✅ Agora a tabela está corretamente posicionada abaixo do gráfico
+    )
 
     # 📌 Adicionar Box de Métricas no Gráfico
     fig1.add_annotation(
@@ -304,10 +342,10 @@ def generate_graph():
         align="left",
         showarrow=False,
         xref="paper", yref="paper",
-        x=0.02, y=0.02,  # 📌 Move o box para o canto inferior esquerdo
+        x=0.02, y=0.02,  
         bordercolor="black",
         borderwidth=1,
-        bgcolor="rgba(240, 240, 240, 0.85)",  # Cinza claro semi-transparente
+        bgcolor="rgba(240, 240, 240, 0.85)",  
         font=dict(size=12, color="black"),
         opacity=0.8
     )
@@ -315,30 +353,10 @@ def generate_graph():
     # 📌 Ajustar eixo X
     fig1.update_xaxes(nticks=10)
 
-    # 📌 Criar dataframe de ranking por autor
-    df_authors = df.groupby("autor").agg({"rework_changes_total": "sum"}).reset_index()
-    df_authors = df_authors.sort_values("rework_changes_total", ascending=False).head(10)
-
-    # 📋 Adicionar tabela interativa abaixo do gráfico
-    fig1.add_trace(go.Table(
-        header=dict(
-            values=["Autor", "Total de Linhas de Retrabalho"],
-            fill_color="lightgrey",
-            align="left"
-        ),
-        cells=dict(
-            values=[
-                df_authors["autor"],
-                df_authors["rework_changes_total"]
-            ],
-            align="left"
-        )
-    ), row=2, col=1)  # 🔥 Insere a tabela abaixo do gráfico
-
     # 📌 Salvar como HTML
     fig1.write_html(f"data/graphs/rework_rate_total-{REPO}.html")
 
-    # 📊 Gráfico 2: Rework Rate Recent (Últimos 21 dias)
+    # 📊 Criando o gráfico 2: Rework Rate Recent (Últimos 21 dias)
     fig2 = px.line(
         df, 
         x="data", 
@@ -346,21 +364,11 @@ def generate_graph():
         markers=True,
         title=f"📊 Rework Rate nos últimos {REWORK_DAYS} dias - {REPO}",
         labels={"data": "Data", "rework_rate_recent": "Rework Rate (%)"},
-        hover_data={"tooltip": True, "autor": True}  # ✅ Agora está correto!
+        hover_data={"tooltip": True, "autor": True}
     )
 
     # 📌 Agora podemos atualizar as configurações do gráfico
     fig2.update_traces(marker=dict(size=6), hovertemplate=df["tooltip"])
-
-
-    # # 📌 Adicionar anotações para os top 3 picos recentes
-    # colors = ["red", "darkred", "orange"]
-    # for i, (idx, row) in enumerate(top3_recent.iterrows()):
-    #     fig2.add_annotation(
-    #         x=row["data"], y=row["rework_rate_recent"],
-    #         text=f"Pico {i+1}: {row['rework_rate_recent']:.2f}%",
-    #         showarrow=True, arrowhead=2, arrowcolor=colors[i]
-    #     )
 
     # 📌 Adicionar Box de Métricas no Gráfico
     fig2.add_annotation(
