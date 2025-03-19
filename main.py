@@ -377,7 +377,7 @@ def generate_graph():
         align="left",
         showarrow=False,
         xref="paper", yref="paper",
-        x=0.01, y=0.99,
+        x=0.02, y=0.02,
         bordercolor="black",
         borderwidth=1,
         bgcolor="rgba(255,255,255,0.8)",
