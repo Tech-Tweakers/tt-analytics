@@ -2,8 +2,6 @@ import requests
 import json
 import pandas as pd
 import plotly.express as px
-import matplotlib.pyplot as plt
-from collections import defaultdict
 from datetime import datetime, timedelta
 import os
 
@@ -233,8 +231,11 @@ def analyze_rework(commits):
         print("⚠️ Nenhum commit foi analisado.")
 
 
+import plotly.express as px
+import pandas as pd
+
 def generate_graph():
-    """Gera gráficos interativos usando Plotly e salva em arquivos HTML."""
+    """Gera gráficos interativos usando Plotly com informações detalhadas para a gestão."""
     rework_data = load_json(json_file)
 
     # 📌 Criar DataFrame a partir dos dados
@@ -242,9 +243,7 @@ def generate_graph():
 
     # 📌 Verificar se há dados válidos
     if df.empty or "total_changes" not in df.columns:
-        print(
-            "⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico."
-        )
+        print("⚠️ O JSON não contém dados válidos. Certifique-se de rodar analyze_rework() antes de gerar o gráfico.")
         return
 
     # 📌 Converter a data para formato datetime
@@ -255,39 +254,115 @@ def generate_graph():
 
     # 📌 Verificar se há dados após o filtro
     if df.empty:
-        print(
-            f"⚠️ Nenhum commit encontrado no período de {START_DATE.date()} a {END_DATE.date()}."
-        )
+        print(f"⚠️ Nenhum commit encontrado no período de {START_DATE.date()} a {END_DATE.date()}.")
         return
 
     # 📌 Ordenar os dados por data
     df = df.sort_values("data")
 
-    # 📌 Gráfico 1: Rework Rate Total
-    fig1 = px.line(
-        df,
-        x="data",
-        y="rework_rate_total",
-        markers=True,
-        title="Evolução do Rework Rate Geral",
-        labels={"data": "Data", "rework_rate_total": "Rework Rate (%)"},
-    )
-    fig1.write_html(f"data/graphs/rework_rate_total-{REPO}.html")  # 📌 Salva o gráfico como HTML
+    # 📌 Calcular métricas para exibição no box
+    total_commits = len(df)
+    total_lines_analyzed = df["total_changes"].sum()
+    total_lines_rework = df["rework_changes_total"].sum()
+    total_lines_rework_recent = df["rework_changes_recent"].sum()
+    average_rework_rate = df["rework_rate_total"].mean()
+    average_rework_rate_recent = df["rework_rate_recent"].mean()
 
-    # 📌 Gráfico 2: Rework Rate Recent (Últimos 21 dias)
-    fig2 = px.line(
-        df,
-        x="data",
-        y="rework_rate_recent",
-        markers=True,
-        title=f"Evolução do Rework Rate nos últimos {REWORK_DAYS} dias",
-        labels={"data": "Data", "rework_rate_recent": "Rework Rate (%)"},
-    )
-    fig2.write_html(f"data/graphs/rework_rate_recent-{REPO}.html")  # 📌 Salva o gráfico como HTML
+    metrics_text = f"""
+        📌 **Métricas da Análise**
+        🔹 Commits analisados: {total_commits}
+        🔹 Linhas analisadas: {total_lines_analyzed}
+        🔹 Linhas de retrabalho: {total_lines_rework}
+        🔹 Retrabalho (Últimos {REWORK_DAYS} dias): {total_lines_rework_recent}
+        🔹 Rework Rate Médio: {average_rework_rate:.2f}%
+        🔹 Rework Rate (Últimos {REWORK_DAYS} dias): {average_rework_rate_recent:.2f}%
+        🔹 Threshold utilizado: {THRESHOLD}
+    """
 
-    print(
-        f"📊 Gráficos gerados para o período {START_DATE.date()} a {END_DATE.date()} e salvos como HTML."
+    # 📌 Criar tooltip detalhado
+    df["tooltip"] = df.apply(lambda row: f"""
+        📅 Data: {row['data'].strftime('%Y-%m-%d')}<br>
+        🔄 SHA: {row['sha'][:7]}<br>
+        📊 Total de mudanças: {row['total_changes']}<br>
+        🔥 Linhas de retrabalho: {row['rework_changes_total']} ({row['rework_rate_total']:.2f}%)<br>
+        📂 Arquivos modificados: {len(row['arquivos_modificados'])}
+    """, axis=1)
+
+    # 📌 Encontrar os 3 maiores picos de retrabalho
+    top3_total = df.nlargest(3, "rework_rate_total")
+    top3_recent = df.nlargest(3, "rework_rate_recent")
+
+    # 📊 Gráfico 1: Rework Rate Total
+    fig1 = px.line(df, x="data", y="rework_rate_total", markers=True,
+                   title=f"📊 Rework Rate Geral - {REPO}",
+                   labels={"data": "Data", "rework_rate_total": "Rework Rate (%)"},
+                   hover_data={"tooltip": True})
+    fig1.update_traces(marker=dict(size=6), hovertemplate=df["tooltip"])
+
+    # 📌 Adicionar anotações para os top 3 picos
+    colors = ["blue", "darkblue", "cyan"]
+    for i, (idx, row) in enumerate(top3_total.iterrows()):
+        fig1.add_annotation(
+            x=row["data"], y=row["rework_rate_total"],
+            text=f"Pico {i+1}: {row['rework_rate_total']:.2f}%",
+            showarrow=True, arrowhead=2, arrowcolor=colors[i]
+        )
+
+    # 📌 Adicionar Box de Métricas no Gráfico
+    fig1.add_annotation(
+        text=metrics_text,
+        align="left",
+        showarrow=False,
+        xref="paper", yref="paper",
+        x=0.01, y=0.99,  # Posição no canto superior esquerdo
+        bordercolor="black",
+        borderwidth=1,
+        bgcolor="rgba(255,255,255,0.8)",  # Fundo branco semi-transparente
+        font=dict(size=12)
     )
+
+    # 📌 Ajustar eixo X
+    fig1.update_xaxes(nticks=10)
+
+    # 📌 Salvar como HTML
+    fig1.write_html(f"rework_rate_total-{REPO}.html")
+
+    # 📊 Gráfico 2: Rework Rate Recent (Últimos 21 dias)
+    fig2 = px.line(df, x="data", y="rework_rate_recent", markers=True,
+                   title=f"📊 Rework Rate nos últimos {REWORK_DAYS} dias - {REPO}",
+                   labels={"data": "Data", "rework_rate_recent": "Rework Rate (%)"},
+                   hover_data={"tooltip": True})
+    fig2.update_traces(marker=dict(size=6), hovertemplate=df["tooltip"])
+
+    # 📌 Adicionar anotações para os top 3 picos recentes
+    colors = ["red", "darkred", "orange"]
+    for i, (idx, row) in enumerate(top3_recent.iterrows()):
+        fig2.add_annotation(
+            x=row["data"], y=row["rework_rate_recent"],
+            text=f"Pico {i+1}: {row['rework_rate_recent']:.2f}%",
+            showarrow=True, arrowhead=2, arrowcolor=colors[i]
+        )
+
+    # 📌 Adicionar Box de Métricas no Gráfico
+    fig2.add_annotation(
+        text=metrics_text,
+        align="left",
+        showarrow=False,
+        xref="paper", yref="paper",
+        x=0.01, y=0.99,
+        bordercolor="black",
+        borderwidth=1,
+        bgcolor="rgba(255,255,255,0.8)",
+        font=dict(size=12)
+    )
+
+    # 📌 Ajustar eixo X
+    fig2.update_xaxes(nticks=10)
+
+    # 📌 Salvar como HTML
+    fig2.write_html(f"rework_rate_recent-{REPO}.html")
+
+    print(f"📊 Gráficos interativos ultra detalhados gerados e salvos!")
 
 
 if __name__ == "__main__":
