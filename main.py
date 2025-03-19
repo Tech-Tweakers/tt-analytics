@@ -372,17 +372,36 @@ def generate_graph():
     fig2.update_traces(marker=dict(size=6), hovertemplate=df["tooltip"])
 
     # 📌 Adicionar Box de Métricas no Gráfico
-    fig2.add_annotation(
-        text=metrics_text,
-        align="left",
-        showarrow=False,
-        xref="paper", yref="paper",
-        x=0.02, y=0.02,
-        bordercolor="black",
-        borderwidth=1,
-        bgcolor="rgba(255,255,255,0.8)",
-        font=dict(size=12)
+    # 📋 Criar DataFrame das métricas
+    df_metrics = pd.DataFrame({
+        "Métrica": [
+            "Commits analisados", "Linhas analisadas", "Linhas de retrabalho",
+            f"Retrabalho (Últimos {REWORK_DAYS} dias)", "Rework Rate Médio", 
+            f"Rework Rate (Últimos {REWORK_DAYS} dias)", "Threshold utilizado"
+        ],
+        "Valor": [
+            total_commits, total_lines_analyzed, total_lines_rework, 
+            total_lines_rework_recent, f"{average_rework_rate:.2f}%", 
+            f"{average_rework_rate_recent:.2f}%", THRESHOLD
+        ]
+    })
+
+    # 📋 Adicionar segunda tabela (Métricas)
+    fig1.add_trace(
+        go.Table(
+            header=dict(
+                values=["Métrica", "Valor"],
+                fill_color="lightgrey",
+                align="left"
+            ),
+            cells=dict(
+                values=[df_metrics["Métrica"], df_metrics["Valor"]],
+                align="left"
+            )
+        ),
+        row=3, col=1  # 🔥 Agora temos 3 linhas: Gráfico + Tabela de Desenvolvedores + Tabela de Métricas
     )
+
 
     # 📌 Ajustar eixo X
     fig2.update_xaxes(nticks=10)
