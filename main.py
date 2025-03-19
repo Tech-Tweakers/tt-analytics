@@ -301,9 +301,10 @@ def generate_graph():
 
     # 📊 Criando um layout com 2 linhas (1 para gráficos, 1 para tabela)
     fig1 = make_subplots(
-        rows=2, cols=1,  # 🔥 Agora temos espaço para os gráficos e a tabela
+        rows=2, cols=1,  
         shared_xaxes=True,
-        vertical_spacing=0.1,  # Ajuste para melhorar espaçamento entre gráficos e tabelas
+        vertical_spacing=0.1,  
+        specs=[[{"type": "xy"}], [{"type": "domain"}]],  # 🔥 Corrige o tipo do subplot para aceitar tabelas
         subplot_titles=[f"📊 Rework Rate Geral - {REPO}", "📋 Top 10 Desenvolvedores com Maior Retrabalho"]
     )
 
