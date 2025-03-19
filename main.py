@@ -20,7 +20,7 @@ THRESHOLD = os.getenv("THRESHOLD")
 REWORK_DAYS = 21
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 
-json_file = f"rework_analysis_{REPO}.json"
+json_file = f"data/repos/rework_analysis_{REPO}.json"
 
 
 def load_json(filename):
@@ -271,7 +271,7 @@ def generate_graph():
         title="Evolução do Rework Rate Geral",
         labels={"data": "Data", "rework_rate_total": "Rework Rate (%)"},
     )
-    fig1.write_html("rework_rate_total.html")  # 📌 Salva o gráfico como HTML
+    fig1.write_html(f"data/graphs/rework_rate_total-{REPO}.html")  # 📌 Salva o gráfico como HTML
 
     # 📌 Gráfico 2: Rework Rate Recent (Últimos 21 dias)
     fig2 = px.line(
@@ -282,7 +282,7 @@ def generate_graph():
         title=f"Evolução do Rework Rate nos últimos {REWORK_DAYS} dias",
         labels={"data": "Data", "rework_rate_recent": "Rework Rate (%)"},
     )
-    fig2.write_html("rework_rate_recent.html")  # 📌 Salva o gráfico como HTML
+    fig2.write_html(f"data/graphs/rework_rate_recent-{REPO}.html")  # 📌 Salva o gráfico como HTML
 
     print(
         f"📊 Gráficos gerados para o período {START_DATE.date()} a {END_DATE.date()} e salvos como HTML."
