@@ -1,5 +1,5 @@
 {
-    "threshold": 25,
+    "threshold": 30,
     "data": [
         {
             "data": "2025-03-18",
@@ -412,10 +412,10 @@
             "data": "2025-03-15",
             "sha": "7befb4c7a3317d1ac680e274134daab536229e0a",
             "total_changes": 28,
-            "rework_changes_total": 28,
-            "rework_rate_total": 100.0,
-            "rework_changes_recent": 28,
-            "rework_rate_recent": 100.0,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 "polaris_api/main.py"
             ]
@@ -1076,10 +1076,10 @@
             "data": "2025-03-13",
             "sha": "1640ef3ee230884b0a09d8ecd6ba1812a2e04c5f",
             "total_changes": 26,
-            "rework_changes_total": 26,
-            "rework_rate_total": 100.0,
-            "rework_changes_recent": 26,
-            "rework_rate_recent": 100.0,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 "services/rework/main.py"
             ]
@@ -1245,10 +1245,10 @@
             "data": "2025-03-13",
             "sha": "8703e6c2b100865c11be436650543c42621b9b6a",
             "total_changes": 240,
-            "rework_changes_total": 240,
-            "rework_rate_total": 100.0,
-            "rework_changes_recent": 240,
-            "rework_rate_recent": 100.0,
+            "rework_changes_total": 215,
+            "rework_rate_total": 89.58333333333334,
+            "rework_changes_recent": 215,
+            "rework_rate_recent": 89.58333333333334,
             "arquivos_modificados": [
                 ".github/workflows/commits-rework-rate.yml",
                 "Makefile",
@@ -2229,10 +2229,10 @@
             "data": "2025-03-09",
             "sha": "07a02369fa5a622986a9056d301050e7e1668001",
             "total_changes": 27,
-            "rework_changes_total": 27,
-            "rework_rate_total": 100.0,
-            "rework_changes_recent": 27,
-            "rework_rate_recent": 100.0,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 ".github/workflows/deploy.yml"
             ]
@@ -2409,10 +2409,10 @@
             "data": "2025-03-09",
             "sha": "3eba5cb66f5d3084b3506841f5b1de7f293d2d08",
             "total_changes": 28,
-            "rework_changes_total": 28,
-            "rework_rate_total": 100.0,
-            "rework_changes_recent": 28,
-            "rework_rate_recent": 100.0,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 ".github/workflows/deploy.yml"
             ]
@@ -2421,10 +2421,10 @@
             "data": "2025-03-09",
             "sha": "8c969a24bb32542525eec93276ed6c86107ede8b",
             "total_changes": 27,
-            "rework_changes_total": 27,
-            "rework_rate_total": 100.0,
-            "rework_changes_recent": 27,
-            "rework_rate_recent": 100.0,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 ".github/workflows/deploy.yml"
             ]
@@ -2469,10 +2469,10 @@
             "data": "2025-03-09",
             "sha": "3e0f7dec1e36458992ac09bbfab198a9f08769b5",
             "total_changes": 28,
-            "rework_changes_total": 28,
-            "rework_rate_total": 100.0,
-            "rework_changes_recent": 28,
-            "rework_rate_recent": 100.0,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 ".github/workflows/deploy.yml"
             ]
@@ -2481,10 +2481,10 @@
             "data": "2025-03-09",
             "sha": "fb0618a3ce689a72bee59d1e033d92cca56a160e",
             "total_changes": 28,
-            "rework_changes_total": 28,
-            "rework_rate_total": 100.0,
-            "rework_changes_recent": 28,
-            "rework_rate_recent": 100.0,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 ".github/workflows/deploy.yml"
             ]
@@ -3022,10 +3022,10 @@
             "data": "2025-03-09",
             "sha": "96fd38701e43a9397180921eb3c9d026311f98fc",
             "total_changes": 1150,
-            "rework_changes_total": 1098,
-            "rework_rate_total": 95.47826086956522,
-            "rework_changes_recent": 1098,
-            "rework_rate_recent": 95.47826086956522,
+            "rework_changes_total": 1041,
+            "rework_rate_total": 90.52173913043478,
+            "rework_changes_recent": 1041,
+            "rework_rate_recent": 90.52173913043478,
             "arquivos_modificados": [
                 ".github/workflows/deploy.yml",
                 ".gitignore",
@@ -3069,10 +3069,10 @@
             "data": "2025-03-09",
             "sha": "0897a478766c28da348b031c22873343ce4f52a3",
             "total_changes": 1106,
-            "rework_changes_total": 1056,
-            "rework_rate_total": 95.47920433996383,
-            "rework_changes_recent": 1056,
-            "rework_rate_recent": 95.47920433996383,
+            "rework_changes_total": 999,
+            "rework_rate_total": 90.32549728752261,
+            "rework_changes_recent": 999,
+            "rework_rate_recent": 90.32549728752261,
             "arquivos_modificados": [
                 ".gitignore",
                 "polaris_api/Dockerfile",
@@ -3359,10 +3359,10 @@
             "data": "2025-03-09",
             "sha": "4a11cf8a4c786b1f34833db13ecef1a63b4b56b3",
             "total_changes": 88,
-            "rework_changes_total": 28,
-            "rework_rate_total": 31.818181818181817,
-            "rework_changes_recent": 28,
-            "rework_rate_recent": 31.818181818181817,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 ".github/workflows/semantic-version.yml",
                 ".gitignore",
@@ -3375,10 +3375,10 @@
             "data": "2025-03-09",
             "sha": "6f874adc909ec3497ce1b8a87314b2aba147d7fe",
             "total_changes": 78,
-            "rework_changes_total": 28,
-            "rework_rate_total": 35.8974358974359,
-            "rework_changes_recent": 28,
-            "rework_rate_recent": 35.8974358974359,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 ".gitignore",
                 "Makefile",
@@ -3490,10 +3490,10 @@
             "data": "2025-03-09",
             "sha": "3fe9b2dfb94e6cf2f1ab5a1f307cd098df93a92e",
             "total_changes": 45,
-            "rework_changes_total": 25,
-            "rework_rate_total": 55.55555555555556,
-            "rework_changes_recent": 25,
-            "rework_rate_recent": 55.55555555555556,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 ".github/workflows/polaris-ci-cd.yml",
                 "docker-compose.yml",
@@ -3566,10 +3566,10 @@
             "data": "2025-03-09",
             "sha": "309db1d3d80a7163be86da3943231bd4bfaa0067",
             "total_changes": 26,
-            "rework_changes_total": 26,
-            "rework_rate_total": 100.0,
-            "rework_changes_recent": 26,
-            "rework_rate_recent": 100.0,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 ".github/workflows/polaris-ci-cd.yml"
             ]
@@ -3859,10 +3859,10 @@
             "data": "2025-03-06",
             "sha": "279015c788339385878a4721199e66c06c45c7d3",
             "total_changes": 39,
-            "rework_changes_total": 29,
-            "rework_rate_total": 74.35897435897436,
-            "rework_changes_recent": 29,
-            "rework_rate_recent": 74.35897435897436,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
             "arquivos_modificados": [
                 ".github/workflows/polaris-ci-cd.yml",
                 "docker-compose.yml",
@@ -3996,10 +3996,10 @@
             "data": "2025-03-04",
             "sha": "0265ca1fca513add219f92f77c14caa37f4fbd74",
             "total_changes": 180,
-            "rework_changes_total": 152,
-            "rework_rate_total": 84.44444444444444,
-            "rework_changes_recent": 152,
-            "rework_rate_recent": 84.44444444444444,
+            "rework_changes_total": 125,
+            "rework_rate_total": 69.44444444444444,
+            "rework_changes_recent": 125,
+            "rework_rate_recent": 69.44444444444444,
             "arquivos_modificados": [
                 ".github/workflows/polaris-ci-cd.yml",
                 "README.md",
@@ -4406,10 +4406,10 @@
             "data": "2025-03-02",
             "sha": "b83cca92007bc2e6ffc10dc464cdd2648ad8689f",
             "total_changes": 91,
-            "rework_changes_total": 76,
-            "rework_rate_total": 83.51648351648352,
-            "rework_changes_recent": 76,
-            "rework_rate_recent": 83.51648351648352,
+            "rework_changes_total": 51,
+            "rework_rate_total": 56.043956043956044,
+            "rework_changes_recent": 51,
+            "rework_rate_recent": 56.043956043956044,
             "arquivos_modificados": [
                 ".gitignore",
                 "Dockerfile",
@@ -4434,10 +4434,10 @@
             "data": "2025-03-02",
             "sha": "b6d9da2d0946cd0c2535e80f931bd3cd012bc620",
             "total_changes": 132,
-            "rework_changes_total": 118,
-            "rework_rate_total": 89.39393939393939,
-            "rework_changes_recent": 118,
-            "rework_rate_recent": 89.39393939393939,
+            "rework_changes_total": 93,
+            "rework_rate_total": 70.45454545454545,
+            "rework_changes_recent": 93,
+            "rework_rate_recent": 70.45454545454545,
             "arquivos_modificados": [
                 ".gitignore",
                 "docker-compose.yml",
@@ -4585,8 +4585,8 @@
             "data": "2025-02-21",
             "sha": "e9986765102d097f84b4c647210ab8a5c0e71dee",
             "total_changes": 729,
-            "rework_changes_total": 715,
-            "rework_rate_total": 98.079561042524,
+            "rework_changes_total": 687,
+            "rework_rate_total": 94.23868312757202,
             "rework_changes_recent": 0,
             "rework_rate_recent": 0.0,
             "arquivos_modificados": [
@@ -4603,8 +4603,8 @@
             "data": "2025-02-21",
             "sha": "c607de781461456c268ded75b21e37e974c538c6",
             "total_changes": 202,
-            "rework_changes_total": 202,
-            "rework_rate_total": 100.0,
+            "rework_changes_total": 173,
+            "rework_rate_total": 85.64356435643565,
             "rework_changes_recent": 0,
             "rework_rate_recent": 0.0,
             "arquivos_modificados": [
@@ -4717,8 +4717,8 @@
             "data": "2025-02-20",
             "sha": "561a63bf3a4b415adce1ba61e48cbfff3e78e299",
             "total_changes": 183,
-            "rework_changes_total": 157,
-            "rework_rate_total": 85.79234972677595,
+            "rework_changes_total": 129,
+            "rework_rate_total": 70.49180327868852,
             "rework_changes_recent": 0,
             "rework_rate_recent": 0.0,
             "arquivos_modificados": [
@@ -4770,8 +4770,8 @@
             "data": "2025-02-15",
             "sha": "f6bf75b37938470d176fc32e6fdf5be1c81e3846",
             "total_changes": 225,
-            "rework_changes_total": 195,
-            "rework_rate_total": 86.66666666666667,
+            "rework_changes_total": 168,
+            "rework_rate_total": 74.66666666666667,
             "rework_changes_recent": 0,
             "rework_rate_recent": 0.0,
             "arquivos_modificados": [
