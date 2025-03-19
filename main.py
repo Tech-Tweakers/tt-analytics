@@ -282,18 +282,14 @@ def generate_graph():
         f"🔹 <b>Threshold utilizado:</b> {THRESHOLD}"
     )
 
-    # 📌 Criar tooltip detalhado
+    # 📌 Criar tooltip detalhado para hover
     df["tooltip"] = df.apply(lambda row: f"""
         📅 Data: {row['data'].strftime('%Y-%m-%d')}<br>
         🔄 SHA: {row['sha'][:7]}<br>
-        📊 Total de mudanças: {row['total_changes']}<br>
-        🔥 Linhas de retrabalho: {row['rework_changes_total']} ({row['rework_rate_total']:.2f}%)<br>
-        📂 Arquivos modificados: {len(row['arquivos_modificados'])}
+        👤 Autor: {row['autor']}<br>
+        📊 Mudanças: {row['total_changes']}<br>
+        🔥 Retrabalho: {row['rework_changes_total']} ({row['rework_rate_total']:.2f}%)<br>
     """, axis=1)
-
-    # 📌 Encontrar os 3 maiores picos de retrabalho
-    # top3_total = df.nlargest(3, "rework_rate_total")
-    # top3_recent = df.nlargest(3, "rework_rate_recent")
 
     # 📊 Gráfico 1: Rework Rate Total
     fig1 = px.line(df, x="data", y="rework_rate_total", markers=True,
@@ -301,15 +297,6 @@ def generate_graph():
                    labels={"data": "Data", "rework_rate_total": "Rework Rate (%)"},
                    hover_data={"tooltip": True})
     fig1.update_traces(marker=dict(size=6), hovertemplate=df["tooltip"])
-
-    # # 📌 Adicionar anotações para os top 3 picos
-    # colors = ["blue", "darkblue", "cyan"]
-    # for i, (idx, row) in enumerate(top3_total.iterrows()):
-    #     fig1.add_annotation(
-    #         x=row["data"], y=row["rework_rate_total"],
-    #         text=f"Pico {i+1}: {row['rework_rate_total']:.2f}%",
-    #         showarrow=True, arrowhead=2, arrowcolor=colors[i]
-    #     )
 
     # 📌 Adicionar Box de Métricas no Gráfico
     fig1.add_annotation(
@@ -352,11 +339,19 @@ def generate_graph():
     fig1.write_html(f"data/graphs/rework_rate_total-{REPO}.html")
 
     # 📊 Gráfico 2: Rework Rate Recent (Últimos 21 dias)
-    fig2 = px.line(df, x="data", y="rework_rate_recent", markers=True,
-                   title=f"📊 Rework Rate nos últimos {REWORK_DAYS} dias - {REPO}",
-                   labels={"data": "Data", "rework_rate_recent": "Rework Rate (%)"},
-                   hover_data={"tooltip": True, "autor": True}
+    fig2 = px.line(
+        df, 
+        x="data", 
+        y="rework_rate_recent", 
+        markers=True,
+        title=f"📊 Rework Rate nos últimos {REWORK_DAYS} dias - {REPO}",
+        labels={"data": "Data", "rework_rate_recent": "Rework Rate (%)"},
+        hover_data={"tooltip": True, "autor": True}  # ✅ Agora está correto!
+    )
+
+    # 📌 Agora podemos atualizar as configurações do gráfico
     fig2.update_traces(marker=dict(size=6), hovertemplate=df["tooltip"])
+
 
     # # 📌 Adicionar anotações para os top 3 picos recentes
     # colors = ["red", "darkred", "orange"]
