@@ -289,8 +289,8 @@ def generate_graph():
     """, axis=1)
 
     # 📌 Encontrar os 3 maiores picos de retrabalho
-    top3_total = df.nlargest(3, "rework_rate_total")
-    top3_recent = df.nlargest(3, "rework_rate_recent")
+    # top3_total = df.nlargest(3, "rework_rate_total")
+    # top3_recent = df.nlargest(3, "rework_rate_recent")
 
     # 📊 Gráfico 1: Rework Rate Total
     fig1 = px.line(df, x="data", y="rework_rate_total", markers=True,
@@ -299,14 +299,14 @@ def generate_graph():
                    hover_data={"tooltip": True})
     fig1.update_traces(marker=dict(size=6), hovertemplate=df["tooltip"])
 
-    # 📌 Adicionar anotações para os top 3 picos
-    colors = ["blue", "darkblue", "cyan"]
-    for i, (idx, row) in enumerate(top3_total.iterrows()):
-        fig1.add_annotation(
-            x=row["data"], y=row["rework_rate_total"],
-            text=f"Pico {i+1}: {row['rework_rate_total']:.2f}%",
-            showarrow=True, arrowhead=2, arrowcolor=colors[i]
-        )
+    # # 📌 Adicionar anotações para os top 3 picos
+    # colors = ["blue", "darkblue", "cyan"]
+    # for i, (idx, row) in enumerate(top3_total.iterrows()):
+    #     fig1.add_annotation(
+    #         x=row["data"], y=row["rework_rate_total"],
+    #         text=f"Pico {i+1}: {row['rework_rate_total']:.2f}%",
+    #         showarrow=True, arrowhead=2, arrowcolor=colors[i]
+    #     )
 
     # 📌 Adicionar Box de Métricas no Gráfico
     fig1.add_annotation(
@@ -335,14 +335,14 @@ def generate_graph():
                    hover_data={"tooltip": True})
     fig2.update_traces(marker=dict(size=6), hovertemplate=df["tooltip"])
 
-    # 📌 Adicionar anotações para os top 3 picos recentes
-    colors = ["red", "darkred", "orange"]
-    for i, (idx, row) in enumerate(top3_recent.iterrows()):
-        fig2.add_annotation(
-            x=row["data"], y=row["rework_rate_recent"],
-            text=f"Pico {i+1}: {row['rework_rate_recent']:.2f}%",
-            showarrow=True, arrowhead=2, arrowcolor=colors[i]
-        )
+    # # 📌 Adicionar anotações para os top 3 picos recentes
+    # colors = ["red", "darkred", "orange"]
+    # for i, (idx, row) in enumerate(top3_recent.iterrows()):
+    #     fig2.add_annotation(
+    #         x=row["data"], y=row["rework_rate_recent"],
+    #         text=f"Pico {i+1}: {row['rework_rate_recent']:.2f}%",
+    #         showarrow=True, arrowhead=2, arrowcolor=colors[i]
+    #     )
 
     # 📌 Adicionar Box de Métricas no Gráfico
     fig2.add_annotation(
