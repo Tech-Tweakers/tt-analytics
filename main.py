@@ -7,9 +7,10 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 import os
 
-START_DATE = os.getenv("START_DATE", "2000-01-01")  # Padrão: pega tudo
-END_DATE = os.getenv("END_DATE", datetime.utcnow().strftime("%Y-%m-%d"))  # Padrão: hoje
-
+START_DATE = os.getenv("START_DATE", "2000-01-01")  # Padrão: tudo
+END_DATE = os.getenv("END_DATE")  # Pode estar vazio
+if not END_DATE:
+    END_DATE = datetime.utcnow().strftime("%Y-%m-%d")
 START_DATE = datetime.strptime(START_DATE, "%Y-%m-%d")
 END_DATE = datetime.strptime(END_DATE, "%Y-%m-%d")
 

@@ -47,7 +47,7 @@ jobs:
           export REPO=${{ github.event.inputs.repo }}
           export THRESHOLD=${{ github.event.inputs.threshold }}
           export START_DATE=${{ github.event.inputs.start_date || '2000-01-01' }}  # Padrão: tudo
-          export END_DATE=${{ github.event.inputs.end_date || github.event.created_at }}
+          export END_DATE=${{ github.event.inputs.end_date || '' }}
 
           echo "📅 Analisando commits de $START_DATE até $END_DATE"
           python main.py
