@@ -268,16 +268,16 @@ def generate_graph():
     average_rework_rate = df["rework_rate_total"].mean()
     average_rework_rate_recent = df["rework_rate_recent"].mean()
 
-    metrics_text = f"""
-        📌 **Métricas da Análise**
-        🔹 Commits analisados: {total_commits}
-        🔹 Linhas analisadas: {total_lines_analyzed}
-        🔹 Linhas de retrabalho: {total_lines_rework}
-        🔹 Retrabalho (Últimos {REWORK_DAYS} dias): {total_lines_rework_recent}
-        🔹 Rework Rate Médio: {average_rework_rate:.2f}%
-        🔹 Rework Rate (Últimos {REWORK_DAYS} dias): {average_rework_rate_recent:.2f}%
-        🔹 Threshold utilizado: {THRESHOLD}
-    """
+    metrics_text = (
+        "📌 <b>Métricas da Análise</b><br>"
+        f"🔹 <b>Commits analisados:</b> {total_commits}<br>"
+        f"🔹 <b>Linhas analisadas:</b> {total_lines_analyzed}<br>"
+        f"🔹 <b>Linhas de retrabalho:</b> {total_lines_rework}<br>"
+        f"🔹 <b>Retrabalho (Últimos {REWORK_DAYS} dias):</b> {total_lines_rework_recent}<br>"
+        f"🔹 <b>Rework Rate Médio:</b> {average_rework_rate:.2f}%<br>"
+        f"🔹 <b>Rework Rate (Últimos {REWORK_DAYS} dias):</b> {average_rework_rate_recent:.2f}%<br>"
+        f"🔹 <b>Threshold utilizado:</b> {THRESHOLD}"
+    )
 
     # 📌 Criar tooltip detalhado
     df["tooltip"] = df.apply(lambda row: f"""
@@ -314,11 +314,12 @@ def generate_graph():
         align="left",
         showarrow=False,
         xref="paper", yref="paper",
-        x=0.01, y=0.99,  # Posição no canto superior esquerdo
+        x=0.02, y=0.02,  # 📌 Move o box para o canto inferior esquerdo
         bordercolor="black",
         borderwidth=1,
-        bgcolor="rgba(255,255,255,0.8)",  # Fundo branco semi-transparente
-        font=dict(size=12)
+        bgcolor="rgba(240, 240, 240, 0.85)",  # Cinza claro semi-transparente
+        font=dict(size=12, color="black"),
+        opacity=0.8
     )
 
     # 📌 Ajustar eixo X
