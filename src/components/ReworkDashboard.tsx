@@ -114,7 +114,8 @@ const rankedAuthorsRecent = Object.entries(authorStatsRecent)
 
 return (
     <div>
-      <h3>📊 Dashboard de Retrabalho - {REPO}</h3>
+      <br />
+      <h3>Padrão com os últimos 21 dias</h3>
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: 20 }}>
         <label><strong>Início:</strong></label>
         <DatePicker selected={startDate} onChange={setStartDate} />
@@ -151,7 +152,7 @@ return (
 />
 
 {/* Tabela - Últimos 21 dias */}
-<h4>🏆 Top Autores com mais retrabalho (Últimos 21 dias):</h4>
+<h3>🏆 Top Autores:</h3>
 <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
   <thead style={{ background: '#2a2a2a' }}>
     <tr>
@@ -168,7 +169,8 @@ return (
     ))}
   </tbody>
 </table>
-
+      <br />
+      <h3>Período Completo do Repositório</h3>
       {/* Gráfico - Total */}
       <Plot
         data={[
@@ -194,7 +196,7 @@ return (
       />
 
       {/* Tabela - Total */}
-      <h3>🏅 Top Autores com mais retrabalho (Geral):</h3>
+      <h3>🏅 Top Autores:</h3>
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead style={{ background: '#2a2a2a' }}>
           <tr>
