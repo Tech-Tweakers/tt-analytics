@@ -89,10 +89,32 @@ const rankedAuthors = Object.entries(authorStats)
     .sort((a, b) => Number(b.total) - Number(a.total))
     .slice(0, 10);
 
+// Estatísticas por autor - Total
+const authorStatsTotal = {};
+filteredData.forEach(item => {
+  const author = item.autor || 'Desconhecido';
+  authorStatsTotal[author] = (authorStatsTotal[author] || 0) + item.rework_changes_total;
+});
+const rankedAuthorsTotal = Object.entries(authorStatsTotal)
+  .map(([autor, total]) => ({ autor, total }))
+  .sort((a, b) => Number(b.total) - Number(a.total))
+  .slice(0, 10);
+
+// Estatísticas por autor - Recentes (21 dias)
+const authorStatsRecent = {};
+filteredData.forEach(item => {
+  const author = item.autor || 'Desconhecido';
+  authorStatsRecent[author] = (authorStatsRecent[author] || 0) + item.rework_changes_recent;
+});
+const rankedAuthorsRecent = Object.entries(authorStatsRecent)
+  .map(([autor, total]) => ({ autor, total }))
+  .sort((a, b) => Number(b.total) - Number(a.total))
+  .slice(0, 10);
+
+
 return (
     <div>
-      <h1>📊 Dashboard de Retrabalho - {REPO}</h1>
-
+      <h3>📊 Dashboard de Retrabalho - {REPO}</h3>
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: 20 }}>
         <label><strong>Início:</strong></label>
         <DatePicker selected={startDate} onChange={setStartDate} />
@@ -105,6 +127,49 @@ return (
         )}
       </div>
 
+{/* Gráfico - Últimos 21 dias */}
+<Plot
+  data={[
+    {
+      x: dates,
+      y: recentRates,
+      type: 'bar',
+      name: `Rework Rate (21 dias)`,
+      marker: { color: 'orange' },
+    },
+  ]}
+  layout={{
+    width: 1000,
+    height: 400,
+    paper_bgcolor: '#1c1e26',
+    plot_bgcolor: '#1c1e26',
+    font: { color: '#eee' },
+    title: `📈 Rework Rate - Últimos ${REWORK_DAYS} dias`,
+    xaxis: { title: 'Data' },
+    yaxis: { title: 'Rework Rate (%)' },
+  }}
+/>
+
+{/* Tabela - Últimos 21 dias */}
+<h4>🏆 Top Autores com mais retrabalho (Últimos 21 dias):</h4>
+<table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
+  <thead style={{ background: '#2a2a2a' }}>
+    <tr>
+      <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Autor</th>
+      <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Linhas de Retrabalho</th>
+    </tr>
+  </thead>
+  <tbody>
+    {rankedAuthorsRecent.map(({ autor, total }, index) => (
+      <tr key={index} style={{ borderBottom: '1px solid #444' }}>
+        <td style={{ padding: 8, color: '#ccc' }}>{autor}</td>
+        <td style={{ padding: 8, color: '#ccc' }}>{Number(total)}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+      {/* Gráfico - Total */}
       <Plot
         data={[
           {
@@ -119,45 +184,29 @@ return (
         layout={{
           width: 1000,
           height: 400,
+          paper_bgcolor: '#1c1e26',
+          plot_bgcolor: '#1c1e26',
+          font: { color: '#eee' },
           title: '📈 Rework Rate Geral',
           xaxis: { title: 'Data' },
           yaxis: { title: 'Rework Rate (%)' },
         }}
       />
 
-      <Plot
-        data={[
-          {
-            x: dates,
-            y: recentRates,
-            type: 'scatter',
-            mode: 'lines+markers',
-            name: 'Rework Rate (21 dias)',
-            marker: { color: 'orange' },
-          },
-        ]}
-        layout={{
-          width: 1000,
-          height: 400,
-          title: `📈 Rework Rate - Últimos ${REWORK_DAYS} dias`,
-          xaxis: { title: 'Data' },
-          yaxis: { title: 'Rework Rate (%)' },
-        }}
-      />
-
-      <h3>🏆 Top 10 Autores com mais retrabalho no período:</h3>
+      {/* Tabela - Total */}
+      <h3>🏅 Top Autores com mais retrabalho (Geral):</h3>
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-        <thead style={{ background: '#f0f0f0' }}>
+        <thead style={{ background: '#2a2a2a' }}>
           <tr>
-            <th style={{ textAlign: 'left', padding: 8 }}>Autor</th>
-            <th style={{ textAlign: 'left', padding: 8 }}>Total de Linhas de Retrabalho</th>
+            <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Autor</th>
+            <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Linhas de Retrabalho</th>
           </tr>
         </thead>
         <tbody>
-          {rankedAuthors.map(({ autor, total }, index) => (
-            <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
-              <td style={{ padding: 8 }}>{autor}</td>
-              <td style={{ padding: 8 }}>{Number(total)}</td>
+          {rankedAuthorsTotal.map(({ autor, total }, index) => (
+            <tr key={index} style={{ borderBottom: '1px solid #444' }}>
+              <td style={{ padding: 8, color: '#ccc' }}>{autor}</td>
+              <td style={{ padding: 8, color: '#ccc' }}>{Number(total)}</td>
             </tr>
           ))}
         </tbody>
