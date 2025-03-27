@@ -5,7 +5,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Papa from 'papaparse';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-const REPO = 'polaris-python-api'; // Altere conforme necessário
 const REWORK_DAYS = 21;
 
 type ReworkEntry = {
@@ -25,15 +24,16 @@ type ReworkData = {
     data: ReworkEntry[];
 };
 
-export default function ReworkGraphsWrapper() {
+export default function ReworkGraphsWrapper({ repo }: { repo: string }) {
     return (
         <BrowserOnly fallback={<div>Carregando gráficos...</div>}>
-        {() => <ReworkGraphs />}
+        {() => <ReworkGraphs repo={repo} />}
         </BrowserOnly>
     );
 }
 
-function ReworkGraphs() {
+function ReworkGraphs({ repo }: { repo: string }) {
+    const REPO = repo;
     const [rawData, setRawData] = useState<ReworkEntry[]>([]);
     const [filteredData, setFilteredData] = useState<ReworkEntry[]>([]);
     const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() - REWORK_DAYS)));
