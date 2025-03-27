@@ -24,8 +24,8 @@ jobs:
       - name: Rodar script de churn
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-          OWNER: sua-org-ou-user
-          REPO: seu-repo
+          OWNER: Tech-Tweakers
+          REPO: polaris-python-api
         run: python services/code-churn/main.py
 
       - name: Commitar resultados
