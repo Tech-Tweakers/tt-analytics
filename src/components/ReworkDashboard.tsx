@@ -27,12 +27,12 @@ type ReworkData = {
 export default function ReworkGraphsWrapper({ repo }: { repo: string }) {
     return (
         <BrowserOnly fallback={<div>Carregando gráficos...</div>}>
-        {() => <ReworkGraphs repo={repo} />}
+        {() => <ReworkDashboard repo={repo} />}
         </BrowserOnly>
     );
 }
 
-function ReworkGraphs({ repo }: { repo: string }) {
+function ReworkDashboard({ repo }: { repo: string }) {
     const REPO = repo;
     const [rawData, setRawData] = useState<ReworkEntry[]>([]);
     const [filteredData, setFilteredData] = useState<ReworkEntry[]>([]);
