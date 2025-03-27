@@ -9,7 +9,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 <BrowserOnly fallback={<div>Carregando gráficos...</div>}>
   {() => {
-    const ReworkDashboard = require('@site/src/components/ReworkGraphsWrapper').default;
-    return <ReworkDashboard repo="polaris-python-api" />;
+    const ReworkGraphsWrapper = require('@site/src/components/ReworkGraphsWrapper').default;
+    return <ReworkGraphsWrapper repo="polaris-python-api" />;
   }}
 </BrowserOnly>
