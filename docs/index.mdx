@@ -1,4 +1,46 @@
 ---
+id: rework-dashboard
 title: Rework Rate Dashboard
+hide_title: true
+sidebar_label: 🧮 Rework Dashboard
+sidebar_position: 1
 ---
 
+## 📊 Rework Rate Dashboard
+
+Bem-vindo ao painel de métricas de **retrabalho** do ciclo de desenvolvimento!
+
+Este dashboard foi criado para **monitorar a qualidade do código** nos repositórios da sua organização, permitindo identificar padrões de retrabalho ao longo do tempo e por autor, de forma visual, clara e exportável.
+
+### 🧭 Objetivos
+
+- Visualizar a **taxa de retrabalho geral** desde o início do repositório.
+- Acompanhar o retrabalho recente (**últimos 21 dias**).
+- Identificar os autores que mais realizaram retrabalho no período selecionado.
+- **Exportar os dados** em formato CSV para análises adicionais.
+- Observar padrões de instabilidade e antecipar riscos no desenvolvimento.
+
+### 🛠️ Como funciona?
+
+As métricas são calculadas com base em commits extraídos via Git e analisados por um motor interno, que cruza informações como:
+
+- Quantidade de alterações por commit.
+- Quantidade de linhas que sofreram retrabalho (linhas modificadas mais de uma vez).
+- Janela de tempo para análise recente (21 dias).
+- Agrupamento por autor e data.
+
+### 📁 Organização
+
+A barra lateral permite navegar entre os repositórios disponíveis. Cada um possui dois gráficos principais:
+
+- **Rework Rate Geral** (desde o início até hoje)
+- **Rework Rate dos últimos 21 dias**
+
+Além disso, um ranking com os **10 autores com mais retrabalho** ajuda a identificar pontos de atenção.
+
+### ✨ Observações
+
+> Este projeto é mantido pela equipe Tech Tweakers. Contribuições e ideias são sempre bem-vindas!  
+> Em caso de dúvidas, entre em contato com o responsável técnico.
+
+---

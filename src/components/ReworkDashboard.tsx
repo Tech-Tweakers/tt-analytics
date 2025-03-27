@@ -36,7 +36,7 @@ export default function ReworkGraphsWrapper() {
 function ReworkGraphs() {
     const [rawData, setRawData] = useState<ReworkEntry[]>([]);
     const [filteredData, setFilteredData] = useState<ReworkEntry[]>([]);
-    const [startDate, setStartDate] = useState(new Date('2000-01-01'));
+    const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() - REWORK_DAYS)));
     const [endDate, setEndDate] = useState(new Date());
     const [csvReady, setCsvReady] = useState(false);
 
@@ -79,6 +79,9 @@ const dates = filteredData.map(d => d.data);
 const totalRates = filteredData.map(d => d.rework_rate_total);
 const recentRates = filteredData.map(d => d.rework_rate_recent);
 
+const fullDates = rawData.map(d => d.data);
+const fullTotalRates = rawData.map(d => d.rework_rate_total);
+
 const authorStats = {};
 filteredData.forEach(item => {
     const author = item.autor || 'Desconhecido';
@@ -115,14 +118,14 @@ const rankedAuthorsRecent = Object.entries(authorStatsRecent)
 return (
     <div>
       <br />
-      <h3>Padrão com os últimos 21 dias</h3>
+      <h3>Últimos 21 dias</h3>
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: 20 }}>
         <label><strong>Início:</strong></label>
         <DatePicker selected={startDate} onChange={setStartDate} />
         <label><strong>Fim:</strong></label>
         <DatePicker selected={endDate} onChange={setEndDate} />
         {csvReady && (
-          <button onClick={exportCSV} style={{ marginLeft: 'auto', padding: '8px 16px' }}>
+          <button onClick={exportCSV} style={{ marginLeft: 'center', padding: '2px 16px' }}>
             📥 Exportar CSV
           </button>
         )}
@@ -175,12 +178,12 @@ return (
       <Plot
         data={[
           {
-            x: dates,
-            y: totalRates,
-            type: 'scatter',
+            x: fullDates,
+            y: fullTotalRates,
+            type: 'bar',
             mode: 'lines+markers',
             name: 'Rework Rate Total',
-            marker: { color: 'blue' },
+            marker: { color: 'light-blue' },
           },
         ]}
         layout={{
@@ -197,22 +200,33 @@ return (
 
       {/* Tabela - Total */}
       <h3>🏅 Top Autores:</h3>
-      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
         <thead style={{ background: '#2a2a2a' }}>
           <tr>
-            <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Autor</th>
-            <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Linhas de Retrabalho</th>
+            <th style={{ textAlign: 'left', padding: 8 }}>Autor</th>
+            <th style={{ textAlign: 'left', padding: 8 }}>Total de Linhas de Retrabalho</th>
           </tr>
         </thead>
         <tbody>
-          {rankedAuthorsTotal.map(({ autor, total }, index) => (
-            <tr key={index} style={{ borderBottom: '1px solid #444' }}>
-              <td style={{ padding: 8, color: '#ccc' }}>{autor}</td>
-              <td style={{ padding: 8, color: '#ccc' }}>{Number(total)}</td>
-            </tr>
-          ))}
+          {Object.entries(
+            rawData.reduce((acc, cur) => {
+              const a = cur.autor || 'Desconhecido';
+              acc[a] = (acc[a] || 0) + cur.rework_changes_total;
+              return acc;
+            }, {})
+          )
+            .map(([autor, total]) => ({ autor, total }))
+            .sort((a, b) => Number(b.total) - Number(a.total))
+            .slice(0, 10)
+            .map(({ autor, total }, index) => (
+              <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
+                <td style={{ padding: 8 }}>{autor}</td>
+                <td style={{ padding: 8 }}>{Number(total)}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
+
     </div>
   );
 }
