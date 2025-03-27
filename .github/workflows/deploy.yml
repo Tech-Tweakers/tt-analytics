@@ -24,10 +24,9 @@ jobs:
       - name: Gera o build
         run: npm run build
 
-      - name: Commit e push do build
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add build
-          git commit -m "ci: build Docusaurus para GitHub Pages" || echo "Nada para commitar"
-          git push origin main
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: main
