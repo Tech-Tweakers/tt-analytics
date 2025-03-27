@@ -14,7 +14,7 @@ import ReworkDashboard from '@site/src/components/ReworkDashboard';
 
 <BrowserOnly fallback={<div>Carregando gráficos...</div>}>
   {() => {
-    const ReworkGraphs = require('@site/src/components/ReworkGraphs').default;
-    return <ReworkGraphs repo="polaris-python-api" />;
+    const ReworkDashboard = require('@site/src/components/ReworkDashboard').default;
+    return <ReworkDashboard repo="polaris-python-api" />;
   }}
 </BrowserOnly>
