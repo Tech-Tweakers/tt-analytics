@@ -26,7 +26,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: sua-org-ou-user
           REPO: seu-repo
-        run: python generate_code_churn.py
+        run: python services/code-churn/main.py
 
       - name: Commitar resultados
         run: |

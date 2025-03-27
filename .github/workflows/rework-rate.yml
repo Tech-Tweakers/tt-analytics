@@ -50,7 +50,7 @@ jobs:
           export END_DATE=${{ github.event.inputs.end_date || '' }}
 
           echo "📅 Analisando commits de $START_DATE até $END_DATE"
-          python main.py
+          python services/rework-rate/main.py
 
       - name: 💾 Salvar resultado no repositório
         run: |
