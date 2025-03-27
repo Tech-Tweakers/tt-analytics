@@ -6,15 +6,10 @@ sidebar_position: 2
 ---
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import ReworkDashboard from '@site/src/components/ReworkDashboard';
-
-<h2 style={{ fontSize: '24px', marginBottom: '10px' }}>
-  📊 Dashboard de Retrabalho - Polaris Python API
-</h2>
 
 <BrowserOnly fallback={<div>Carregando gráficos...</div>}>
   {() => {
-    const ReworkDashboard = require('@site/src/components/ReworkDashboard').default;
-    return <ReworkDashboard repo="polaris-python-api" />;
+    const ReworkGraphs = require('@site/src/components/ReworkGraphs').default;
+    return <ReworkGraphs repo="polaris-python-api" />;
   }}
 </BrowserOnly>
