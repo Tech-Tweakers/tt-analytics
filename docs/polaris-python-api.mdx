@@ -12,6 +12,9 @@ import ReworkDashboard from '@site/src/components/ReworkDashboard';
   📊 Dashboard de Retrabalho - Polaris Python API
 </h2>
 
-<BrowserOnly>
-  {() => <ReworkDashboard repo="polaris-python-api"/>}
+<BrowserOnly fallback={<div>Carregando gráficos...</div>}>
+  {() => {
+    const ReworkGraphs = require('@site/src/components/ReworkGraphs').default;
+    return <ReworkGraphs repo="polaris-python-api" />;
+  }}
 </BrowserOnly>
