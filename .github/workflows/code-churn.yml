@@ -23,7 +23,7 @@ jobs:
 
       - name: Rodar script de churn
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           OWNER: sua-org-ou-user
           REPO: seu-repo
         run: python services/code-churn/main.py
