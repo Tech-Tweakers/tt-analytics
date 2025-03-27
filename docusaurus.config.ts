@@ -13,7 +13,7 @@ const config: Config = {
   url: 'https://tech-tweakers.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/tt-analytics/',
+  baseUrl: '/',
   trailingSlash: false,
 
   // GitHub pages deployment config.
