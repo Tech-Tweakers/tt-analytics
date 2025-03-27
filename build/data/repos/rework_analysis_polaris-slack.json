@@ -1,0 +1,151 @@
+{
+    "threshold": 3,
+    "data": [
+        {
+            "data": "2024-01-01",
+            "sha": "479c4b03bf8443a27bd6bb38a067ebccf95bde49",
+            "autor": "Andre Torres",
+            "total_changes": 4,
+            "rework_changes_total": 4,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-01",
+            "sha": "ba7a12133bfd6c77c18ac6cc735721bdbfd5e323",
+            "autor": "Andre Torres",
+            "total_changes": 3,
+            "rework_changes_total": 3,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-01",
+            "sha": "1e69220e1e6883bf568e44cfc19eef17f0fd728d",
+            "autor": "Andre Torres",
+            "total_changes": 98,
+            "rework_changes_total": 98,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "internal/domain/polarisslack/models.go",
+                "internal/domain/polarisslack/read-msg.go",
+                "internal/domain/polarisslack/reply-msg.go",
+                "internal/domain/polarisslack/usecases.go"
+            ]
+        },
+        {
+            "data": "2024-01-01",
+            "sha": "0bcf8a12f6f43382038a4a7645c16981b7b9bfab",
+            "autor": "Andre Torres",
+            "total_changes": 182,
+            "rework_changes_total": 176,
+            "rework_rate_total": 96.7032967032967,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "cmd/main.go",
+                "go.mod",
+                "internal/domain/appcontext/appcontext.go",
+                "internal/domain/slackmessagesapi/models.go",
+                "internal/domain/slackmessagesapi/read-msg.go",
+                "internal/domain/slackmessagesapi/reply-msg.go",
+                "internal/domain/slackmessagesapi/usecases.go",
+                "internal/infrastructure/api/routes.go",
+                "internal/infrastructure/botengines/automsgbot.go",
+                "internal/infrastructure/logger/logger.go",
+                "internal/infrastructure/slackclient/getPayloadFront.go",
+                "internal/infrastructure/slackclient/replyMessage.go",
+                "internal/infrastructure/slackworker/worker-main.go",
+                "internal/infrastructure/slackworker/worker-websocket.go"
+            ]
+        },
+        {
+            "data": "2024-01-01",
+            "sha": "85744860d56af3c432a36c34041bd0e4f3f7694a",
+            "autor": "Andre Torres",
+            "total_changes": 31,
+            "rework_changes_total": 31,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2024-01-01",
+            "sha": "e494224ac673374c959cee1be63ce4da128f2fff",
+            "autor": "Andre Torres",
+            "total_changes": 26,
+            "rework_changes_total": 24,
+            "rework_rate_total": 92.3076923076923,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md",
+                "internal/infrastructure/environment/environment.go"
+            ]
+        },
+        {
+            "data": "2024-01-01",
+            "sha": "f290a68f4ffe3bd0f86b232c1816d5164c31f68e",
+            "autor": "Andre Torres",
+            "total_changes": 1588,
+            "rework_changes_total": 1585,
+            "rework_rate_total": 99.81108312342569,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".gitignore",
+                "CODE_OF_CONDUCT.md",
+                "CONTRIBUTING.md",
+                "LICENSE",
+                "cmd/main.go",
+                "go.mod",
+                "go.sum",
+                "internal/domain/appcontext/appcontext.go",
+                "internal/domain/slackmessagesapi/models.go",
+                "internal/domain/slackmessagesapi/read-msg.go",
+                "internal/domain/slackmessagesapi/reply-msg.go",
+                "internal/domain/slackmessagesapi/usecases.go",
+                "internal/infrastructure/api/routes.go",
+                "internal/infrastructure/botengines/automsgbot.go",
+                "internal/infrastructure/environment/environment.go",
+                "internal/infrastructure/logger/logger.go",
+                "internal/infrastructure/logger/logwrapper/logWrapper.go",
+                "internal/infrastructure/logger/logwrapper/mock.go",
+                "internal/infrastructure/logger/logwrapper/span.go",
+                "internal/infrastructure/logger/logwrapper/zap.go",
+                "internal/infrastructure/polaris/send2polaris.go",
+                "internal/infrastructure/slackclient/getPayloadFront.go",
+                "internal/infrastructure/slackclient/replyMessage.go",
+                "internal/infrastructure/slackworker/worker-main.go",
+                "internal/infrastructure/slackworker/worker-websocket.go",
+                "internal/infrastructure/structx/structs.go"
+            ]
+        },
+        {
+            "data": "2024-01-01",
+            "sha": "c6b2e1657010201f4567e3672aca24bb0e502728",
+            "autor": "Andre Torres",
+            "total_changes": 19,
+            "rework_changes_total": 19,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        }
+    ]
+}

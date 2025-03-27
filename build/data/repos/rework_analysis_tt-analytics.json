@@ -1,0 +1,308 @@
+{
+    "threshold": 3,
+    "data": [
+        {
+            "data": "2025-03-18",
+            "sha": "f39a16d43975e6548d832c8ebb1f7f0b4d520df5",
+            "autor": "Andre Torres",
+            "total_changes": 62,
+            "rework_changes_total": 62,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 62,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                ".github/workflows/commits-rework-rate.yml",
+                "main.py"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "a0bc17b42ce13fd887fa4f0d59af51210aefe7f1",
+            "autor": "Andre Torres",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".github/workflows/commits-rework-rate.yml"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "f38fbdb97d71838b079af1436f1e11d2a76fdacf",
+            "autor": "Andre Torres",
+            "total_changes": 89,
+            "rework_changes_total": 89,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 89,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "main.py"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "e4ec094368e1cd4e634f8db9c96907b400fc6eb0",
+            "autor": "Andre Torres",
+            "total_changes": 7,
+            "rework_changes_total": 7,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 7,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "main.py",
+                "rework_analysis_polaris-python-api.json"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "5cd564f9a6a91d031cab95f4f87f0c3ce8f4baf0",
+            "autor": "github-actions",
+            "total_changes": 4,
+            "rework_changes_total": 4,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 4,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "rework_analysis_polaris-python-api.json"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "16cbcec9e5243983416534bcda0787bae6964af7",
+            "autor": "Andre Torres",
+            "total_changes": 185,
+            "rework_changes_total": 185,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 185,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "main.py",
+                "rework_analysis_polaris-baby.json"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "a191f1e3b3f38977920403f2c182bb9fb6b1c007",
+            "autor": "Andre Torres",
+            "total_changes": 43,
+            "rework_changes_total": 43,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 43,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "rework_analysis_tt-analytics.json"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "87efba9a0b408a4dfa90b97382a5379860cd405b",
+            "autor": "github-actions",
+            "total_changes": 50,
+            "rework_changes_total": 50,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 50,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "rework_analysis_polaris-baby.json"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "5902edc4152fabcb40e570ad394bf7605906f53f",
+            "autor": "Andre Torres",
+            "total_changes": 100,
+            "rework_changes_total": 100,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 100,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "main.py"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "def8b0a53359ecdbe6063ec0e17210ff719b48e3",
+            "autor": "github-actions",
+            "total_changes": 50,
+            "rework_changes_total": 50,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 50,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "rework_analysis_polaris-baby.json"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "ff8727789e1a8e211cce5fcf1a68d02ad1cf553f",
+            "autor": "github-actions",
+            "total_changes": 159,
+            "rework_changes_total": 159,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 159,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "rework_analysis_polaris-baby.json"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "09dcd00f6172157a97abea856e01e9ae91806fa6",
+            "autor": "Andre Torres",
+            "total_changes": 5,
+            "rework_changes_total": 5,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 5,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "main.py"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "817945ed3a629df4e5ba883803cdad4a8aa4f34c",
+            "autor": "Andre Torres",
+            "total_changes": 3,
+            "rework_changes_total": 3,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 3,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "main.py"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "28c6deb623eca14d9c11f9b4109f8d9eb075c701",
+            "autor": "Andre Torres",
+            "total_changes": 37,
+            "rework_changes_total": 37,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 37,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "main.py"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "7664814ddb9c61d7786ed70bf6bdac4ddf9f3634",
+            "autor": "Andre Torres",
+            "total_changes": 9,
+            "rework_changes_total": 9,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 9,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "main.py"
+            ]
+        },
+        {
+            "data": "2025-03-18",
+            "sha": "e45dd8219763c49624a738cf7e008c66e9c7fa30",
+            "autor": "Andre Torres",
+            "total_changes": 4,
+            "rework_changes_total": 4,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 4,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                ".github/workflows/commits-rework-rate.yml"
+            ]
+        },
+        {
+            "data": "2025-03-17",
+            "sha": "8e4de0ce2dc45094932b8d883b9ad8ef42d7e0a3",
+            "autor": "github-actions",
+            "total_changes": 28,
+            "rework_changes_total": 28,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 28,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "rework_analysis_tt-analytics.json"
+            ]
+        },
+        {
+            "data": "2025-03-17",
+            "sha": "6769516413cebbf7cd9efc7f74f82c1aa6c209f1",
+            "autor": "Andre Torres",
+            "total_changes": 121,
+            "rework_changes_total": 121,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 121,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "main.py"
+            ]
+        },
+        {
+            "data": "2025-03-15",
+            "sha": "59219afc58278535f185ff380abae7953d0c8e52",
+            "autor": "Andre Torres",
+            "total_changes": 6,
+            "rework_changes_total": 6,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 6,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2025-03-15",
+            "sha": "1c5159d1fa238c9f3180f93aca3fdc39315058ee",
+            "autor": "Andre Torres",
+            "total_changes": 101,
+            "rework_changes_total": 101,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 101,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "README.md"
+            ]
+        },
+        {
+            "data": "2025-03-14",
+            "sha": "3a3ae41083aabe90a325e2cacee4d29f5617f05b",
+            "autor": "github-actions",
+            "total_changes": 23,
+            "rework_changes_total": 23,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 23,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                "rework_analysis_tt-analytics.json"
+            ]
+        },
+        {
+            "data": "2025-03-14",
+            "sha": "4fe30d0737dc46118905e0192b13290698102999",
+            "autor": "Andre Torres",
+            "total_changes": 2,
+            "rework_changes_total": 0,
+            "rework_rate_total": 0.0,
+            "rework_changes_recent": 0,
+            "rework_rate_recent": 0.0,
+            "arquivos_modificados": [
+                ".github/workflows/commits-rework-rate.yml"
+            ]
+        },
+        {
+            "data": "2025-03-14",
+            "sha": "f91fbae75fde759dd9a7efc256edcd946996e97b",
+            "autor": "Andre Torres",
+            "total_changes": 235,
+            "rework_changes_total": 235,
+            "rework_rate_total": 100.0,
+            "rework_changes_recent": 235,
+            "rework_rate_recent": 100.0,
+            "arquivos_modificados": [
+                ".github/workflows/commits-rework-rate.yml",
+                "main.py"
+            ]
+        }
+    ]
+}
