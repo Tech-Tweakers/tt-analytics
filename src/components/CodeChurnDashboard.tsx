@@ -36,8 +36,9 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
 
   useEffect(() => {
     fetch(`/data/repos/code_churn_${repo}.json`)
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
+        console.log('Dados carregados:', data);
         setWeeklyChurn(data.weekly_churn || []);
         setTopFiles(data.top_files_by_churn || []);
         setTopAuthors(data.top_authors_by_churn || []);
