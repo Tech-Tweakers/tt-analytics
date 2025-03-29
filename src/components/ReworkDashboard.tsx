@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Papa from 'papaparse';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const REWORK_DAYS = 21;
 
@@ -41,14 +42,17 @@ function ReworkDashboard({ repo }: { repo: string }) {
     const [csvReady, setCsvReady] = useState(false);
 
     useEffect(() => {
-        fetch(`/data/repos/rework_analysis_${REPO}.json`)
-        .then(res => res.json())
-        .then((json: ReworkData) => {
-            const sorted = json.data.sort((a, b) => new Date(a.data).getTime() - new Date(b.data).getTime());
-            setRawData(sorted);
-            setFilteredData(sorted);
-        });
-    }, []);
+      const jsonUrl = useBaseUrl(`/data/repos/rework_analysis_${REPO}.json`);
+      fetch(jsonUrl)
+          .then(res => res.json())
+          .then((json: ReworkData) => {
+              const sorted = json.data.sort(
+                  (a, b) => new Date(a.data).getTime() - new Date(b.data).getTime()
+              );
+              setRawData(sorted);
+              setFilteredData(sorted);
+          });
+  }, [REPO]);
     
 
     useEffect(() => {
