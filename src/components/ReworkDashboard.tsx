@@ -41,7 +41,7 @@ function ReworkDashboard({ repo }: { repo: string }) {
     const [csvReady, setCsvReady] = useState(false);
 
     useEffect(() => {
-        fetch(`tt-analytics/data/repos/rework_analysis_${REPO}.json`)
+        fetch(`/data/repos/rework_analysis_${REPO}.json`)
         .then(res => res.json())
         .then((json: ReworkData) => {
             const sorted = json.data.sort((a, b) => new Date(a.data).getTime() - new Date(b.data).getTime());
