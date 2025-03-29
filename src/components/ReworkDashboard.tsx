@@ -41,23 +41,24 @@ function ReworkDashboard({ repo }: { repo: string }) {
     const [endDate, setEndDate] = useState(new Date());
     const [csvReady, setCsvReady] = useState(false);
 
+    const jsonUrl = useBaseUrl(`/data/repos/rework_analysis_${REPO}.json`);
+
     useEffect(() => {
-      const jsonUrl = useBaseUrl(`/data/repos/rework_analysis_${REPO}.json`);
-      fetch(jsonUrl)
-          .then(res => {
-              if (!res.ok) throw new Error('Falha ao carregar JSON');
-              return res.json();
-          })
-          .then((json: ReworkData) => {
-              if (!json.data) throw new Error('Dados inválidos no JSON');
-              const sorted = json.data.sort(
-                  (a, b) => new Date(a.data).getTime() - new Date(b.data).getTime()
-              );
-              setRawData(sorted);
-              setFilteredData(sorted);
-          })
-          .catch(err => console.error("Erro no fetch:", err));
-  }, [REPO]);
+        fetch(jsonUrl)
+            .then(res => {
+                if (!res.ok) throw new Error('Falha ao carregar JSON');
+                return res.json();
+            })
+            .then((json: ReworkData) => {
+                const sorted = json.data.sort(
+                    (a, b) => new Date(a.data).getTime() - new Date(b.data).getTime()
+                );
+                setRawData(sorted);
+                setFilteredData(sorted);
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+    }, [jsonUrl]);
+    
     
 
     useEffect(() => {
