@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Plot from "react-plotly.js";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 interface Props {
   repo: string;
@@ -34,17 +35,23 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
     average_churn_per_commit: 0,
   });
 
+  // ✅ Hook chamado no topo, como manda a lei
+  const url = useBaseUrl(`/data/repos/code_churn_${repo}.json`);
+
   useEffect(() => {
-    fetch(`tt-analytics/data/repos/code_churn_${repo}.json`)
-      .then(res => res.json())
-      .then(data => {
-        console.log('Dados carregados:', data);
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("🚀 Dados carregados:", data);
         setWeeklyChurn(data.weekly_churn || []);
         setTopFiles(data.top_files_by_churn || []);
         setTopAuthors(data.top_authors_by_churn || []);
         setSummary(data.churn_summary || {});
+      })
+      .catch((err) => {
+        console.error("❌ Erro ao carregar o JSON:", err);
       });
-  }, [repo]);
+  }, [url]);
 
   return (
     <div>
@@ -77,7 +84,7 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
           },
         ]}
         layout={{
-          title: "Evolução semanal de churn e commits",
+          title: "📈 Evolução semanal de churn e commits",
           barmode: "group",
           yaxis: { title: "Churn (linhas)" },
           yaxis2: {
@@ -99,7 +106,7 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
           },
         ]}
         layout={{
-          title: "Top arquivos com mais churn",
+          title: "🗂️ Top arquivos com mais churn",
           xaxis: { title: "Arquivo", tickangle: -45 },
           yaxis: { title: "Linhas churnadas" },
         }}
@@ -114,7 +121,7 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
           },
         ]}
         layout={{
-          title: "Top autores por churn",
+          title: "👤 Top autores por churn",
           xaxis: { title: "Autor" },
           yaxis: { title: "Linhas churnadas" },
         }}
