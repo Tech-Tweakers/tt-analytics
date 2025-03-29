@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgitpages=self.webpackChunkgitpages||[]).push([[583],{6107:(e,s,u)=>{u.r(s),u.d(s,{default:()=>n});var t=u(6540),c=u(6347);function n(){const e=(0,c.W6)();return(0,t.useEffect)((()=>{e.push("/docs")}),[e]),null}}}]);
