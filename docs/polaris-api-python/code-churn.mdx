@@ -3,10 +3,10 @@ title: Code Churn
 ---
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import CodeChurnDashboard from '@site/src/components/CodeChurnDashboard';
 
-# 📊 Code Churn
-
-<BrowserOnly fallback={<div>Carregando gráficos...</div>}>
-  {() => <CodeChurnDashboard repo="polaris-python-api" />}
+<BrowserOnly fallback={<div>Carregando gráfico...</div>}>
+  {() => {
+    const CodeChurnDashboard = require('@site/src/components/CodeChurnDashboard').default;
+    return <CodeChurnDashboard repo="polaris-python-api" />;
+  }}
 </BrowserOnly>
