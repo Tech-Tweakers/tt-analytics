@@ -1,4 +1,4 @@
-name: Rework Analyzer
+name: "[GEN] - Rework Rate Analysis"
 
 on:
   workflow_dispatch:

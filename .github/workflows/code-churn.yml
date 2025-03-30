@@ -1,4 +1,4 @@
-name: Geração de Code Churn
+name: "[GEN] - Code Churn Analysis"
 
 on:
   workflow_dispatch:
