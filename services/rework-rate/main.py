@@ -22,7 +22,7 @@ THRESHOLD = os.getenv("THRESHOLD")
 REWORK_DAYS = 21
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 
-json_file = f"data/repos/rework_analysis_{REPO}.json"
+json_file = f"static/data/repos/rework_analysis_{REPO}.json"
 
 
 def load_json(filename):
