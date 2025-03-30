@@ -27,7 +27,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           OWNER: Tech-Tweakers
-          REPO: polaris-python-api
+          REPO: ${{ github.event.inputs.repo }}
         run: python services/code-churn/main.py
 
       - name: Commitar resultados
