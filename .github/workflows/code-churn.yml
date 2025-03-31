@@ -37,3 +37,24 @@ jobs:
           git add static/data/repos/code_churn_*.json
           git commit -m "📊 Atualiza análise de code churn"
           git push
+  deploy_json:
+    needs: generate-churn
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout da branch gh-pages
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+
+      - name: 🔁 Sincronizar JSON gerado da main
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git fetch origin main
+          git checkout origin/main -- static/data/repos/code_churn_${{ github.event.inputs.repo }}.json
+
+          git add data/repos/
+          git commit -m "📊 Sync JSON de retrabalho na gh-pages" || echo "⚠️ Nada novo pra commitar"
+          git push
+        
