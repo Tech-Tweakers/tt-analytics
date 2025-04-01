@@ -85,6 +85,9 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
         ]}
         layout={{
           title: "📈 Evolução semanal de churn e commits",
+          paper_bgcolor: '#1c1e26',
+          plot_bgcolor: '#1c1e26',
+          font: { color: '#eee' },
           barmode: "group",
           yaxis: { title: "Churn (linhas)" },
           yaxis2: {
@@ -107,6 +110,9 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
         ]}
         layout={{
           title: "🗂️ Top arquivos com mais churn",
+          paper_bgcolor: '#1c1e26',
+          plot_bgcolor: '#1c1e26',
+          font: { color: '#eee' },
           xaxis: { title: "Arquivo", tickangle: -45 },
           yaxis: { title: "Linhas churnadas" },
         }}
@@ -121,6 +127,9 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
           },
         ]}
         layout={{
+          paper_bgcolor: '#1c1e26',
+          plot_bgcolor: '#1c1e26',
+          font: { color: '#eee' },
           title: "👤 Top autores por churn",
           xaxis: { title: "Autor" },
           yaxis: { title: "Linhas churnadas" },
