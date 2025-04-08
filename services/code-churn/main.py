@@ -123,13 +123,20 @@ def analyze_churn(commits):
     return churn_data
 
 
-def save_json(filepath, data):
-    with open(filepath, "w") as f:
-        json.dump(data, f, indent=2)
-    print(f"✅ JSON salvo em: {filepath}")
+def save_js(filepath, data, var_name):
+    js_path = filepath.replace(".json", ".js")
+
+    content = f"const {var_name} = " + json.dumps(data, indent=2) + ";\n\n"
+    content += f"export default {var_name};\n"
+
+    with open(js_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+    print(f"✅ JS salvo em: {js_path}")
 
 
 if __name__ == "__main__":
     commits = get_commits(OWNER, REPO, BRANCH)
     churn_data = analyze_churn(commits)
-    save_json(json_file, churn_data)
+    save_js(json_file, churn_data, f"churn{REPO.replace('-', '').title().replace('_', '')}")
+
