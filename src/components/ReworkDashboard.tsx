@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Papa from 'papaparse';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import { repoMap } from '../../src/data/repoMap';
 
 const REWORK_DAYS = 21;
 
@@ -41,25 +41,20 @@ function ReworkDashboard({ repo }: { repo: string }) {
     const [endDate, setEndDate] = useState(new Date());
     const [csvReady, setCsvReady] = useState(false);
 
-    const jsonUrl = useBaseUrl(`/data/repos/rework_analysis_${REPO}.json`);
-
     useEffect(() => {
-        fetch(jsonUrl)
-            .then(res => {
-                if (!res.ok) throw new Error('Falha ao carregar JSON');
-                return res.json();
-            })
-            .then((json: ReworkData) => {
-                const sorted = json.data.sort(
-                    (a, b) => new Date(a.data).getTime() - new Date(b.data).getTime()
-                );
-                setRawData(sorted);
-                setFilteredData(sorted);
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-    }, [jsonUrl]);
+      const raw = repoMap[repo];
     
+      if (!raw || !Array.isArray(raw.data)) {
+        console.error(`Repositório inválido ou sem dados: ${repo}`);
+        return;
+      }
     
+      const sorted = raw.data.sort(
+        (a, b) => new Date(a.data).getTime() - new Date(b.data).getTime()
+      );
+      setRawData(sorted);
+      setFilteredData(sorted);
+    }, [repo]);
 
     useEffect(() => {
         if (rawData.length === 0) return;

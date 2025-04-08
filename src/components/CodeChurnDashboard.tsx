@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Plot from "react-plotly.js";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import { repoMap } from '../../src/data/repoMap';
+
 
 interface Props {
   repo: string;
@@ -35,24 +36,21 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
     average_churn_per_commit: 0,
   });
 
-  // ✅ Hook chamado no topo, como manda a lei
-  const url = useBaseUrl(`/data/repos/code_churn_${repo}.json`);
-
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("🚀 Dados carregados:", data);
-        setWeeklyChurn(data.weekly_churn || []);
-        setTopFiles(data.top_files_by_churn || []);
-        setTopAuthors(data.top_authors_by_churn || []);
-        setSummary(data.churn_summary || {});
-      })
-      .catch((err) => {
-        console.error("❌ Erro ao carregar o JSON:", err);
-      });
-  }, [url]);
-
+    const data = repoMap[repo];
+  
+    if (!data) {
+      console.error("❌ Repositório não encontrado no repoMap:", repo);
+      return;
+    }
+  
+    console.log("🚀 Dados carregados:", data);
+    setWeeklyChurn(data.weekly_churn || []);
+    setTopFiles(data.top_files_by_churn || []);
+    setTopAuthors(data.top_authors_by_churn || []);
+    setSummary(data.churn_summary || {});
+  }, [repo]);
+  
   return (
     <div>
       <h2>📊 Code Churn – {repo}</h2>

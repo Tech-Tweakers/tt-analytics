@@ -7,9 +7,9 @@ sidebar_position: 2
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-<BrowserOnly fallback={<div>Carregando gráficos...</div>}>
+<BrowserOnly fallback={<div>Carregando gráfico...</div>}>
   {() => {
-    const ReworkGraphsWrapper = require('@site/src/components/ReworkDashboard').default;
-    return <ReworkGraphsWrapper repo="polaris-python-api" />;
+    const ReworkDashboard = require('@site/src/components/ReworkDashboard').default;
+    return <ReworkDashboard repo="polaris-api-python" />;
   }}
 </BrowserOnly>
