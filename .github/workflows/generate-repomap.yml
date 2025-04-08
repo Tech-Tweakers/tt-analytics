@@ -59,3 +59,9 @@ jobs:
           git add src/data/repoMap.js
           git commit -m "🧠 Atualiza repoMap dinamicamente" || echo "⚠️ Nada novo pra commitar"
           git push || echo "⚠️ Nada novo pra push"
+
+      - name: 🚀 Disparar deploy do portal
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: deploy-portal
