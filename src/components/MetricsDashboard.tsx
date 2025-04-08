@@ -1,32 +1,23 @@
+import React from 'react';
 import CodeChurnDashboard from './CodeChurnDashboard';
 import ReworkDashboard from './ReworkDashboard';
-import { repoMap } from '../../src/data/repoMap';
+import { repoMap } from '../data/repoMap';
 
-interface Props {
-  repo: string;
-  type: 'rework' | 'churn';
-}
+const MetricsDashboard = ({ repo, type }) => {
+  const data = repoMap[repo];
 
-const MetricsDashboard: React.FC<Props> = ({ repo, type }) => {
-  const data = repoMap[repo]?.[type];
-
-  if (!data) {
-    return (
-      <div style={{ color: 'red' }}>
-        ❌ Dados de <strong>{type}</strong> não encontrados para o repositório: <em>{repo}</em>
-      </div>
-    );
+  if (!data || !data[type]) {
+    return <div>⚠️ Dados não encontrados para {repo} / {type}</div>;
   }
 
-  if (type === 'rework') {
-    return <ReworkDashboard repo={repo} data={data} />;
+  switch (type) {
+    case 'churn':
+      return <CodeChurnDashboard data={data.churn} repo={repo} />;
+    case 'rework':
+      return <ReworkDashboard data={data.rework} repo={repo} />;
+    default:
+      return <div>⚠️ Tipo inválido: {type}</div>;
   }
-
-  if (type === 'churn') {
-    return <CodeChurnDashboard repo={repo} data={data} />;
-  }
-
-  return <div>❓ Tipo de métrica inválido: {type}</div>;
 };
 
 export default MetricsDashboard;
