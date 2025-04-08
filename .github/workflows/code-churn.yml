@@ -34,9 +34,9 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add src/data/repos/code_churn_*.js
-          git commit -m "📊 Atualiza análise de code churn (.js)"
-          git push
+          git add -f src/data/repos/code_churn_${{ github.event.inputs.repo }}.js || echo "⚠️ Nada novo para adicionar"
+          git commit -m "📊 Atualiza análise de code churn (.js)" || echo "⚠️ Nenhuma alteração para commitar"
+          git push || echo "⚠️ Nenhuma alteração para push"
 
   deploy_js:
     needs: generate-churn
@@ -57,4 +57,4 @@ jobs:
 
           git add src/data/repos/
           git commit -m "📊 Sync JS de code churn na gh-pages" || echo "⚠️ Nada novo pra commitar"
-          git push
+          git push || echo "⚠️ Nenhuma alteração para push"
