@@ -57,6 +57,13 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
             y: weeklyChurn.map((w) => w.churn_lines),
             type: "bar",
             name: "Churn (linhas)",
+            text: weeklyChurn.map(
+              (w) =>
+                `📅 ${w.week_start} → ${w.week_end}<br>` +
+                `🧾 Commits: ${w.commits}<br>` +
+                `🔥 Linhas churnadas: ${w.churn_lines}`
+            ),
+            hoverinfo: "text",
           },
           {
             x: weeklyChurn.map((w) => w.week_start),
@@ -65,6 +72,12 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
             mode: "lines+markers",
             name: "Commits",
             yaxis: "y2",
+            text: weeklyChurn.map(
+              (w) =>
+                `📅 ${w.week_start} → ${w.week_end}<br>` +
+                `🧾 Commits: ${w.commits}`
+            ),
+            hoverinfo: "text",
           },
         ]}
         layout={{
@@ -90,6 +103,13 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
             x: topFiles.map((f) => f.file),
             y: topFiles.map((f) => f.churn_lines),
             type: "bar",
+            text: topFiles.map(
+              (f) =>
+                `🗂️ ${f.file}<br>` +
+                `🔥 Linhas churnadas: ${f.churn_lines}<br>` +
+                `🛠️ Modificações: ${f.modifications}`
+            ),
+            hoverinfo: "text",
           },
         ]}
         layout={{
@@ -108,6 +128,13 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
             x: topAuthors.map((a) => a.author),
             y: topAuthors.map((a) => a.churn_lines),
             type: "bar",
+            text: topAuthors.map(
+              (a) =>
+                `👤 Autor: ${a.author}<br>` +
+                `🔥 Linhas churnadas: ${a.churn_lines}<br>` +
+                `🧾 Commits: ${a.commits}`
+            ),
+            hoverinfo: "text",
           },
         ]}
         layout={{

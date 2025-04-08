@@ -121,6 +121,14 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
             type: 'bar',
             name: `Rework Rate (21 dias)`,
             marker: { color: 'orange' },
+            text: filteredData.map((d) =>
+              `📅 Data: ${d.data}<br>` +
+              `🔁 SHA: ${d.sha.slice(0, 7)}<br>` +
+              `👤 Autor: ${d.autor}<br>` +
+              `📊 Mudanças: ${d.total_changes}<br>` +
+              `🔥 Retrabalho recente: ${d.rework_changes_recent} (${d.rework_rate_recent.toFixed(2)}%)`
+            ),
+            hoverinfo: 'text',
           },
         ]}
         layout={{
@@ -135,25 +143,8 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
         }}
       />
 
-      <h3>🏆 Top Autores:</h3>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
-        <thead style={{ background: '#2a2a2a' }}>
-          <tr>
-            <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Autor</th>
-            <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Linhas de Retrabalho</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rankedAuthorsRecent.map(({ autor, total }, index) => (
-            <tr key={index} style={{ borderBottom: '1px solid #444' }}>
-              <td style={{ padding: 8, color: '#ccc' }}>{autor}</td>
-              <td style={{ padding: 8, color: '#ccc' }}>{Number(total)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      ...
 
-      <h3>Período Completo do Repositório</h3>
       <Plot
         data={[
           {
@@ -163,6 +154,14 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
             mode: 'lines+markers',
             name: 'Rework Rate Total',
             marker: { color: 'light-blue' },
+            text: rawData.map((d) =>
+              `📅 Data: ${d.data}<br>` +
+              `🔁 SHA: ${d.sha.slice(0, 7)}<br>` +
+              `👤 Autor: ${d.autor}<br>` +
+              `📊 Mudanças: ${d.total_changes}<br>` +
+              `🔥 Retrabalho total: ${d.rework_changes_total} (${d.rework_rate_total.toFixed(2)}%)`
+            ),
+            hoverinfo: 'text',
           },
         ]}
         layout={{
