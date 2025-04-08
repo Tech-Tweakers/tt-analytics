@@ -1,4 +1,4 @@
-const reworkPolarisPythonApi = {
+const reworkPolarispythonapi = {
   "threshold": 3,
   "data": [
     {
@@ -5350,4 +5350,4 @@ const reworkPolarisPythonApi = {
   ]
 };
 
-export default reworkPolarisPythonApi;
+export default reworkPolarispythonapi;
