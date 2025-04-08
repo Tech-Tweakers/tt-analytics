@@ -1,0 +1,58 @@
+name: "[GEN] - RepoMap Dinâmico"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-repomap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout do repositório
+        uses: actions/checkout@v3
+
+      - name: 🧠 Gerar repoMap dinamicamente
+        run: |
+          echo "// ⚡️ Arquivo gerado automaticamente pelo GitHub Actions" > src/data/repoMap.js
+          echo "" >> src/data/repoMap.js
+
+          for file in src/data/*.js; do
+            filename=$(basename "$file" .js)
+            if [[ "$filename" == "repoMap" ]]; then continue; fi
+
+            if [[ "$filename" == code_churn_* ]]; then
+              prefix="churn"
+            elif [[ "$filename" == rework_rate_* ]]; then
+              prefix="rework"
+            else
+              continue
+            fi
+
+            repo_name="${filename#${prefix}_}"
+            const_name="${prefix}$(echo "$repo_name" | tr -d '-' | tr -d '_' | sed -r 's/^(.)/\U\1/')"
+
+            echo "import $const_name from './$filename.js';" >> src/data/repoMap.js
+            echo "$repo_name;$prefix;$const_name" >> temp_map.txt
+          done
+
+          echo "" >> src/data/repoMap.js
+          echo "export const repoMap = {" >> src/data/repoMap.js
+
+          cut -d ';' -f1 temp_map.txt | sort -u | while read repo; do
+            echo "  '$repo': {" >> src/data/repoMap.js
+            grep "^$repo;" temp_map.txt | while IFS=';' read _ type const; do
+              echo "    $type: $const," >> src/data/repoMap.js
+            done
+            echo "  }," >> src/data/repoMap.js
+          done
+
+          echo "};" >> src/data/repoMap.js
+          rm temp_map.txt
+
+      - name: 💾 Commitar repoMap
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add src/data/repoMap.js
+          git commit -m "🧠 Atualiza repoMap dinamicamente" || echo "⚠️ Nada novo pra commitar"
+          git push || echo "⚠️ Nada novo pra push"
