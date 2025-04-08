@@ -1,8 +1,8 @@
-import churnPolarisLLM from 'code_churn_polaris-llm.js';
-import reworkPolarisLLM from 'rework_rate_polaris-llm.js';
+import churnPolarisLLM from './code_churn_polaris-llm.js';
+import reworkPolarisLLM from './rework_rate_polaris-llm.js';
 
-import churnPolarisPythonApi from 'code_churn_polaris-python-api.js';
-import reworkPolarisPythonApi from 'rework_rate_polaris-python-api.js';
+import churnPolarisPythonApi from './code_churn_polaris-python-api.js';
+import reworkPolarisPythonApi from './rework_rate_polaris-python-api.js';
 
 export const repoMap = {
     'polaris-python-api': {
