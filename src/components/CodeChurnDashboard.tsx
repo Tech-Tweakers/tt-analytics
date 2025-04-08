@@ -64,6 +64,7 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
                 `🔥 Linhas churnadas: ${w.churn_lines}`
             ),
             hoverinfo: "text",
+            textposition: 'none',
           },
           {
             x: weeklyChurn.map((w) => w.week_start),
