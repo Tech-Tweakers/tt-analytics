@@ -21,6 +21,7 @@ REWORK_DAYS = 21
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 def save_as_js(filename, data, var_name):
+    os.makedirs("src/data/repos", exist_ok=True)
     with open(filename, "w") as f:
         f.write(f"const {var_name} = ")
         json.dump(data, f, indent=2)
