@@ -3,124 +3,96 @@ import Plot from 'react-plotly.js';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Papa from 'papaparse';
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import { repoMap } from '../../src/data/repoMap';
 
 const REWORK_DAYS = 21;
 
 type ReworkEntry = {
-    data: string;
-    sha: string;
-    autor: string;
-    total_changes: number;
-    rework_changes_total: number;
-    rework_rate_total: number;
-    rework_changes_recent: number;
-    rework_rate_recent: number;
-    arquivos_modificados: string[];
+  data: string;
+  sha: string;
+  autor: string;
+  total_changes: number;
+  rework_changes_total: number;
+  rework_rate_total: number;
+  rework_changes_recent: number;
+  rework_rate_recent: number;
+  arquivos_modificados: string[];
 };
 
-type ReworkData = {
-    threshold: number;
-    data: ReworkEntry[];
-};
-
-export default function ReworkGraphsWrapper({ repo }: { repo: string }) {
-    return (
-        <BrowserOnly fallback={<div>Carregando gráficos...</div>}>
-        {() => <ReworkDashboard repo={repo} />}
-        </BrowserOnly>
-    );
+interface ReworkData {
+  threshold: number;
+  data: ReworkEntry[];
 }
 
-function ReworkDashboard({ repo }: { repo: string }) {
-    const REPO = repo;
-    const [rawData, setRawData] = useState<ReworkEntry[]>([]);
-    const [filteredData, setFilteredData] = useState<ReworkEntry[]>([]);
-    const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() - REWORK_DAYS)));
-    const [endDate, setEndDate] = useState(new Date());
-    const [csvReady, setCsvReady] = useState(false);
+interface Props {
+  repo: string;
+  data: ReworkData;
+}
 
-    useEffect(() => {
-      const raw = repoMap[repo];
-    
-      if (!raw || !Array.isArray(raw.data)) {
-        console.error(`Repositório inválido ou sem dados: ${repo}`);
-        return;
-      }
-    
-      const sorted = raw.data.sort(
-        (a, b) => new Date(a.data).getTime() - new Date(b.data).getTime()
-      );
-      setRawData(sorted);
-      setFilteredData(sorted);
-    }, [repo]);
+const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
+  const [rawData, setRawData] = useState<ReworkEntry[]>([]);
+  const [filteredData, setFilteredData] = useState<ReworkEntry[]>([]);
+  const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() - REWORK_DAYS)));
+  const [endDate, setEndDate] = useState(new Date());
+  const [csvReady, setCsvReady] = useState(false);
 
-    useEffect(() => {
-        if (rawData.length === 0) return;
+  useEffect(() => {
+    const sorted = data.data.sort(
+      (a, b) => new Date(a.data).getTime() - new Date(b.data).getTime()
+    );
+    setRawData(sorted);
+    setFilteredData(sorted);
+  }, [data]);
 
-        const filtered = rawData.filter(entry => {
-        const d = new Date(entry.data);
-        return d >= startDate && d <= endDate;
-        });
-
+  useEffect(() => {
+    if (rawData.length === 0) return;
+    const filtered = rawData.filter(entry => {
+      const d = new Date(entry.data);
+      return d >= startDate && d <= endDate;
+    });
     setFilteredData(filtered);
     setCsvReady(true);
-}, [startDate, endDate, rawData]);
+  }, [startDate, endDate, rawData]);
 
-const exportCSV = () => {
+  const exportCSV = () => {
     const csv = Papa.unparse(filteredData);
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", `rework_data_${REPO}.csv`);
+    link.setAttribute("download", `rework_data_${repo}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-};
+  };
 
-const dates = filteredData.map(d => d.data);
-const totalRates = filteredData.map(d => d.rework_rate_total);
-const recentRates = filteredData.map(d => d.rework_rate_recent);
+  const dates = filteredData.map(d => d.data);
+  const totalRates = filteredData.map(d => d.rework_rate_total);
+  const recentRates = filteredData.map(d => d.rework_rate_recent);
 
-const fullDates = rawData.map(d => d.data);
-const fullTotalRates = rawData.map(d => d.rework_rate_total);
+  const fullDates = rawData.map(d => d.data);
+  const fullTotalRates = rawData.map(d => d.rework_rate_total);
 
-const authorStats = {};
-filteredData.forEach(item => {
+  const authorStatsRecent = filteredData.reduce((acc, item) => {
     const author = item.autor || 'Desconhecido';
-    authorStats[author] = (authorStats[author] || 0) + item.rework_changes_total;
-});
-const rankedAuthors = Object.entries(authorStats)
+    acc[author] = (acc[author] || 0) + item.rework_changes_recent;
+    return acc;
+  }, {} as Record<string, number>);
+  const rankedAuthorsRecent = Object.entries(authorStatsRecent)
     .map(([autor, total]) => ({ autor, total }))
-    .sort((a, b) => Number(b.total) - Number(a.total))
+    .sort((a, b) => b.total - a.total)
     .slice(0, 10);
 
-// Estatísticas por autor - Total
-const authorStatsTotal = {};
-filteredData.forEach(item => {
-  const author = item.autor || 'Desconhecido';
-  authorStatsTotal[author] = (authorStatsTotal[author] || 0) + item.rework_changes_total;
-});
-const rankedAuthorsTotal = Object.entries(authorStatsTotal)
-  .map(([autor, total]) => ({ autor, total }))
-  .sort((a, b) => Number(b.total) - Number(a.total))
-  .slice(0, 10);
+  const authorStatsTotal = rawData.reduce((acc, item) => {
+    const author = item.autor || 'Desconhecido';
+    acc[author] = (acc[author] || 0) + item.rework_changes_total;
+    return acc;
+  }, {} as Record<string, number>);
+  const rankedAuthorsTotal = Object.entries(authorStatsTotal)
+    .map(([autor, total]) => ({ autor, total }))
+    .sort((a, b) => b.total - a.total)
+    .slice(0, 10);
 
-// Estatísticas por autor - Recentes (21 dias)
-const authorStatsRecent = {};
-filteredData.forEach(item => {
-  const author = item.autor || 'Desconhecido';
-  authorStatsRecent[author] = (authorStatsRecent[author] || 0) + item.rework_changes_recent;
-});
-const rankedAuthorsRecent = Object.entries(authorStatsRecent)
-  .map(([autor, total]) => ({ autor, total }))
-  .sort((a, b) => Number(b.total) - Number(a.total))
-  .slice(0, 10);
-
-
-return (
+  return (
     <div>
       <br />
       <h3>Últimos 21 dias</h3>
@@ -136,50 +108,47 @@ return (
         )}
       </div>
 
-{/* Gráfico - Últimos 21 dias */}
-<Plot
-  data={[
-    {
-      x: dates,
-      y: recentRates,
-      type: 'bar',
-      name: `Rework Rate (21 dias)`,
-      marker: { color: 'orange' },
-    },
-  ]}
-  layout={{
-    width: 1000,
-    height: 400,
-    paper_bgcolor: '#1c1e26',
-    plot_bgcolor: '#1c1e26',
-    font: { color: '#eee' },
-    title: `📈 Rework Rate - Últimos ${REWORK_DAYS} dias`,
-    xaxis: { title: 'Data' },
-    yaxis: { title: 'Rework Rate (%)' },
-  }}
-/>
+      <Plot
+        data={[
+          {
+            x: dates,
+            y: recentRates,
+            type: 'bar',
+            name: `Rework Rate (21 dias)`,
+            marker: { color: 'orange' },
+          },
+        ]}
+        layout={{
+          width: 1000,
+          height: 400,
+          paper_bgcolor: '#1c1e26',
+          plot_bgcolor: '#1c1e26',
+          font: { color: '#eee' },
+          title: `📈 Rework Rate - Últimos ${REWORK_DAYS} dias`,
+          xaxis: { title: 'Data' },
+          yaxis: { title: 'Rework Rate (%)' },
+        }}
+      />
 
-{/* Tabela - Últimos 21 dias */}
-<h3>🏆 Top Autores:</h3>
-<table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
-  <thead style={{ background: '#2a2a2a' }}>
-    <tr>
-      <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Autor</th>
-      <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Linhas de Retrabalho</th>
-    </tr>
-  </thead>
-  <tbody>
-    {rankedAuthorsRecent.map(({ autor, total }, index) => (
-      <tr key={index} style={{ borderBottom: '1px solid #444' }}>
-        <td style={{ padding: 8, color: '#ccc' }}>{autor}</td>
-        <td style={{ padding: 8, color: '#ccc' }}>{Number(total)}</td>
-      </tr>
-    ))}
-  </tbody>
-</table>
-      <br />
+      <h3>🏆 Top Autores:</h3>
+      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
+        <thead style={{ background: '#2a2a2a' }}>
+          <tr>
+            <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Autor</th>
+            <th style={{ textAlign: 'center', padding: 8, color: '#eee' }}>Linhas de Retrabalho</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rankedAuthorsRecent.map(({ autor, total }, index) => (
+            <tr key={index} style={{ borderBottom: '1px solid #444' }}>
+              <td style={{ padding: 8, color: '#ccc' }}>{autor}</td>
+              <td style={{ padding: 8, color: '#ccc' }}>{Number(total)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       <h3>Período Completo do Repositório</h3>
-      {/* Gráfico - Total */}
       <Plot
         data={[
           {
@@ -203,7 +172,6 @@ return (
         }}
       />
 
-      {/* Tabela - Total */}
       <h3>🏅 Top Autores:</h3>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
         <thead style={{ background: '#2a2a2a' }}>
@@ -213,25 +181,16 @@ return (
           </tr>
         </thead>
         <tbody>
-          {Object.entries(
-            rawData.reduce((acc, cur) => {
-              const a = cur.autor || 'Desconhecido';
-              acc[a] = (acc[a] || 0) + cur.rework_changes_total;
-              return acc;
-            }, {})
-          )
-            .map(([autor, total]) => ({ autor, total }))
-            .sort((a, b) => Number(b.total) - Number(a.total))
-            .slice(0, 10)
-            .map(({ autor, total }, index) => (
-              <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: 8 }}>{autor}</td>
-                <td style={{ padding: 8 }}>{Number(total)}</td>
-              </tr>
-            ))}
+          {rankedAuthorsTotal.map(({ autor, total }, index) => (
+            <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
+              <td style={{ padding: 8 }}>{autor}</td>
+              <td style={{ padding: 8 }}>{Number(total)}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
-
     </div>
   );
-}
+};
+
+export default ReworkDashboard;

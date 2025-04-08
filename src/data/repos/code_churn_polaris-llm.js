@@ -1,4 +1,4 @@
-export default {
+const churnPolarisLLM = {
   repo: "polaris-llm",
   generated_at: "2025-03-31T00:52:03.561360Z",
   churn_summary: {
@@ -27,67 +27,21 @@ export default {
     }
   ],
   top_files_by_churn: [
-    {
-      file: "input.txt",
-      churn_lines: 627328,
-      modifications: 4
-    },
-    {
-      file: "train.py",
-      churn_lines: 2136,
-      modifications: 30
-    },
-    {
-      file: "inference.py",
-      churn_lines: 710,
-      modifications: 26
-    },
-    {
-      file: "tokenizer.py",
-      churn_lines: 336,
-      modifications: 4
-    },
-    {
-      file: "README.md",
-      churn_lines: 196,
-      modifications: 12
-    },
-    {
-      file: ".gitignore",
-      churn_lines: 189,
-      modifications: 10
-    },
-    {
-      file: "Makefile",
-      churn_lines: 158,
-      modifications: 6
-    },
-    {
-      file: "file-split.sh",
-      churn_lines: 50,
-      modifications: 2
-    },
-    {
-      file: "check-gpu.py",
-      churn_lines: 34,
-      modifications: 2
-    },
-    {
-      file: "pdf-to-text.py",
-      churn_lines: 14,
-      modifications: 2
-    }
+    { file: "input.txt", churn_lines: 627328, modifications: 4 },
+    { file: "train.py", churn_lines: 2136, modifications: 30 },
+    { file: "inference.py", churn_lines: 710, modifications: 26 },
+    { file: "tokenizer.py", churn_lines: 336, modifications: 4 },
+    { file: "README.md", churn_lines: 196, modifications: 12 },
+    { file: ".gitignore", churn_lines: 189, modifications: 10 },
+    { file: "Makefile", churn_lines: 158, modifications: 6 },
+    { file: "file-split.sh", churn_lines: 50, modifications: 2 },
+    { file: "check-gpu.py", churn_lines: 34, modifications: 2 },
+    { file: "pdf-to-text.py", churn_lines: 14, modifications: 2 }
   ],
   top_authors_by_churn: [
-    {
-      author: "Andre Torres",
-      churn_lines: 316531,
-      commits: 36
-    },
-    {
-      author: "Andreh1982",
-      churn_lines: 314626,
-      commits: 12
-    }
+    { author: "Andre Torres", churn_lines: 316531, commits: 36 },
+    { author: "Andreh1982", churn_lines: 314626, commits: 12 }
   ]
 };
+
+export default churnPolarisLLM;

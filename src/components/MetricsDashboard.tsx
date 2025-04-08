@@ -1,7 +1,6 @@
-import React from 'react';
-import { repoMap } from '../../src/data/repoMap';
-import ReworkDashboard from './ReworkDashboard';
 import CodeChurnDashboard from './CodeChurnDashboard';
+import ReworkDashboard from './ReworkDashboard';
+import { repoMap } from '../../src/data/repoMap';
 
 interface Props {
   repo: string;
@@ -20,11 +19,11 @@ const MetricsDashboard: React.FC<Props> = ({ repo, type }) => {
   }
 
   if (type === 'rework') {
-    return <ReworkDashboard repo={repo} />;
+    return <ReworkDashboard repo={repo} data={data} />;
   }
-  
+
   if (type === 'churn') {
-    return <CodeChurnDashboard repo={repo} />;
+    return <CodeChurnDashboard repo={repo} data={data} />;
   }
 
   return <div>❓ Tipo de métrica inválido: {type}</div>;

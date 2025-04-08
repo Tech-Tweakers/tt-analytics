@@ -1,56 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Plot from "react-plotly.js";
-import { repoMap } from '../../src/data/repoMap';
-
 
 interface Props {
   repo: string;
+  data: {
+    churn_summary: {
+      total_churn_lines: number;
+      total_commits: number;
+      average_churn_per_commit: number;
+    };
+    weekly_churn: {
+      week_start: string;
+      week_end: string;
+      churn_lines: number;
+      commits: number;
+    }[];
+    top_files_by_churn: {
+      file: string;
+      churn_lines: number;
+      modifications: number;
+    }[];
+    top_authors_by_churn: {
+      author: string;
+      churn_lines: number;
+      commits: number;
+    }[];
+  };
 }
 
-interface WeeklyChurn {
-  week_start: string;
-  week_end: string;
-  churn_lines: number;
-  commits: number;
-}
-
-interface FileChurn {
-  file: string;
-  churn_lines: number;
-  modifications: number;
-}
-
-interface AuthorChurn {
-  author: string;
-  churn_lines: number;
-  commits: number;
-}
-
-const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
-  const [weeklyChurn, setWeeklyChurn] = useState<WeeklyChurn[]>([]);
-  const [topFiles, setTopFiles] = useState<FileChurn[]>([]);
-  const [topAuthors, setTopAuthors] = useState<AuthorChurn[]>([]);
-  const [summary, setSummary] = useState({
+const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
+  const weeklyChurn = data.weekly_churn || [];
+  const topFiles = data.top_files_by_churn || [];
+  const topAuthors = data.top_authors_by_churn || [];
+  const summary = data.churn_summary || {
     total_churn_lines: 0,
     total_commits: 0,
     average_churn_per_commit: 0,
-  });
+  };
 
-  useEffect(() => {
-    const data = repoMap[repo];
-  
-    if (!data) {
-      console.error("❌ Repositório não encontrado no repoMap:", repo);
-      return;
-    }
-  
-    console.log("🚀 Dados carregados:", data);
-    setWeeklyChurn(data.weekly_churn || []);
-    setTopFiles(data.top_files_by_churn || []);
-    setTopAuthors(data.top_authors_by_churn || []);
-    setSummary(data.churn_summary || {});
-  }, [repo]);
-  
   return (
     <div>
       <h2>📊 Code Churn – {repo}</h2>
@@ -60,8 +47,7 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
         <br />
         <strong>Total de commits:</strong> {summary.total_commits}
         <br />
-        <strong>Média por commit:</strong> {summary.average_churn_per_commit}{" "}
-        linhas
+        <strong>Média por commit:</strong> {summary.average_churn_per_commit} linhas
       </div>
 
       <Plot
@@ -83,9 +69,9 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
         ]}
         layout={{
           title: "📈 Evolução semanal de churn e commits",
-          paper_bgcolor: '#1c1e26',
-          plot_bgcolor: '#1c1e26',
-          font: { color: '#eee' },
+          paper_bgcolor: "#1c1e26",
+          plot_bgcolor: "#1c1e26",
+          font: { color: "#eee" },
           barmode: "group",
           yaxis: { title: "Churn (linhas)" },
           yaxis2: {
@@ -108,9 +94,9 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
         ]}
         layout={{
           title: "🗂️ Top arquivos com mais churn",
-          paper_bgcolor: '#1c1e26',
-          plot_bgcolor: '#1c1e26',
-          font: { color: '#eee' },
+          paper_bgcolor: "#1c1e26",
+          plot_bgcolor: "#1c1e26",
+          font: { color: "#eee" },
           xaxis: { title: "Arquivo", tickangle: -45 },
           yaxis: { title: "Linhas churnadas" },
         }}
@@ -125,9 +111,9 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo }) => {
           },
         ]}
         layout={{
-          paper_bgcolor: '#1c1e26',
-          plot_bgcolor: '#1c1e26',
-          font: { color: '#eee' },
+          paper_bgcolor: "#1c1e26",
+          plot_bgcolor: "#1c1e26",
+          font: { color: "#eee" },
           title: "👤 Top autores por churn",
           xaxis: { title: "Autor" },
           yaxis: { title: "Linhas churnadas" },
