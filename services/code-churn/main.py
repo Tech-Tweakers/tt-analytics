@@ -12,7 +12,7 @@ BRANCH = os.getenv("BRANCH", "main")
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 # Caminho de saída
-output_dir = "static/data/repos"
+output_dir = "src/data/repos"
 os.makedirs(output_dir, exist_ok=True)
 json_file = os.path.join(output_dir, f"code_churn_{REPO}.json")
 
