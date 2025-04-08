@@ -123,7 +123,7 @@ def analyze_rework(commits):
         total_lines_rework += rework_changes_total
         total_lines_rework_recent += rework_changes_recent
 
-    output_js = f"static/data/repos/rework_rate_{REPO}.js"
+    output_js = f"src/data/repos/rework_rate_{REPO}.js"
     var_name = f"rework{REPO.replace('-', '').capitalize()}"
     save_as_js(output_js, {"threshold": THRESHOLD, "data": rework_data}, var_name)
 
