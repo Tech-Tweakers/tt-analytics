@@ -129,6 +129,7 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
               `🔥 Retrabalho recente: ${d.rework_changes_recent} (${d.rework_rate_recent.toFixed(2)}%)`
             ),
             hoverinfo: 'text',
+            textposition: 'none',
           },
         ]}
         layout={{
@@ -162,6 +163,7 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
               `🔥 Retrabalho total: ${d.rework_changes_total} (${d.rework_rate_total.toFixed(2)}%)`
             ),
             hoverinfo: 'text',
+            textposition: 'none',
           },
         ]}
         layout={{

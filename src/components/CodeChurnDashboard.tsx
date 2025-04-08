@@ -78,6 +78,7 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
                 `🧾 Commits: ${w.commits}`
             ),
             hoverinfo: "text",
+            textposition: 'none',
           },
         ]}
         layout={{
@@ -110,6 +111,7 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
                 `🛠️ Modificações: ${f.modifications}`
             ),
             hoverinfo: "text",
+            textposition: 'none',
           },
         ]}
         layout={{
@@ -135,6 +137,7 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
                 `🧾 Commits: ${a.commits}`
             ),
             hoverinfo: "text",
+            textposition: 'none',
           },
         ]}
         layout={{
