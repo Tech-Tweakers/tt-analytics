@@ -10,6 +10,13 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 <BrowserOnly fallback={<div>Carregando gráfico...</div>}>
   {() => {
     const CodeChurnDashboard = require('@site/src/components/CodeChurnDashboard').default;
-    return <CodeChurnDashboard repo="polaris-chatbot" />;
+    const repoMap = require('@site/src/data/repoMap').repoMap;
+    const repoId = "polaris-chatbot";
+
+    if (!repoMap[repoId] || !repoMap[repoId].churn) {
+      return <div>⚠️ Dados de churn indisponíveis para o repositório: {repoId}</div>;
+    }
+
+    return <CodeChurnDashboard repo={repoId} data={repoMap[repoId].churn} />;
   }}
 </BrowserOnly>

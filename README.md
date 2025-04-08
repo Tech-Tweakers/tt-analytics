@@ -48,7 +48,7 @@ tt-analytics/
 │       ├── rework_analysis_<repo>.json
 │       └── code_churn_<repo>.json
 ├── docs/
-│   ├── polaris-api-python/
+│   ├── polaris-python-api/
 │   │   ├── _category_.json
 │   │   ├── rework-rate.mdx
 │   │   └── code-churn.mdx

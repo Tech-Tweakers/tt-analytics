@@ -1,5 +1,5 @@
 ---
-title: Polaris Python API
+title: Rework Rate
 hide_title: true
 sidebar_label: Rework Rate
 sidebar_position: 2
@@ -7,9 +7,15 @@ sidebar_position: 2
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-<BrowserOnly fallback={<div>Carregando gráficos...</div>}>
+<BrowserOnly fallback={<div>Carregando gráfico...</div>}>
   {() => {
-    const ReworkGraphsWrapper = require('@site/src/components/ReworkDashboard').default;
-    return <ReworkGraphsWrapper repo="polaris-frontend" />;
+    const ReworkDashboard = require('@site/src/components/ReworkDashboard').default;
+    const { repoMap } = require('@site/src/data/repoMap');
+    return (
+      <ReworkDashboard
+        repo="polaris-frontend"
+        data={repoMap["polaris-frontend"].rework}
+      />
+    );
   }}
 </BrowserOnly>

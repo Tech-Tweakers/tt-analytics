@@ -28,12 +28,17 @@ interface Props {
   data: ReworkData;
 }
 
+
 const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
   const [rawData, setRawData] = useState<ReworkEntry[]>([]);
   const [filteredData, setFilteredData] = useState<ReworkEntry[]>([]);
   const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() - REWORK_DAYS)));
   const [endDate, setEndDate] = useState(new Date());
   const [csvReady, setCsvReady] = useState(false);
+
+  if (!data || !Array.isArray(data.data)) {
+    return <div>⚠️ Dados de retrabalho indisponíveis para o repositório: {repo}</div>;
+  }
 
   useEffect(() => {
     const sorted = data.data.sort(
