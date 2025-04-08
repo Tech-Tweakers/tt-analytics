@@ -22,14 +22,17 @@ jobs:
 
             if [[ "$filename" == code_churn_* ]]; then
               prefix="churn"
+              repo_name="${filename#code_churn_}"
             elif [[ "$filename" == rework_rate_* ]]; then
               prefix="rework"
+              repo_name="${filename#rework_rate_}"
             else
               continue
             fi
 
-            repo_name="${filename#${prefix}_}"
-            const_name="${prefix}$(echo "$repo_name" | tr -d '-' | tr -d '_' | sed -r 's/^(.)/\U\1/')"
+            # Nome da constante: churnPolarispythonapi ou reworkPolarischatbot etc
+            camel_repo=$(echo "$repo_name" | sed -r 's/[-_]//g' | sed -r 's/^(.)/\U\1/')
+            const_name="${prefix}${camel_repo}"
 
             echo "import $const_name from './$filename.js';" >> src/data/repoMap.js
             echo "$repo_name;$prefix;$const_name" >> temp_map.txt
@@ -49,7 +52,7 @@ jobs:
           echo "};" >> src/data/repoMap.js
           rm temp_map.txt
 
-      - name: 💾 Commitar repoMap
+      - name: 💾 Commitar repoMap.js
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
