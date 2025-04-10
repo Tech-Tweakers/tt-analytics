@@ -50,18 +50,32 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
 
   useEffect(() => {
     if (rawData.length === 0) return;
+  
     const inicio = new Date(startDate);
     const fim = new Date(endDate);
     inicio.setHours(0, 0, 0, 0);
     fim.setHours(23, 59, 59, 999);
-    
+  
     const filtered = rawData.filter(entry => {
       const d = new Date(entry.data);
-      return d >= inicio && d <= fim;
+      const isInRange = d >= inicio && d <= fim;
+  
+      if (!isInRange) {
+        console.log("⛔️ Ignorado:", {
+          data: entry.data,
+          parsed: d.toISOString(),
+          start: inicio.toISOString(),
+          end: fim.toISOString()
+        });
+      }
+  
+      return isInRange;
     });
+  
     setFilteredData(filtered);
     setCsvReady(true);
   }, [startDate, endDate, rawData]);
+  
 
   const exportCSV = () => {
     const csv = Papa.unparse(filteredData);
