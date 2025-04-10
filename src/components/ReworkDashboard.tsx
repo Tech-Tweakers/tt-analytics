@@ -42,19 +42,20 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
   }
 
   useEffect(() => {
-    const sorted = data.data.sort(
-      (a, b) => new Date(a.data).getTime() - new Date(b.data).getTime()
-    );
-    setRawData(sorted);
-
-    // Aplica o filtro padrão dos 21 dias
-    const defaultFiltered = sorted.filter(entry => {
+    if (rawData.length === 0) return;
+  
+    console.log('🔍 Intervalo selecionado:', startDate.toISOString(), endDate.toISOString());
+  
+    const filtered = rawData.filter(entry => {
       const d = new Date(entry.data);
+      console.log('📅 Data do commit:', entry.data, '| Interpretada como:', d.toISOString());
+  
       return d >= startDate && d <= endDate;
     });
-    setFilteredData(defaultFiltered);
+  
+    setFilteredData(filtered);
     setCsvReady(true);
-  }, [data]);
+  }, [startDate, endDate, rawData]);
 
   const atualizarFiltro = () => {
     const inicio = new Date(startInput);
