@@ -50,9 +50,14 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
 
   useEffect(() => {
     if (rawData.length === 0) return;
+    const inicio = new Date(startDate);
+    const fim = new Date(endDate);
+    inicio.setHours(0, 0, 0, 0);
+    fim.setHours(23, 59, 59, 999);
+    
     const filtered = rawData.filter(entry => {
       const d = new Date(entry.data);
-      return d >= startDate && d <= endDate;
+      return d >= inicio && d <= fim;
     });
     setFilteredData(filtered);
     setCsvReady(true);
