@@ -57,12 +57,19 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
   }, [data]);
 
   const atualizarFiltro = () => {
+    const inicio = new Date(startInput);
+    const fim = new Date(endInput);
+    inicio.setHours(0, 0, 0, 0);
+    fim.setHours(23, 59, 59, 999);
+  
     const filtered = rawData.filter(entry => {
       const d = new Date(entry.data);
-      return d >= startInput && d <= endInput;
+      console.log(`🔍 ${entry.data} → ${d} | dentro do range?`, d >= inicio && d <= fim);
+      return d >= inicio && d <= fim;
     });
-    setStartDate(startInput);
-    setEndDate(endInput);
+  
+    setStartDate(inicio);
+    setEndDate(fim);
     setFilteredData(filtered);
     setCsvReady(true);
   };
