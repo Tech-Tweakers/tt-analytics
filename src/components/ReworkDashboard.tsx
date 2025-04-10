@@ -28,12 +28,13 @@ interface Props {
   data: ReworkData;
 }
 
-
 const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
   const [rawData, setRawData] = useState<ReworkEntry[]>([]);
   const [filteredData, setFilteredData] = useState<ReworkEntry[]>([]);
   const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() - REWORK_DAYS)));
   const [endDate, setEndDate] = useState(new Date());
+  const [startInput, setStartInput] = useState(startDate);
+  const [endInput, setEndInput] = useState(endDate);
   const [csvReady, setCsvReady] = useState(false);
 
   if (!data || !Array.isArray(data.data)) {
@@ -45,18 +46,26 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
       (a, b) => new Date(a.data).getTime() - new Date(b.data).getTime()
     );
     setRawData(sorted);
-    setFilteredData(sorted);
-  }, [data]);
 
-  useEffect(() => {
-    if (rawData.length === 0) return;
-    const filtered = rawData.filter(entry => {
+    // Aplica o filtro padrão dos 21 dias
+    const defaultFiltered = sorted.filter(entry => {
       const d = new Date(entry.data);
       return d >= startDate && d <= endDate;
     });
+    setFilteredData(defaultFiltered);
+    setCsvReady(true);
+  }, [data]);
+
+  const atualizarFiltro = () => {
+    const filtered = rawData.filter(entry => {
+      const d = new Date(entry.data);
+      return d >= startInput && d <= endInput;
+    });
+    setStartDate(startInput);
+    setEndDate(endInput);
     setFilteredData(filtered);
     setCsvReady(true);
-  }, [startDate, endDate, rawData]);
+  };
 
   const exportCSV = () => {
     const csv = Papa.unparse(filteredData);
@@ -100,14 +109,17 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
   return (
     <div>
       <br />
-      <h3>Últimos 21 dias</h3>
+      <h3>Filtrar por intervalo</h3>
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: 20 }}>
         <label><strong>Início:</strong></label>
-        <DatePicker selected={startDate} onChange={setStartDate} />
+        <DatePicker selected={startInput} onChange={setStartInput} />
         <label><strong>Fim:</strong></label>
-        <DatePicker selected={endDate} onChange={setEndDate} />
+        <DatePicker selected={endInput} onChange={setEndInput} />
+        <button onClick={atualizarFiltro} style={{ padding: '2px 16px' }}>
+          🔄 Atualizar
+        </button>
         {csvReady && (
-          <button onClick={exportCSV} style={{ marginLeft: 'center', padding: '2px 16px' }}>
+          <button onClick={exportCSV} style={{ padding: '2px 16px' }}>
             📥 Exportar CSV
           </button>
         )}
@@ -119,7 +131,7 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
             x: dates,
             y: recentRates,
             type: 'bar',
-            name: `Rework Rate (21 dias)`,
+            name: `Rework Rate (Período)`,
             marker: { color: 'orange' },
             text: filteredData.map((d) =>
               `📅 Data: ${d.data}<br>` +
@@ -138,13 +150,11 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
           paper_bgcolor: '#1c1e26',
           plot_bgcolor: '#1c1e26',
           font: { color: '#eee' },
-          title: `📈 Rework Rate - Últimos ${REWORK_DAYS} dias`,
+          title: `📈 Rework Rate - Período Selecionado`,
           xaxis: { title: 'Data' },
           yaxis: { title: 'Rework Rate (%)' },
         }}
       />
-
-      ...
 
       <Plot
         data={[
@@ -152,9 +162,8 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
             x: fullDates,
             y: fullTotalRates,
             type: 'bar',
-            mode: 'lines+markers',
             name: 'Rework Rate Total',
-            marker: { color: 'light-blue' },
+            marker: { color: 'lightblue' },
             text: rawData.map((d) =>
               `📅 Data: ${d.data}<br>` +
               `🔁 SHA: ${d.sha.slice(0, 7)}<br>` +
