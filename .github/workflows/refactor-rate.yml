@@ -1,0 +1,78 @@
+name: "[GEN] - Refactor Rate Analysis"
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: 'Repositório a ser analisado'
+        required: true
+        default: 'polaris-python-api'
+      branch:
+        description: 'Branch a ser analisada'
+        required: true
+        default: 'main'
+      start_date:
+        description: 'Data inicial (YYYY-MM-DD) - Deixe em branco para analisar tudo'
+        required: false
+      end_date:
+        description: 'Data final (YYYY-MM-DD) - Deixe em branco para analisar até hoje'
+        required: false
+
+jobs:
+  analyze_refactor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛠️ Checkout do repositório
+        uses: actions/checkout@v3
+
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: 📦 Instalar dependências
+        run: pip install requests
+
+      - name: 🚀 Rodar análise de refatoração
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          export GITHUB_TOKEN=${{ secrets.GH_PAT }}
+          export OWNER="Tech-Tweakers"
+          export REPO=${{ github.event.inputs.repo }}
+          export BRANCH=${{ github.event.inputs.branch }}
+          export START_DATE=${{ github.event.inputs.start_date || '2000-01-01' }}
+          export END_DATE=${{ github.event.inputs.end_date || '' }}
+
+          echo "📅 Analisando commits de $START_DATE até $END_DATE"
+          python services/refactor-rate/refactor_rate.py
+
+      - name: 💾 Commitar arquivos .js
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'actions@github.com'
+          git add -f src/data/repos/refactor_rate_${{ github.event.inputs.repo }}.js || echo "⚠️ Nada para adicionar"
+          git commit -m "🔄 Atualizando métricas de refatoração (.js)" || echo "⚠️ Nenhuma alteração para commitar"
+          git push || echo "⚠️ Nenhuma alteração para push"
+
+  deploy_js:
+    needs: analyze_refactor
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout da branch gh-pages
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+
+      - name: 🔁 Sincronizar arquivos JS da main
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git fetch origin main
+          git checkout origin/main -- src/data/repos/refactor_rate_${{ github.event.inputs.repo }}.js
+
+          git add src/data/
+          git commit -m "📊 Sync JS de refatoração na gh-pages" || echo "⚠️ Nada novo pra commitar"
+          git push || echo "⚠️ Nenhuma alteração para push"
