@@ -46,7 +46,7 @@ jobs:
           export END_DATE=${{ github.event.inputs.end_date || '' }}
 
           echo "📅 Analisando commits de $START_DATE até $END_DATE"
-          python services/refactor-rate/refactor_rate.py
+          python services/refactor-rate/main.py
 
       - name: 💾 Commitar arquivos .js
         run: |
