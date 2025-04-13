@@ -18,7 +18,7 @@ HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 # 📁 Funções auxiliares
 def save_as_js(filename, data, var_name):
-    os.makedirs("src/data/repos", exist_ok=True)
+    os.makedirs("src/data/", exist_ok=True)
     with open(filename, "w") as f:
         f.write(f"const {var_name} = ")
         json.dump(data, f, indent=2)
@@ -132,7 +132,7 @@ def analyze_refactor(commits):
         })
 
     var_name = f"refactor{REPO.replace('-', '').capitalize()}"
-    js_file = f"src/data/repos/refactor_rate_{REPO}.js"
+    js_file = f"src/data/refactor_rate_{REPO}.js"
     save_as_js(js_file, {"data": refactor_data}, var_name)
 
     stats = {

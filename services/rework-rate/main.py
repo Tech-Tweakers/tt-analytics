@@ -17,7 +17,7 @@ REWORK_DAYS = 21
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 def save_as_js(filename, data, var_name):
-    os.makedirs("src/data/repos", exist_ok=True)
+    os.makedirs("src/data/", exist_ok=True)
     with open(filename, "w") as f:
         f.write(f"const {var_name} = ")
         json.dump(data, f, indent=2)
@@ -120,7 +120,7 @@ def analyze_rework(commits):
         total_lines_rework += rework_changes_total
         total_lines_rework_recent += rework_changes_recent
 
-    output_js = f"src/data/repos/rework_rate_{REPO}.js"
+    output_js = f"src/data/rework_rate_{REPO}.js"
     var_name = f"rework{REPO.replace('-', '').capitalize()}"
     save_as_js(output_js, {"threshold": THRESHOLD, "data": rework_data}, var_name)
 
