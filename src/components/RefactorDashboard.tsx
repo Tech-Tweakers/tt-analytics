@@ -23,6 +23,11 @@ interface Props {
   data: RefactorData;
 }
 
+console.log("📦 PROPS -> repo:", repo);
+console.log("📦 PROPS -> data:", data);
+console.log("📦 PROPS -> data.data:", data?.data);
+
+
 const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
   const [rawData, setRawData] = useState<RefactorEntry[]>([]);
   const [filteredData, setFilteredData] = useState<RefactorEntry[]>([]);
