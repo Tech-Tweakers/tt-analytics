@@ -1,0 +1,21 @@
+---
+title: Refactor Rate
+hide_title: true
+sidebar_label: Refactor Rate
+sidebar_position: 3
+---
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+<BrowserOnly fallback={<div>Carregando gráfico...</div>}>
+  {() => {
+    const RefactorDashboard = require('@site/src/components/RefactorDashboard').default;
+    const { repoMap } = require('@site/src/data/repoMap');
+    return (
+      <RefactorDashboard
+        repo="polaris-python-api"
+        data={repoMap["polaris-python-api"].refactor}
+      />
+    );
+  }}
+</BrowserOnly>
