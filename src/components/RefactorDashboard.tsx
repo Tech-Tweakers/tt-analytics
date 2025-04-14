@@ -142,8 +142,42 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
           ))}
         </tbody>
       </table>
+
+      <Plot
+        data={[
+            {
+            x: rawData.map(d => d.data),
+            y: rawData.map(d => (d.refactor_lines / d.total_lines) * 100),
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Refactor Rate Geral',
+            marker: { color: 'deepskyblue' },
+            text: rawData.map((d) =>
+                `📅 Data: ${d.data}<br>` +
+                `🔁 SHA: ${d.sha.slice(0, 7)}<br>` +
+                `👤 Autor: ${d.autor}<br>` +
+                `📊 Linhas totais: ${d.total_lines}<br>` +
+                `🛠️ Refatoradas: ${d.refactor_lines} (${((d.refactor_lines / d.total_lines) * 100).toFixed(2)}%)<br>` +
+                `📂 Arquivos: ${d.arquivos_refatorados.join(", ")}`
+            ),
+            hoverinfo: 'text',
+            textposition: 'none',
+            },
+        ]}
+        layout={{
+            width: 1000,
+            height: 400,
+            paper_bgcolor: '#1c1e26',
+            plot_bgcolor: '#1c1e26',
+            font: { color: '#eee' },
+            title: '📈 Refactor Rate Geral (Histórico Completo)',
+            xaxis: { title: 'Data' },
+            yaxis: { title: 'Refactor Rate (%)' },
+        }}
+        />
     </div>
   );
+
 };
 
 export default RefactorDashboard;
