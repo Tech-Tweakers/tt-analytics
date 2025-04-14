@@ -153,7 +153,7 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
             {
             x: rawData.map(d => d.data),
             y: rawData.map(d => (d.refactor_lines / d.total_lines) * 100),
-            type: 'scatter',
+            type: 'bar',
             mode: 'lines+markers',
             name: 'Refactor Rate Geral',
             marker: { color: 'deepskyblue' },
