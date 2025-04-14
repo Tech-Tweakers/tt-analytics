@@ -57,7 +57,7 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
     fim.setHours(23, 59, 59, 999);
   
     const filtered = rawData.filter(entry => {
-      const d = new Date(entry.data);
+      const d = new Date(`${entry.data}T00:00:00`);
       const isInRange = d >= inicio && d <= fim;
   
       if (!isInRange) {
@@ -75,7 +75,7 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
     setFilteredData(filtered);
     setCsvReady(true);
   }, [startDate, endDate, rawData]);
-  
+    
 
   const exportCSV = () => {
     const csv = Papa.unparse(filteredData);
