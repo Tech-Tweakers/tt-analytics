@@ -23,10 +23,6 @@ interface Props {
   data: RefactorData;
 }
 
-console.log("📦 PROPS -> repo:", repo);
-console.log("📦 PROPS -> data:", data);
-console.log("📦 PROPS -> data.data:", data?.data);
-
 
 const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
   const [rawData, setRawData] = useState<RefactorEntry[]>([]);
@@ -34,6 +30,10 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
   const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() - 21)));
   const [endDate, setEndDate] = useState(new Date());
   const [csvReady, setCsvReady] = useState(false);
+
+  console.log("📦 PROPS -> repo:", repo);
+  console.log("📦 PROPS -> data:", data);
+  console.log("📦 PROPS -> data.data:", data?.data);
 
   useEffect(() => {
     if (!data || !Array.isArray(data.data)) return;
