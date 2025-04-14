@@ -6,6 +6,8 @@ import churnPolarisfrontend from './code_churn_polaris-frontend.js';
 import churnPolarisllm from './code_churn_polaris-llm.js';
 import churnPolarispythonapi from './code_churn_polaris-python-api.js';
 import churnTtanalytics from './code_churn_tt-analytics.js';
+import refactorPolarisllm from './refactor_rate_polaris-llm.js';
+import refactorPolarispythonapi from './refactor_rate_polaris-python-api.js';
 import reworkPolarisbaby from './rework_rate_polaris-baby.js';
 import reworkPolarischatbot from './rework_rate_polaris-chatbot.js';
 import reworkPolarisfrontend from './rework_rate_polaris-frontend.js';
@@ -28,10 +30,12 @@ export const repoMap = {
   },
   'polaris-llm': {
     churn: churnPolarisllm,
+    refactor: refactorPolarisllm,
     rework: reworkPolarisllm,
   },
   'polaris-python-api': {
     churn: churnPolarispythonapi,
+    refactor: refactorPolarispythonapi,
     rework: reworkPolarispythonapi,
   },
   'tt-analytics': {
