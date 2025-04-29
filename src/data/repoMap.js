@@ -1,53 +1,53 @@
 // ⚡️ Arquivo gerado automaticamente pelo GitHub Actions
 
-import churnPolarisbaby from './code_churn_polaris-baby.js';
-import churnPolarischatbot from './code_churn_polaris-chatbot.js';
-import churnPolarisfrontend from './code_churn_polaris-frontend.js';
-import churnPolarisllm from './code_churn_polaris-llm.js';
-import churnPolarispythonapi from './code_churn_polaris-python-api.js';
-import churnTtanalytics from './code_churn_tt-analytics.js';
-import refactorPolarisbaby from './refactor_rate_polaris-baby.js';
-import refactorPolarischatbot from './refactor_rate_polaris-chatbot.js';
-import refactorPolarisfrontend from './refactor_rate_polaris-frontend.js';
-import refactorPolarisllm from './refactor_rate_polaris-llm.js';
-import refactorPolarispythonapi from './refactor_rate_polaris-python-api.js';
-import refactorTtanalytics from './refactor_rate_tt-analytics.js';
-import reworkPolarisbaby from './rework_rate_polaris-baby.js';
-import reworkPolarischatbot from './rework_rate_polaris-chatbot.js';
-import reworkPolarisfrontend from './rework_rate_polaris-frontend.js';
-import reworkPolarisllm from './rework_rate_polaris-llm.js';
-import reworkPolarispythonapi from './rework_rate_polaris-python-api.js';
-import reworkTtanalytics from './rework_rate_tt-analytics.js';
+import churnpolarisbaby from './code_churn_polaris-baby.js';
+import churnpolarischatbot from './code_churn_polaris-chatbot.js';
+import churnpolarisfrontend from './code_churn_polaris-frontend.js';
+import churnpolarisllm from './code_churn_polaris-llm.js';
+import churnpolarispythonapi from './code_churn_polaris-python-api.js';
+import churnttanalytics from './code_churn_tt-analytics.js';
+import refactorpolarisbaby from './refactor_rate_polaris-baby.js';
+import refactorpolarischatbot from './refactor_rate_polaris-chatbot.js';
+import refactorpolarisfrontend from './refactor_rate_polaris-frontend.js';
+import refactorpolarisllm from './refactor_rate_polaris-llm.js';
+import refactorpolarispythonapi from './refactor_rate_polaris-python-api.js';
+import refactorttanalytics from './refactor_rate_tt-analytics.js';
+import reworkpolarisbaby from './rework_rate_polaris-baby.js';
+import reworkpolarischatbot from './rework_rate_polaris-chatbot.js';
+import reworkpolarisfrontend from './rework_rate_polaris-frontend.js';
+import reworkpolarisllm from './rework_rate_polaris-llm.js';
+import reworkpolarispythonapi from './rework_rate_polaris-python-api.js';
+import reworkttanalytics from './rework_rate_tt-analytics.js';
 
 export const repoMap = {
   'polaris-baby': {
-    churn: churnPolarisbaby,
-    refactor: refactorPolarisbaby,
-    rework: reworkPolarisbaby,
+    churn: churnpolarisbaby,
+    refactor: refactorpolarisbaby,
+    rework: reworkpolarisbaby,
   },
   'polaris-chatbot': {
-    churn: churnPolarischatbot,
-    refactor: refactorPolarischatbot,
-    rework: reworkPolarischatbot,
+    churn: churnpolarischatbot,
+    refactor: refactorpolarischatbot,
+    rework: reworkpolarischatbot,
   },
   'polaris-frontend': {
-    churn: churnPolarisfrontend,
-    refactor: refactorPolarisfrontend,
-    rework: reworkPolarisfrontend,
+    churn: churnpolarisfrontend,
+    refactor: refactorpolarisfrontend,
+    rework: reworkpolarisfrontend,
   },
   'polaris-llm': {
-    churn: churnPolarisllm,
-    refactor: refactorPolarisllm,
-    rework: reworkPolarisllm,
+    churn: churnpolarisllm,
+    refactor: refactorpolarisllm,
+    rework: reworkpolarisllm,
   },
   'polaris-python-api': {
-    churn: churnPolarispythonapi,
-    refactor: refactorPolarispythonapi,
-    rework: reworkPolarispythonapi,
+    churn: churnpolarispythonapi,
+    refactor: refactorpolarispythonapi,
+    rework: reworkpolarispythonapi,
   },
   'tt-analytics': {
-    churn: churnTtanalytics,
-    refactor: refactorTtanalytics,
-    rework: reworkTtanalytics,
+    churn: churnttanalytics,
+    refactor: refactorttanalytics,
+    rework: reworkttanalytics,
   },
 };
