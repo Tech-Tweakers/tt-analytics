@@ -33,9 +33,9 @@ jobs:
               continue
             fi
 
-            # Nome da constante no estilo: churnPolarispythonapi, reworkPolarischatbot, etc
-            camel_repo=$(echo "$repo_name" | sed -r 's/[-_]//g' | sed -r 's/^(.)/\U\1/')
-            const_name="${prefix}${camel_repo}"
+            # Nome da constante no estilo: churnpolarischatbot (tudo minúsculo, sem _ ou -)
+            clean_repo=$(echo "$repo_name" | tr '[:upper:]' '[:lower:]' | tr -d '_-')
+            const_name="${prefix}${clean_repo}"
 
             echo "import $const_name from './$filename.js';" >> src/data/repoMap.js
             echo "$repo_name;$prefix;$const_name" >> temp_map.txt
