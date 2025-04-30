@@ -3,10 +3,10 @@ name: "[GEN] - Full Repo Analysis & Deploy"
 on:
   workflow_dispatch:
     inputs:
-      repo:
-        description: 'Repositório a ser analisado'
+      repos:
+        description: 'Lista de repositórios separados por vírgula'
         required: true
-        default: 'polaris-python-api'
+        default: 'polaris-python-api,ecaterminal'
       branch:
         description: 'Branch a ser analisada'
         required: true
@@ -15,12 +15,6 @@ on:
         description: 'Mínimo de alterações p/ retrabalho (Rework Rate)'
         required: true
         default: '3'
-      start_date:
-        description: 'Data inicial (YYYY-MM-DD) - opcional'
-        required: false
-      end_date:
-        description: 'Data final (YYYY-MM-DD) - opcional'
-        required: false
 
 jobs:
   full_pipeline:
@@ -38,74 +32,52 @@ jobs:
       - name: 📦 Instalar dependências
         run: pip install requests pandas plotly kaleido
 
-      - name: 📁 Gerar páginas MDX
-        run: |
-          export REPOS=${{ github.event.inputs.repo }}
-          chmod +x services/generate-mdx/mdx-gen.sh
-          services/generate-mdx/mdx-gen.sh
-          
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git pull origin main --rebase || echo "⚠️ Pull falhou, seguindo mesmo assim"
-          git add docs/
-          git commit -m "📊 Cria nova página de métricas para $REPOS" || echo "⚠️ Nenhuma alteração para commitar"
-          git push || echo "⚠️ Nenhuma alteração para push"
-
-      - name: 🔁 Analisar Rework Rate
+      - name: 🔁 Executar pipeline para cada repositório
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          export OWNER="Tech-Tweakers"
-          export REPO=${{ github.event.inputs.repo }}
-          export BRANCH=${{ github.event.inputs.branch }}
-          export THRESHOLD=${{ github.event.inputs.threshold }}
-          export START_DATE=${{ github.event.inputs.start_date || '2000-01-01' }}
-          export END_DATE=${{ github.event.inputs.end_date || '' }}
+          REPOS="${{ github.event.inputs.repos }}"
+          BRANCH="${{ github.event.inputs.branch }}"
+          THRESHOLD="${{ github.event.inputs.threshold }}"
 
-          echo "📅 Rework: $START_DATE → $END_DATE"
-          python services/rework-rate/main.py
+          for REPO in $(echo "$REPOS" | tr ',' ' '); do
+            echo "🚀 Processando $REPO..."
 
-          git add src/data/rework_rate_${REPO}.js
-          git commit -m "🔄 Rework Rate atualizado para ${REPO}" || echo "⚠️ Nenhuma alteração para commitar"
-          git push || echo "⚠️ Nenhuma alteração para push"
+            # 🔁 MDX Pages
+            export REPOS=$REPO
+            chmod +x services/generate-mdx/mdx-gen.sh
+            services/generate-mdx/mdx-gen.sh
+            git add docs/
+            git commit -m "📊 Cria/atualiza páginas para $REPO" || echo "⚠️ Nada para commitar"
 
-      - name: 🔁 Analisar Code Churn
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-        run: |
-          export OWNER="Tech-Tweakers"
-          export REPO=${{ github.event.inputs.repo }}
+            # 🔁 Rework Rate
+            export OWNER="Tech-Tweakers"
+            export REPO=$REPO
+            export BRANCH=$BRANCH
+            export THRESHOLD=$THRESHOLD
 
-          python services/code-churn/main.py
+            python services/rework-rate/main.py
+            git add src/data/rework_rate_${REPO}.js
+            git commit -m "🔄 Rework Rate atualizado para $REPO" || echo "⚠️ Nada novo"
 
-          git add src/data/code_churn_${REPO}.js
-          git commit -m "📊 Code Churn atualizado para ${REPO}" || echo "⚠️ Nenhuma alteração para commitar"
-          git push || echo "⚠️ Nenhuma alteração para push"
+            # 🔁 Code Churn
+            python services/code-churn/main.py
+            git add src/data/code_churn_${REPO}.js
+            git commit -m "📊 Code Churn atualizado para $REPO" || echo "⚠️ Nada novo"
 
-      - name: 🔁 Analisar Refactor Rate
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-        run: |
-          export OWNER="Tech-Tweakers"
-          export REPO=${{ github.event.inputs.repo }}
-          export BRANCH=${{ github.event.inputs.branch }}
-          export START_DATE=${{ github.event.inputs.start_date || '2000-01-01' }}
-          export END_DATE=${{ github.event.inputs.end_date || '' }}
-
-          python services/refactor-rate/main.py
-
-          git add src/data/refactor_rate_${REPO}.js
-          git commit -m "🔧 Refactor Rate atualizado para ${REPO}" || echo "⚠️ Nenhuma alteração para commitar"
-          git push || echo "⚠️ Nenhuma alteração para push"
+            # 🔁 Refactor Rate
+            python services/refactor-rate/main.py
+            git add src/data/refactor_rate_${REPO}.js
+            git commit -m "🔧 Refactor Rate atualizado para $REPO" || echo "⚠️ Nada novo"
+          done
 
       - name: 🧠 Regenerar repoMap
         run: |
           chmod +x services/generate-mdx/repomap-gen.sh
           services/generate-mdx/repomap-gen.sh
-
           git add src/data/repoMap.js
-          git commit -m "🧠 Atualiza repoMap após análises para $REPO" || echo "⚠️ Nada novo pra commitar"
-          git push || echo "⚠️ Nenhuma alteração para push"
+          git commit -m "🧠 repoMap atualizado após rodada completa" || echo "⚠️ Nada novo"
+          git push || echo "⚠️ Nada para push"
 
       - name: 🏗️ Build do Docusaurus
         run: npm ci && npm run build
