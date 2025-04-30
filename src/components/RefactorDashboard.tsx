@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import Papa from 'papaparse';
 
 type RefactorEntry = {
@@ -23,17 +21,10 @@ interface Props {
   data: RefactorData;
 }
 
-
 const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
   const [rawData, setRawData] = useState<RefactorEntry[]>([]);
   const [filteredData, setFilteredData] = useState<RefactorEntry[]>([]);
-  const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() - 21)));
-  const [endDate, setEndDate] = useState(new Date());
   const [csvReady, setCsvReady] = useState(false);
-
-  console.log("📦 PROPS -> repo:", repo);
-  console.log("📦 PROPS -> data:", data);
-  console.log("📦 PROPS -> data.data:", data?.data);
 
   useEffect(() => {
     if (!data || !Array.isArray(data.data)) return;
@@ -43,8 +34,9 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
   }, [data]);
 
   useEffect(() => {
-    const inicio = new Date(startDate);
-    const fim = new Date(endDate);
+    const fim = new Date();
+    const inicio = new Date();
+    inicio.setDate(fim.getDate() - 21);
     inicio.setHours(0, 0, 0, 0);
     fim.setHours(23, 59, 59, 999);
 
@@ -55,7 +47,7 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
 
     setFilteredData(filtered);
     setCsvReady(true);
-  }, [startDate, endDate, rawData]);
+  }, [rawData]);
 
   const exportCSV = () => {
     const csv = Papa.unparse(filteredData);
@@ -70,7 +62,7 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
   };
 
   const dates = filteredData.map(d => d.data);
-  const refactorRates = filteredData.map(d => d.refactor_lines / d.total_lines * 100);
+  const refactorRates = filteredData.map(d => (d.refactor_lines / d.total_lines) * 100);
 
   const authorStats = filteredData.reduce((acc, item) => {
     const author = item.autor || 'Desconhecido';
@@ -86,17 +78,13 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
     <div>
       <br />
       <h3>Refactor Rate - Últimos 21 dias</h3>
-      <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: 20 }}>
-        <label><strong>Início:</strong></label>
-        <DatePicker selected={startDate} onChange={setStartDate} />
-        <label><strong>Fim:</strong></label>
-        <DatePicker selected={endDate} onChange={setEndDate} />
-        {csvReady && (
-          <button onClick={exportCSV} style={{ marginLeft: 'center', padding: '2px 16px' }}>
+      {csvReady && (
+        <div style={{ marginBottom: 20 }}>
+          <button onClick={exportCSV} style={{ padding: '2px 16px' }}>
             📥 Exportar CSV
           </button>
-        )}
-      </div>
+        </div>
+      )}
 
       <Plot
         data={[
@@ -150,7 +138,7 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
 
       <Plot
         data={[
-            {
+          {
             x: rawData.map(d => d.data),
             y: rawData.map(d => (d.refactor_lines / d.total_lines) * 100),
             type: 'bar',
@@ -158,49 +146,30 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
             name: 'Refactor Rate Geral',
             marker: { color: 'deepskyblue' },
             text: rawData.map((d) =>
-                `📅 Data: ${d.data}<br>` +
-                `🔁 SHA: ${d.sha.slice(0, 7)}<br>` +
-                `👤 Autor: ${d.autor}<br>` +
-                `📊 Linhas totais: ${d.total_lines}<br>` +
-                `🛠️ Refatoradas: ${d.refactor_lines} (${((d.refactor_lines / d.total_lines) * 100).toFixed(2)}%)<br>` +
-                `📂 Arquivos: ${d.arquivos_refatorados.join(", ")}`
+              `📅 Data: ${d.data}<br>` +
+              `🔁 SHA: ${d.sha.slice(0, 7)}<br>` +
+              `👤 Autor: ${d.autor}<br>` +
+              `📊 Linhas totais: ${d.total_lines}<br>` +
+              `🛠️ Refatoradas: ${d.refactor_lines} (${((d.refactor_lines / d.total_lines) * 100).toFixed(2)}%)<br>` +
+              `📂 Arquivos: ${d.arquivos_refatorados.join(", ")}`
             ),
             hoverinfo: 'text',
             textposition: 'none',
-            },
+          },
         ]}
         layout={{
-            width: 1000,
-            height: 400,
-            paper_bgcolor: '#1c1e26',
-            plot_bgcolor: '#1c1e26',
-            font: { color: '#eee' },
-            title: '📈 Refactor Rate Geral (Histórico Completo)',
-            xaxis: { title: 'Data' },
-            yaxis: { title: 'Refactor Rate (%)' },
+          width: 1000,
+          height: 400,
+          paper_bgcolor: '#1c1e26',
+          plot_bgcolor: '#1c1e26',
+          font: { color: '#eee' },
+          title: '📈 Refactor Rate Geral (Histórico Completo)',
+          xaxis: { title: 'Data' },
+          yaxis: { title: 'Refactor Rate (%)' },
         }}
-        />
-        <h3>📚 Top Autores (Histórico Completo):</h3>
-        <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
-          <thead style={{ background: '#2a2a2a' }}>
-            <tr>
-              <th style={{ textAlign: 'left', padding: 8 }}>Autor</th>
-              <th style={{ textAlign: 'left', padding: 8 }}>Total de Linhas Refatoradas</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rankedAuthors.map(({ autor, total }, index) => (
-              <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
-                <td style={{ padding: 8 }}>{autor}</td>
-                <td style={{ padding: 8 }}>{Number(total)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      />
     </div>
-    
   );
-
 };
 
 export default RefactorDashboard;

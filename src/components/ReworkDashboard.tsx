@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import Papa from 'papaparse';
 
 const REWORK_DAYS = 21;
@@ -28,12 +26,9 @@ interface Props {
   data: ReworkData;
 }
 
-
 const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
   const [rawData, setRawData] = useState<ReworkEntry[]>([]);
   const [filteredData, setFilteredData] = useState<ReworkEntry[]>([]);
-  const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() - REWORK_DAYS)));
-  const [endDate, setEndDate] = useState(new Date());
   const [csvReady, setCsvReady] = useState(false);
 
   if (!data || !Array.isArray(data.data)) {
@@ -49,33 +44,20 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
   }, [data]);
 
   useEffect(() => {
-    if (rawData.length === 0) return;
-  
-    const inicio = new Date(startDate);
-    const fim = new Date(endDate);
+    const fim = new Date();
+    const inicio = new Date();
+    inicio.setDate(fim.getDate() - REWORK_DAYS);
     inicio.setHours(0, 0, 0, 0);
     fim.setHours(23, 59, 59, 999);
-  
+
     const filtered = rawData.filter(entry => {
       const d = new Date(`${entry.data}T00:00:00`);
-      const isInRange = d >= inicio && d <= fim;
-  
-      if (!isInRange) {
-        console.log("⛔️ Ignorado:", {
-          data: entry.data,
-          parsed: d.toISOString(),
-          start: inicio.toISOString(),
-          end: fim.toISOString()
-        });
-      }
-  
-      return isInRange;
+      return d >= inicio && d <= fim;
     });
-  
+
     setFilteredData(filtered);
     setCsvReady(true);
-  }, [startDate, endDate, rawData]);
-    
+  }, [rawData]);
 
   const exportCSV = () => {
     const csv = Papa.unparse(filteredData);
@@ -119,18 +101,14 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
   return (
     <div>
       <br />
-      <h3>Últimos 21 dias</h3>
-      <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: 20 }}>
-        <label><strong>Início:</strong></label>
-        <DatePicker selected={startDate} onChange={setStartDate} />
-        <label><strong>Fim:</strong></label>
-        <DatePicker selected={endDate} onChange={setEndDate} />
-        {csvReady && (
-          <button onClick={exportCSV} style={{ marginLeft: 'center', padding: '2px 16px' }}>
+      <h3>Rework Rate - Últimos {REWORK_DAYS} dias</h3>
+      {csvReady && (
+        <div style={{ marginBottom: 20 }}>
+          <button onClick={exportCSV} style={{ padding: '2px 16px' }}>
             📥 Exportar CSV
           </button>
-        )}
-      </div>
+        </div>
+      )}
 
       <Plot
         data={[
@@ -168,7 +146,7 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
         <thead style={{ background: '#2a2a2a' }}>
           <tr>
             <th style={{ textAlign: 'left', padding: 8 }}>Autor</th>
-            <th style={{ textAlign: 'left', padding: 8 }}>Linhas de Retrabalho (21d)</th>
+            <th style={{ textAlign: 'left', padding: 8 }}>Linhas de Retrabalho</th>
           </tr>
         </thead>
         <tbody>
@@ -180,7 +158,7 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
           ))}
         </tbody>
       </table>
-      
+
       <Plot
         data={[
           {
@@ -189,7 +167,7 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
             type: 'bar',
             mode: 'lines+markers',
             name: 'Rework Rate Total',
-            marker: { color: 'light-blue' },
+            marker: { color: 'lightblue' },
             text: rawData.map((d) =>
               `📅 Data: ${d.data}<br>` +
               `🔁 SHA: ${d.sha.slice(0, 7)}<br>` +
@@ -213,7 +191,7 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
         }}
       />
 
-      <h3>🏅 Top Autores:</h3>
+      <h3>🏅 Top Autores (Histórico Completo):</h3>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
         <thead style={{ background: '#2a2a2a' }}>
           <tr>
