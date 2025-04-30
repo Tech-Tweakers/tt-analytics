@@ -180,7 +180,25 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
             yaxis: { title: 'Refactor Rate (%)' },
         }}
         />
+        <h3>📚 Top Autores (Histórico Completo):</h3>
+        <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
+          <thead style={{ background: '#2a2a2a' }}>
+            <tr>
+              <th style={{ textAlign: 'left', padding: 8 }}>Autor</th>
+              <th style={{ textAlign: 'left', padding: 8 }}>Total de Linhas Refatoradas</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rankedAuthors.map(({ autor, total }, index) => (
+              <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
+                <td style={{ padding: 8 }}>{autor}</td>
+                <td style={{ padding: 8 }}>{Number(total)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
     </div>
+    
   );
 
 };

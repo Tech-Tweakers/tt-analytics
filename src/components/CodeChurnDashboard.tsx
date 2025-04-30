@@ -99,6 +99,26 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
         }}
       />
 
+      <h3>📅 Detalhamento Semanal</h3>
+        <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '3rem' }}>
+          <thead style={{ background: '#2a2a2a' }}>
+            <tr>
+              <th style={{ padding: 8, textAlign: 'left' }}>Semana</th>
+              <th style={{ padding: 8, textAlign: 'left' }}>Linhas Churnadas</th>
+              <th style={{ padding: 8, textAlign: 'left' }}>Commits</th>
+            </tr>
+          </thead>
+          <tbody>
+            {weeklyChurn.map((w, index) => (
+              <tr key={index} style={{ borderBottom: '1px solid #444' }}>
+                <td style={{ padding: 8 }}>{w.week_start} → {w.week_end}</td>
+                <td style={{ padding: 8 }}>{w.churn_lines}</td>
+                <td style={{ padding: 8 }}>{w.commits}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
       <Plot
         data={[
           {
@@ -125,6 +145,26 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
         }}
       />
 
+      <h3>🗂️ Top Arquivos com Mais Churn</h3>
+      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '3rem' }}>
+        <thead style={{ background: '#2a2a2a' }}>
+          <tr>
+            <th style={{ padding: 8, textAlign: 'left' }}>Arquivo</th>
+            <th style={{ padding: 8, textAlign: 'left' }}>Linhas Churnadas</th>
+            <th style={{ padding: 8, textAlign: 'left' }}>Modificações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {topFiles.map((f, index) => (
+            <tr key={index} style={{ borderBottom: '1px solid #444' }}>
+              <td style={{ padding: 8 }}>{f.file}</td>
+              <td style={{ padding: 8 }}>{f.churn_lines}</td>
+              <td style={{ padding: 8 }}>{f.modifications}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       <Plot
         data={[
           {
@@ -150,6 +190,26 @@ const CodeChurnDashboard: React.FC<Props> = ({ repo, data }) => {
           yaxis: { title: "Linhas churnadas" },
         }}
       />
+
+      <h3>👤 Top Autores com Mais Churn</h3>
+      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '3rem' }}>
+        <thead style={{ background: '#2a2a2a' }}>
+          <tr>
+            <th style={{ padding: 8, textAlign: 'left' }}>Autor</th>
+            <th style={{ padding: 8, textAlign: 'left' }}>Linhas Churnadas</th>
+            <th style={{ padding: 8, textAlign: 'left' }}>Commits</th>
+          </tr>
+        </thead>
+        <tbody>
+          {topAuthors.map((a, index) => (
+            <tr key={index} style={{ borderBottom: '1px solid #444' }}>
+              <td style={{ padding: 8 }}>{a.author}</td>
+              <td style={{ padding: 8 }}>{a.churn_lines}</td>
+              <td style={{ padding: 8 }}>{a.commits}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
