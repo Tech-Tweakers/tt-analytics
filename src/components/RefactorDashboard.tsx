@@ -118,7 +118,6 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
         }}
       />
 
-      <h3>🏅 Top Autores de Refatoração:</h3>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
         <thead style={{ background: '#2a2a2a' }}>
           <tr>
@@ -136,6 +135,8 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
         </tbody>
       </table>
 
+      <br />
+      <h3>Refactor Rate - Geral</h3>
       <Plot
         data={[
           {
@@ -168,6 +169,33 @@ const RefactorDashboard: React.FC<Props> = ({ repo, data }) => {
           yaxis: { title: 'Refactor Rate (%)' },
         }}
       />
+
+      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
+        <thead style={{ background: '#2a2a2a' }}>
+          <tr>
+            <th style={{ textAlign: 'left', padding: 8 }}>Autor</th>
+            <th style={{ textAlign: 'left', padding: 8 }}>Total de Linhas Refatoradas</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(
+            rawData.reduce((acc, item) => {
+              const author = item.autor || 'Desconhecido';
+              acc[author] = (acc[author] || 0) + item.refactor_lines;
+              return acc;
+            }, {} as Record<string, number>)
+          )
+            .map(([autor, total]) => ({ autor, total }))
+            .sort((a, b) => b.total - a.total)
+            .slice(0, 10)
+            .map(({ autor, total }, index) => (
+              <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
+                <td style={{ padding: 8 }}>{autor}</td>
+                <td style={{ padding: 8 }}>{Number(total)}</td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
     </div>
   );
 };

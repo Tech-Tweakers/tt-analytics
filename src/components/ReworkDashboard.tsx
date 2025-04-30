@@ -102,14 +102,6 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
     <div>
       <br />
       <h3>Rework Rate - Últimos {REWORK_DAYS} dias</h3>
-      {csvReady && (
-        <div style={{ marginBottom: 20 }}>
-          <button onClick={exportCSV} style={{ padding: '2px 16px' }}>
-            📥 Exportar CSV
-          </button>
-        </div>
-      )}
-
       <Plot
         data={[
           {
@@ -141,7 +133,6 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
         }}
       />
 
-      <h3>📆 Top Autores (Últimos {REWORK_DAYS} dias):</h3>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
         <thead style={{ background: '#2a2a2a' }}>
           <tr>
@@ -158,7 +149,9 @@ const ReworkDashboard: React.FC<Props> = ({ repo, data }) => {
           ))}
         </tbody>
       </table>
-
+      
+      <br />
+      <h3>Rework Rate - Geral</h3>
       <Plot
         data={[
           {
