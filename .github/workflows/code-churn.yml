@@ -59,3 +59,8 @@ jobs:
           git add src/data/
           git commit -m "📊 Sync JS de code churn na gh-pages" || echo "⚠️ Nada novo pra commitar"
           git push || echo "⚠️ Nenhuma alteração para push"
+      - name: 🚀 Disparar deploy do portal
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: deploy-portal
