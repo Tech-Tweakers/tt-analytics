@@ -1,0 +1,21 @@
+---
+title: Rework Rate
+hide_title: true
+sidebar_label: Rework Rate
+sidebar_position: 4
+---
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+<BrowserOnly fallback={<div>Carregando gráfico...</div>}>
+  {() => {
+    const ReworkDashboard = require('@site/src/components/ReworkDashboard').default;
+    const { repoMap } = require('@site/src/data/repoMap');
+    return (
+      <ReworkDashboard
+        repo="polaris-frontend-vue"
+        data={repoMap["polaris-frontend-vue"].rework}
+      />
+    );
+  }}
+</BrowserOnly>
