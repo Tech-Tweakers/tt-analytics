@@ -1,6 +1,550 @@
-const reworkPolarispythonapi = {
+const reworkpolarispythonapi = {
   "threshold": 3,
   "data": [
+    {
+      "data": "2025-04-28",
+      "sha": "766ae7ef34a8cc4265b7e9bed4fa4717e4512b40",
+      "autor": "Andreh1982",
+      "total_changes": 68,
+      "rework_changes_total": 68,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 68,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "polaris_api/main.py",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-28",
+      "sha": "7458e9871850d424c04ca948e2699774de0d9376",
+      "autor": "Andre Torres",
+      "total_changes": 14,
+      "rework_changes_total": 14,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 14,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "polaris_api/main.py",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-28",
+      "sha": "f710311ab7f78525b0244099c406486550ebf2a7",
+      "autor": "Andre Torres",
+      "total_changes": 62,
+      "rework_changes_total": 60,
+      "rework_rate_total": 96.7741935483871,
+      "rework_changes_recent": 60,
+      "rework_rate_recent": 96.7741935483871,
+      "arquivos_modificados": [
+        "polaris_api/main.py",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "d0db89c2c3f72365e6dc5bffc10a9cd5940c2596",
+      "autor": "Andreh1982",
+      "total_changes": 101,
+      "rework_changes_total": 99,
+      "rework_rate_total": 98.01980198019803,
+      "rework_changes_recent": 99,
+      "rework_rate_recent": 98.01980198019803,
+      "arquivos_modificados": [
+        "polaris_api/main.py",
+        "polaris_api/requirements.txt",
+        "polaris_setup/data-flush.py",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "92f843a2f281af89904d691ff541d2b98f77d204",
+      "autor": "Andre Torres",
+      "total_changes": 44,
+      "rework_changes_total": 44,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 44,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "polaris_setup/data-flush.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "5dcb9fd5818b6f8da262ce719d421b4dc82341df",
+      "autor": "Andre Torres",
+      "total_changes": 57,
+      "rework_changes_total": 55,
+      "rework_rate_total": 96.49122807017544,
+      "rework_changes_recent": 55,
+      "rework_rate_recent": 96.49122807017544,
+      "arquivos_modificados": [
+        "polaris_api/main.py",
+        "polaris_api/requirements.txt",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "90795b3e01653a938c3bd7847f39bbc29bf9fd74",
+      "autor": "Andreh1982",
+      "total_changes": 117,
+      "rework_changes_total": 115,
+      "rework_rate_total": 98.29059829059828,
+      "rework_changes_recent": 115,
+      "rework_rate_recent": 98.29059829059828,
+      "arquivos_modificados": [
+        ".github/workflows/polaris-ci-cd.yml",
+        "polaris_api/main.py",
+        "telegram_bot/main.py",
+        "tests/test_polaris_api.py",
+        "tests/test_telegram_bot.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "ec3fd23e0bc916c4f0a1b98f6ff089446d47f065",
+      "autor": "Andre Torres",
+      "total_changes": 1,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "95aa78635dba5c4d47412823161c886954ffdb7e",
+      "autor": "Andre Torres",
+      "total_changes": 5,
+      "rework_changes_total": 3,
+      "rework_rate_total": 60.0,
+      "rework_changes_recent": 3,
+      "rework_rate_recent": 60.0,
+      "arquivos_modificados": [
+        ".github/workflows/polaris-ci-cd.yml",
+        "tests/test_telegram_bot.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "1c74f2c582944d7d958868fbf0e2d16b2bb9ea27",
+      "autor": "Andre Torres",
+      "total_changes": 12,
+      "rework_changes_total": 12,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 12,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "polaris_api/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "022e8d64ee3a7fba9e5ef78cddf41189bb5877fb",
+      "autor": "Andre Torres",
+      "total_changes": 114,
+      "rework_changes_total": 114,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 114,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "polaris_api/main.py",
+        "telegram_bot/main.py",
+        "tests/test_polaris_api.py",
+        "tests/test_telegram_bot.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "9969d3c3a1369eab8745db11507d6f7d1791c31f",
+      "autor": "Andreh1982",
+      "total_changes": 148,
+      "rework_changes_total": 146,
+      "rework_rate_total": 98.64864864864865,
+      "rework_changes_recent": 146,
+      "rework_rate_recent": 98.64864864864865,
+      "arquivos_modificados": [
+        "polaris_api/main.py",
+        "polaris_api/polaris_prompt.txt",
+        "telegram_bot/main.py",
+        "telegram_bot/tts_polaris.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "34b637b1c0b22193fe54c64a104b7e02bfbe00d7",
+      "autor": "Andre Torres",
+      "total_changes": 4,
+      "rework_changes_total": 4,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 4,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "polaris_api/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "7dfae3f2575220b14439287c62b4ebd53a91e4c7",
+      "autor": "Andre Torres",
+      "total_changes": 146,
+      "rework_changes_total": 144,
+      "rework_rate_total": 98.63013698630137,
+      "rework_changes_recent": 144,
+      "rework_rate_recent": 98.63013698630137,
+      "arquivos_modificados": [
+        "polaris_api/main.py",
+        "polaris_api/polaris_prompt.txt",
+        "telegram_bot/main.py",
+        "telegram_bot/tts_polaris.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "a017053613613314b65cc1d1d1f8669208e0b556",
+      "autor": "Andreh1982",
+      "total_changes": 74,
+      "rework_changes_total": 71,
+      "rework_rate_total": 95.94594594594594,
+      "rework_changes_recent": 71,
+      "rework_rate_recent": 95.94594594594594,
+      "arquivos_modificados": [
+        ".github/workflows/deploy.yml",
+        "Makefile",
+        "telegram_bot/main.py",
+        "telegram_bot/requirements.txt",
+        "tests/test_telegram_bot.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "758f301fef9fa8742ff329fe96933dbcf07ea092",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "5a1f4192ed7d05d9ad05bfdf799643a1905a6a5b",
+      "autor": "Andre Torres",
+      "total_changes": 4,
+      "rework_changes_total": 4,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 4,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "60c7c46459233f3b7e7732c774290e9071a1bc66",
+      "autor": "Andre Torres",
+      "total_changes": 4,
+      "rework_changes_total": 4,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 4,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "37f2b56c1317f12f7ace2bc07adeea622e342c9a",
+      "autor": "Andre Torres",
+      "total_changes": 22,
+      "rework_changes_total": 22,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 22,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "tests/test_telegram_bot.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "a7caea04063b25ef73e4a85c0178859ac05e750a",
+      "autor": "Andre Torres",
+      "total_changes": 46,
+      "rework_changes_total": 45,
+      "rework_rate_total": 97.82608695652173,
+      "rework_changes_recent": 45,
+      "rework_rate_recent": 97.82608695652173,
+      "arquivos_modificados": [
+        "telegram_bot/main.py",
+        "telegram_bot/requirements.txt"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "3cbd168bce8aea720ac2e52c9194a937b9a08792",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/deploy.yml",
+        "Makefile"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "db1934af6c6dc2496ca3f8784d325c83da5bf460",
+      "autor": "Andreh1982",
+      "total_changes": 113,
+      "rework_changes_total": 111,
+      "rework_rate_total": 98.23008849557522,
+      "rework_changes_recent": 111,
+      "rework_rate_recent": 98.23008849557522,
+      "arquivos_modificados": [
+        ".github/workflows/polaris-ci-cd.yml",
+        "telegram_bot/main.py",
+        "telegram_bot/requirements.txt",
+        "tests/test_telegram_bot.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "4b16259d0a122c83a3b49ad91b87fac3735e6a95",
+      "autor": "Andre Torres",
+      "total_changes": 6,
+      "rework_changes_total": 6,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 6,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "5a15bca4e319ea8b4aee8711f30cc4001a28803d",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "ba93d9c7efb5e30bd2e99714e59edc3c474cd2eb",
+      "autor": "Andre Torres",
+      "total_changes": 14,
+      "rework_changes_total": 14,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 14,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "telegram_bot/main.py",
+        "telegram_bot/requirements.txt"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "0da8b8509437c0447b71054ccb072aec85bc7dc4",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/polaris-ci-cd.yml"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "e2cc7b04a277e0c50f38dbf80ff04bc54caa6ca4",
+      "autor": "Andre Torres",
+      "total_changes": 116,
+      "rework_changes_total": 116,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 116,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "telegram_bot/main.py",
+        "telegram_bot/requirements.txt",
+        "tests/test_telegram_bot.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "53b646876840190c2b7390d07f8e256560edd978",
+      "autor": "Andreh1982",
+      "total_changes": 27,
+      "rework_changes_total": 27,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 27,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "README.md"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "8aa40d7ca29c28a5b767cdc19cd1360772b783b5",
+      "autor": "Andre Torres",
+      "total_changes": 27,
+      "rework_changes_total": 27,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 27,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "README.md"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "171935d432bf8134a54a94099273682d84e05396",
+      "autor": "Andreh1982",
+      "total_changes": 39,
+      "rework_changes_total": 39,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 39,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/deploy.yml"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "bb36d4aa20af12735a0bf64e8bc55f6c92f0c0bd",
+      "autor": "Andre Torres",
+      "total_changes": 39,
+      "rework_changes_total": 39,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 39,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/deploy.yml"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "70bc2afe98872fae294f7eb75090751100b76d2d",
+      "autor": "Andreh1982",
+      "total_changes": 11,
+      "rework_changes_total": 11,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 11,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/deploy.yml"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "6495b7643fe33a5515a4da8f81602928af9c285a",
+      "autor": "Andre Torres",
+      "total_changes": 11,
+      "rework_changes_total": 11,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 11,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/deploy.yml"
+      ]
+    },
+    {
+      "data": "2025-04-17",
+      "sha": "b0c4bbf4b11296b1522a968bd4f116e5304a99d1",
+      "autor": "Andreh1982",
+      "total_changes": 30,
+      "rework_changes_total": 30,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 30,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/deploy.yml"
+      ]
+    },
+    {
+      "data": "2025-04-17",
+      "sha": "759ad10afef1a91dbf08015034dd20ec65eb2f3a",
+      "autor": "Andre Torres",
+      "total_changes": 30,
+      "rework_changes_total": 30,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 30,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/deploy.yml"
+      ]
+    },
+    {
+      "data": "2025-04-17",
+      "sha": "70abcf2efd3b645d5f0d56cb45a59e0e7bd47b81",
+      "autor": "Andreh1982",
+      "total_changes": 135,
+      "rework_changes_total": 133,
+      "rework_rate_total": 98.51851851851852,
+      "rework_changes_recent": 133,
+      "rework_rate_recent": 98.51851851851852,
+      "arquivos_modificados": [
+        "README.md",
+        "polaris_api/polaris_prompt.txt",
+        "polaris_setup/docker-compose.yml"
+      ]
+    },
+    {
+      "data": "2025-04-17",
+      "sha": "d3c38f19275b303d750946a607a4633d21da05e7",
+      "autor": "Andre Torres",
+      "total_changes": 130,
+      "rework_changes_total": 130,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 130,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "README.md",
+        "polaris_setup/docker-compose.yml"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "5e359220c728ee2186ad176f4b2946de182927bb",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "README.md"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "328a2f45594a3e0a191d4b626678ddd0cda01996",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "polaris_api/polaris_prompt.txt"
+      ]
+    },
     {
       "data": "2025-03-20",
       "sha": "22786ac89f28b584d9f307ab4fb87c9c4b58b859",
@@ -8,8 +552,8 @@ const reworkPolarispythonapi = {
       "total_changes": 3,
       "rework_changes_total": 3,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 3,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "telegram_bot/main.py"
       ]
@@ -60,8 +604,8 @@ const reworkPolarispythonapi = {
       "total_changes": 29,
       "rework_changes_total": 29,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 29,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "Makefile",
         "polaris_setup/polaris-os-tunner.sh"
@@ -74,8 +618,8 @@ const reworkPolarispythonapi = {
       "total_changes": 29,
       "rework_changes_total": 29,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 29,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "Makefile",
         "polaris_setup/polaris-os-tunner.sh"
@@ -88,8 +632,8 @@ const reworkPolarispythonapi = {
       "total_changes": 77,
       "rework_changes_total": 77,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 77,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "polaris_api/Dockerfile",
         "polaris_api/polaris_prompt.txt",
@@ -104,8 +648,8 @@ const reworkPolarispythonapi = {
       "total_changes": 5,
       "rework_changes_total": 5,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 5,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "telegram_bot/main.py"
       ]
@@ -117,8 +661,8 @@ const reworkPolarispythonapi = {
       "total_changes": 68,
       "rework_changes_total": 68,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 68,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "polaris_api/Dockerfile",
         "telegram_bot/Dockerfile",
@@ -5350,4 +5894,4 @@ const reworkPolarispythonapi = {
   ]
 };
 
-export default reworkPolarispythonapi;
+export default reworkpolarispythonapi;
