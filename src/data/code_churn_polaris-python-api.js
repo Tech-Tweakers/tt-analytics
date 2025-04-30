@@ -1,10 +1,10 @@
-const churnPolarispythonapi = {
+const churnpolarispythonapi = {
   "repo": "polaris-python-api",
-  "generated_at": "2025-04-08T13:41:30.900406Z",
+  "generated_at": "2025-04-30T01:37:41.977423Z",
   "churn_summary": {
-    "total_churn_lines": 51190,
-    "total_commits": 409,
-    "average_churn_per_commit": 125.16
+    "total_churn_lines": 53378,
+    "total_commits": 448,
+    "average_churn_per_commit": 119.15
   },
   "weekly_churn": [
     {
@@ -54,6 +54,30 @@ const churnPolarispythonapi = {
       "week_end": "2025-03-23",
       "churn_lines": 340,
       "commits": 15
+    },
+    {
+      "week_start": "2025-04-07",
+      "week_end": "2025-04-13",
+      "churn_lines": 6,
+      "commits": 2
+    },
+    {
+      "week_start": "2025-04-14",
+      "week_end": "2025-04-20",
+      "churn_lines": 1020,
+      "commits": 23
+    },
+    {
+      "week_start": "2025-04-21",
+      "week_end": "2025-04-27",
+      "churn_lines": 974,
+      "commits": 11
+    },
+    {
+      "week_start": "2025-04-28",
+      "week_end": "2025-05-04",
+      "churn_lines": 188,
+      "commits": 3
     }
   ],
   "top_files_by_churn": [
@@ -74,8 +98,8 @@ const churnPolarispythonapi = {
     },
     {
       "file": ".github/workflows/deploy.yml",
-      "churn_lines": 2084,
-      "modifications": 115
+      "churn_lines": 2254,
+      "modifications": 123
     },
     {
       "file": "polaris_iac/.terraform/providers/registry.terraform.io/kreuzwerker/docker/3.0.2/linux_amd64/CHANGELOG.md",
@@ -83,14 +107,19 @@ const churnPolarispythonapi = {
       "modifications": 3
     },
     {
+      "file": "polaris_api/main.py",
+      "churn_lines": 1880,
+      "modifications": 40
+    },
+    {
       "file": "services/rework/main.py",
       "churn_lines": 1480,
       "modifications": 37
     },
     {
-      "file": "polaris_api/main.py",
-      "churn_lines": 1368,
-      "modifications": 29
+      "file": "tests/test_telegram_bot.py",
+      "churn_lines": 1162,
+      "modifications": 20
     },
     {
       "file": "polaris_iac/.terraform/providers/registry.terraform.io/hashicorp/null/3.2.3/linux_amd64/LICENSE.txt",
@@ -101,18 +130,13 @@ const churnPolarispythonapi = {
       "file": "polaris_iac/.terraform/providers/registry.terraform.io/kreuzwerker/docker/3.0.2/linux_amd64/LICENSE",
       "churn_lines": 1119,
       "modifications": 3
-    },
-    {
-      "file": ".github/workflows/polaris-ci-cd.yml",
-      "churn_lines": 864,
-      "modifications": 35
     }
   ],
   "top_authors_by_churn": [
     {
       "author": "Andre Torres",
-      "churn_lines": 28035,
-      "commits": 311
+      "churn_lines": 29159,
+      "commits": 339
     },
     {
       "author": "github-actions",
@@ -121,10 +145,10 @@ const churnPolarispythonapi = {
     },
     {
       "author": "Andreh1982",
-      "churn_lines": 10375,
-      "commits": 73
+      "churn_lines": 11439,
+      "commits": 84
     }
   ]
 };
 
-export default churnPolarispythonapi;
+export default churnpolarispythonapi;
