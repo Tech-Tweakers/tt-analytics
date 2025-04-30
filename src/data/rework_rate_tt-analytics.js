@@ -1,6 +1,1049 @@
-const reworkTtanalytics = {
+const reworkttanalytics = {
   "threshold": 3,
   "data": [
+    {
+      "data": "2025-04-29",
+      "sha": "f770129273b19d80dd4568e17809515d397119d7",
+      "autor": "Andreh1982",
+      "total_changes": 116,
+      "rework_changes_total": 116,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 116,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/generate-mdx-doc.yml",
+        "services/generate-mdx/mdx-gen.sh"
+      ]
+    },
+    {
+      "data": "2025-04-29",
+      "sha": "1ec9ac6578a8568b46658c92590c536203b46d77",
+      "autor": "Andre Torres",
+      "total_changes": 116,
+      "rework_changes_total": 116,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 116,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/generate-mdx-doc.yml",
+        "services/generate-mdx/mdx-gen.sh"
+      ]
+    },
+    {
+      "data": "2025-04-29",
+      "sha": "56e4ef082c3e394399e6cdf6493b2eb7bed1d7d0",
+      "autor": "Andreh1982",
+      "total_changes": 67,
+      "rework_changes_total": 67,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 67,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/generate-mdx-doc.yml"
+      ]
+    },
+    {
+      "data": "2025-04-29",
+      "sha": "d21dc0aa61ed974ec0f0a2a24f6dead903fcbd93",
+      "autor": "Andre Torres",
+      "total_changes": 67,
+      "rework_changes_total": 67,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 67,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/generate-mdx-doc.yml"
+      ]
+    },
+    {
+      "data": "2025-04-29",
+      "sha": "6ea6612bacb6061dbe5371b33573f2584f3013bf",
+      "autor": "github-actions",
+      "total_changes": 72,
+      "rework_changes_total": 72,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 72,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-29",
+      "sha": "a6843075afba1f1cfff82c0cb48f388099816c3f",
+      "autor": "Andreh1982",
+      "total_changes": 6,
+      "rework_changes_total": 6,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 6,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/generate-repomap.yml"
+      ]
+    },
+    {
+      "data": "2025-04-29",
+      "sha": "1561eedbbc33e6da4fcae082eace3c2bc2d4093e",
+      "autor": "Andre Torres",
+      "total_changes": 6,
+      "rework_changes_total": 6,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 6,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/generate-repomap.yml"
+      ]
+    },
+    {
+      "data": "2025-04-15",
+      "sha": "5fc94fe4d83a9bfef2a03fc33c9374242d51be01",
+      "autor": "github-actions",
+      "total_changes": 8,
+      "rework_changes_total": 8,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 8,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-15",
+      "sha": "7d9905143d4a593cb50defbceef97097fed173d9",
+      "autor": "github-actions",
+      "total_changes": 638,
+      "rework_changes_total": 638,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 638,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/refactor_rate_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2025-04-15",
+      "sha": "63cb75538fa506003ab05db4ff9425f44ca2a3af",
+      "autor": "github-actions",
+      "total_changes": 310,
+      "rework_changes_total": 310,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 310,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/refactor_rate_polaris-chatbot.js"
+      ]
+    },
+    {
+      "data": "2025-04-15",
+      "sha": "d359fb04e8ad7281580f93a55d4142927ad9a693",
+      "autor": "github-actions",
+      "total_changes": 151,
+      "rework_changes_total": 151,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 151,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/refactor_rate_polaris-baby.js"
+      ]
+    },
+    {
+      "data": "2025-04-14",
+      "sha": "9141a47eeb7e9db8c117687424fc22a40998660b",
+      "autor": "github-actions",
+      "total_changes": 361,
+      "rework_changes_total": 361,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 361,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/refactor_rate_polaris-frontend.js"
+      ]
+    },
+    {
+      "data": "2025-04-14",
+      "sha": "8db061f6663dd5f8adcb95d8ece232e85d48c185",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/components/RefactorDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-14",
+      "sha": "21a573d6aea81c87e6d8f39535630b660735bf24",
+      "autor": "Andre Torres",
+      "total_changes": 4,
+      "rework_changes_total": 4,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 4,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-14",
+      "sha": "3acc34395759ff88fb9c5dfa6b4c826feb9f3350",
+      "autor": "Andre Torres",
+      "total_changes": 8,
+      "rework_changes_total": 8,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 8,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/RefactorDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-14",
+      "sha": "f26f61ca9cfe0638decdf0c33f9694fd153d1822",
+      "autor": "Andre Torres",
+      "total_changes": 4,
+      "rework_changes_total": 4,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 4,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/RefactorDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-14",
+      "sha": "e0296c7532d13a4793f9f62999ced2eae9e62206",
+      "autor": "github-actions",
+      "total_changes": 4,
+      "rework_changes_total": 4,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 4,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-14",
+      "sha": "916b41359f61853c1ea0d1329116c28baaacc652",
+      "autor": "Andre Torres",
+      "total_changes": 33,
+      "rework_changes_total": 33,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 33,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/RefactorDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-14",
+      "sha": "fe14972163953a83462fe66773c84da77f20e606",
+      "autor": "github-actions",
+      "total_changes": 139,
+      "rework_changes_total": 139,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 139,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/refactor_rate_polaris-llm.js"
+      ]
+    },
+    {
+      "data": "2025-04-14",
+      "sha": "f2cb67585ed1db2c0b10be343648ff0929de57eb",
+      "autor": "Andre Torres",
+      "total_changes": 76,
+      "rework_changes_total": 76,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 76,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "docs/polaris-api-python/refactor-rate.mdx",
+        "docs/polaris-chatbot/refactor-rate.mdx",
+        "docs/polaris-frontend/refactor-rate.mdx",
+        "docs/polaris-llm/refactor-rate.mdx"
+      ]
+    },
+    {
+      "data": "2025-04-13",
+      "sha": "66eed6ef2174c4033eda549765a756139d798f6f",
+      "autor": "Andre Torres",
+      "total_changes": 14,
+      "rework_changes_total": 12,
+      "rework_rate_total": 85.71428571428571,
+      "rework_changes_recent": 12,
+      "rework_rate_recent": 85.71428571428571,
+      "arquivos_modificados": [
+        ".github/workflows/refactor-rate.yml",
+        "services/code-churn/main.py",
+        "services/refactor-rate/main.py",
+        "services/rework-rate/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-13",
+      "sha": "78653c3c8e2dff589356b822a439f46aae7cc47b",
+      "autor": "Andre Torres",
+      "total_changes": 129,
+      "rework_changes_total": 129,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 129,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "services/refactor-rate/main.py",
+        "services/rework-rate/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-13",
+      "sha": "c450a8a7fcbbd8f95147c6a09cb2a380463babcc",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/refactor-rate.yml"
+      ]
+    },
+    {
+      "data": "2025-04-13",
+      "sha": "9a7b85e7ef153db722e3815e11dd1223defb197a",
+      "autor": "Andre Torres",
+      "total_changes": 151,
+      "rework_changes_total": 151,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 151,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "docs/polaris-baby/refactor-rate.mdx",
+        "src/components/RefactorDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-13",
+      "sha": "f35e3fd32caec789b07f58ec8254e7e291169607",
+      "autor": "Andre Torres",
+      "total_changes": 65,
+      "rework_changes_total": 65,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 65,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".github/workflows/generate-repomap.yml",
+        ".github/workflows/refactor-rate.yml"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "5d1e021029e296d8e44b924f29eb2055ced21be2",
+      "autor": "Andre Torres",
+      "total_changes": 20,
+      "rework_changes_total": 20,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 20,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/MetricsDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "570bde3ac6a193b9645dd5912b29adc46e96dd41",
+      "autor": "Andre Torres",
+      "total_changes": 13,
+      "rework_changes_total": 13,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 13,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "26c20153eb6acdecdcf5dabee9cca51779d6ec8b",
+      "autor": "Andre Torres",
+      "total_changes": 7,
+      "rework_changes_total": 7,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 7,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "0412a0b0f6c10047b1e4867d094268216a9847eb",
+      "autor": "Andre Torres",
+      "total_changes": 46,
+      "rework_changes_total": 46,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 46,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "bddd72637438a31a42d3db448d65abb8bf918c02",
+      "autor": "Andre Torres",
+      "total_changes": 16,
+      "rework_changes_total": 16,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 16,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "6ce4e6a4c4c9072c399d0ca789f70836545e3beb",
+      "autor": "Andre Torres",
+      "total_changes": 16,
+      "rework_changes_total": 16,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 16,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "6f2f531d65713887e88b539e79d7471027cacef7",
+      "autor": "Andre Torres",
+      "total_changes": 12,
+      "rework_changes_total": 12,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 12,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "517a0410ebe3844bc9943ae977a6223a5ac7515b",
+      "autor": "Andre Torres",
+      "total_changes": 40,
+      "rework_changes_total": 40,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 40,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "c361f15d748f2ac3a246bce10eb0e83d29f486c8",
+      "autor": "Andre Torres",
+      "total_changes": 1,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/components/CodeChurnDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "e0d34bce7c9dca048a098125098c23e1a8defce1",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/components/CodeChurnDashboard.tsx",
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "28f87c29db0b8d8cd77e92aaa5a48c050ebc5ae5",
+      "autor": "Andre Torres",
+      "total_changes": 47,
+      "rework_changes_total": 47,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/components/CodeChurnDashboard.tsx",
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "aae1370e1f7dfef2e38cea5739b8a24320bc0a04",
+      "autor": "Andre Torres",
+      "total_changes": 6,
+      "rework_changes_total": 6,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/generate-repomap.yml"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "bd15e1af9be952fb544cf6b800a73f615a184cd9",
+      "autor": "github-actions",
+      "total_changes": 67,
+      "rework_changes_total": 67,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "f7a86676d3dd8a5c5a8d1a6641a4f6fd773e15e5",
+      "autor": "Andre Torres",
+      "total_changes": 9,
+      "rework_changes_total": 9,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/generate-repomap.yml"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "312ad28a54838266da3bdf2790bd8477af21aa40",
+      "autor": "github-actions",
+      "total_changes": 51,
+      "rework_changes_total": 51,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "78e4daa711196b34bfb2165091aa5756af960d05",
+      "autor": "Andre Torres",
+      "total_changes": 44,
+      "rework_changes_total": 44,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/generate-repomap.yml"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "ec381cebb0533fa8019bf36f0168bc8d7ef3deed",
+      "autor": "Andre Torres",
+      "total_changes": 991,
+      "rework_changes_total": 991,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/code-churn.yml",
+        ".github/workflows/rework-rate.yml",
+        "data/repos/rework_analysis_polaris-baby.json",
+        "data/repos/rework_analysis_polaris-frontend.json",
+        "data/repos/rework_analysis_polaris-llm.json",
+        "data/repos/rework_analysis_polaris-slack.json",
+        "data/repos/rework_analysis_tt-analytics.json"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "c517f4c90ce916c54ee0524c34e187940aabbf95",
+      "autor": "github-actions",
+      "total_changes": 336,
+      "rework_changes_total": 336,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/rework_rate_polaris-chatbot.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "b331891353f89370c34a3dfbbcf98fb7e1cdd5c9",
+      "autor": "Andre Torres",
+      "total_changes": 2293,
+      "rework_changes_total": 2291,
+      "rework_rate_total": 99.91277802006105,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-llm.js",
+        "src/data/code_churn_polaris-python-api.js",
+        "src/data/repoMap.js",
+        "src/data/repos/code_churn_polaris-llm.js",
+        "src/data/repos/code_churn_polaris-python-api.js",
+        "src/data/repos/rework_rate_polaris-llm.js",
+        "src/data/rework_rate_polaris-llm.js",
+        "src/data/rework_rate_polaris-python-api.js",
+        "static/data/repos/code_churn_polaris-baby.json",
+        "static/data/repos/code_churn_polaris-chatbot.json",
+        "static/data/repos/code_churn_polaris-frontend.json",
+        "static/data/repos/code_churn_polaris-python-api.json",
+        "static/data/repos/rework_analysis_polaris-baby.json",
+        "static/data/repos/rework_analysis_polaris-chatbot.json",
+        "static/data/repos/rework_analysis_polaris-frontend.json",
+        "static/data/repos/rework_analysis_polaris-llm.json",
+        "static/data/repos/rework_analysis_polaris-slack.json",
+        "static/data/repos/rework_analysis_tt-analytics.json"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "3d6551679cf8dc067aa2489056b2408b790289ad",
+      "autor": "github-actions",
+      "total_changes": 606,
+      "rework_changes_total": 606,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/rework_rate_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "36e1239a82877e87a364b061cce3a763c1fe5c4e",
+      "autor": "github-actions",
+      "total_changes": 509,
+      "rework_changes_total": 509,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/rework_rate_polaris-frontend.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "0ed257d9b62201387ce26f0ec8c4f64ee7c4ee53",
+      "autor": "github-actions",
+      "total_changes": 166,
+      "rework_changes_total": 166,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/rework_rate_polaris-baby.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "70aeba0127a843c4380a421913bb4c783a4aa349",
+      "autor": "github-actions",
+      "total_changes": 154,
+      "rework_changes_total": 154,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/rework_rate_polaris-llm.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "a67da67c34a9e3e1dd6b2f73d5827858d54f62d2",
+      "autor": "github-actions",
+      "total_changes": 96,
+      "rework_changes_total": 96,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/code_churn_polaris-chatbot.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "f52318d7e696490d2269d896bbea59e3e68ae6a6",
+      "autor": "github-actions",
+      "total_changes": 58,
+      "rework_changes_total": 58,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/code_churn_polaris-frontend.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "dbf95dd103f1145e46b840f818b3e614f9c3e4ad",
+      "autor": "github-actions",
+      "total_changes": 73,
+      "rework_changes_total": 73,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/code_churn_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "4eb611c50205ba5ceff41ef6f02785743001280c",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/code_churn_polaris-llm.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "919bf26f74ac421a22d4fefc1e81009fcfca6b94",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/code-churn.yml"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "47b057af7ee8c9486ed914864cae380bf0fc9bb7",
+      "autor": "github-actions",
+      "total_changes": 73,
+      "rework_changes_total": 73,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/code_churn_polaris-baby.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "1d404ffac52755000d84e215d5c09e6ab647d26c",
+      "autor": "github-actions",
+      "total_changes": 87,
+      "rework_changes_total": 87,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/code_churn_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "6989182d2a5b8ee166d39aea2d748c2a3ec8261d",
+      "autor": "Andre Torres",
+      "total_changes": 3,
+      "rework_changes_total": 3,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/code-churn.yml"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "90f300ff9dcb465cb19c4ac825236d70942aa9c3",
+      "autor": "Andre Torres",
+      "total_changes": 1,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "services/rework-rate/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "2b431fcd004b924d6fa07698b98de1b42f176e1a",
+      "autor": "github-actions",
+      "total_changes": 64,
+      "rework_changes_total": 64,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/code_churn_polaris-llm.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "2ca3dccceda52b4ee2671b22e41d11eaf5ac7023",
+      "autor": "Andre Torres",
+      "total_changes": 118,
+      "rework_changes_total": 116,
+      "rework_rate_total": 98.30508474576271,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "README.md",
+        "docs/polaris-api-python/code-churn.mdx",
+        "docs/polaris-api-python/rework-rate.mdx",
+        "docs/polaris-baby/code-churn.mdx",
+        "docs/polaris-baby/rework-rate.mdx",
+        "docs/polaris-chatbot/code-churn.mdx",
+        "docs/polaris-chatbot/rework-rate.mdx",
+        "docs/polaris-frontend/code-churn.mdx",
+        "docs/polaris-frontend/rework-rate.mdx",
+        "docs/polaris-llm/code-churn.mdx",
+        "docs/polaris-llm/rework-rate.mdx",
+        "src/components/ReworkDashboard.tsx",
+        "src/data/rework_rate_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "33beb73ef14aad51ef28586860092c57d6142301",
+      "autor": "Andre Torres",
+      "total_changes": 13,
+      "rework_changes_total": 13,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repoMap.js",
+        "tsconfig.json"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "d18d8124ed5cd51e8839cb15f49c9c6029ecfd2e",
+      "autor": "Andre Torres",
+      "total_changes": 8,
+      "rework_changes_total": 8,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "5b93d08fdd4696c3802bc4e265d09a95f2aa3766",
+      "autor": "Andre Torres",
+      "total_changes": 13,
+      "rework_changes_total": 13,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repoMap.js",
+        "tsconfig.json"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "f69a8a976280ce8c0ccfb66f3955cb8e0c478bc1",
+      "autor": "Andre Torres",
+      "total_changes": 9,
+      "rework_changes_total": 7,
+      "rework_rate_total": 77.77777777777779,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "services/rework-rate/main.py",
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "ccabb41d38a051bd7fbfa52eaf2d7c5695fd4efa",
+      "autor": "Andre Torres",
+      "total_changes": 7,
+      "rework_changes_total": 7,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "deb7882a9d315121cbb8e0506cf714c555369d3e",
+      "autor": "Andre Torres",
+      "total_changes": 28,
+      "rework_changes_total": 28,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/components/MetricsDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "5fd0a894cbfddc7d58a84a3efc17ae066db36987",
+      "autor": "Andre Torres",
+      "total_changes": 33,
+      "rework_changes_total": 33,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/components/MetricsDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "c315eb28349208d3ea81e5e4d45ce53f75a77198",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/code_churn_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "a32200f317004cabeed0657556122858a93a65bd",
+      "autor": "Andre Torres",
+      "total_changes": 14,
+      "rework_changes_total": 14,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "5cf57f615b25554dceb2c60e22f346db9049b1bb",
+      "autor": "github-actions",
+      "total_changes": 87,
+      "rework_changes_total": 87,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/repos/code_churn_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "ac4203128753e0825beadec79a3f75173475ef21",
+      "autor": "Andre Torres",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "services/code-churn/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "6abd38f5ccc213820fed8464588e0cd75e49ce36",
+      "autor": "Andre Torres",
+      "total_changes": 10,
+      "rework_changes_total": 10,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/code-churn.yml",
+        ".github/workflows/rework-rate.yml"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "6454471bf1fbbdac210b7108ed9a5a116b548781",
+      "autor": "Andre Torres",
+      "total_changes": 45,
+      "rework_changes_total": 45,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        ".github/workflows/code-churn.yml",
+        ".github/workflows/rework-rate.yml"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "042d68f93a439de5bdea83001708f10dd5542280",
+      "autor": "Andre Torres",
+      "total_changes": 295,
+      "rework_changes_total": 295,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "services/code-churn/main.py",
+        "services/rework-rate/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "be5238e09851b661422b4c51d5b91c212c3caa60",
+      "autor": "Andre Torres",
+      "total_changes": 519,
+      "rework_changes_total": 519,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/components/CodeChurnDashboard.tsx",
+        "src/components/MetricsDashboard.tsx",
+        "src/components/ReworkDashboard.tsx",
+        "src/data/repos/code_churn_polaris-llm.js",
+        "src/data/repos/rework_rate_polaris-llm.js"
+      ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "247cab54b363bbbe23ebbfaa134b8d0fc57529a9",
+      "autor": "Andre Torres",
+      "total_changes": 319,
+      "rework_changes_total": 317,
+      "rework_rate_total": 99.37304075235109,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "docs/polaris-api-python/code-churn.mdx",
+        "docs/polaris-api-python/rework-rate.mdx",
+        "docs/polaris-llm/code-churn.mdx",
+        "docs/polaris-llm/rework-rate.mdx",
+        "src/components/CodeChurnDashboard.tsx",
+        "src/components/MetricsDashboard.tsx",
+        "src/components/ReworkDashboard.tsx",
+        "src/data/repoMap.js",
+        "static/data/repos/code_churn_polaris-llm.js",
+        "static/data/repos/code_churn_polaris-llm.json",
+        "static/data/repos/rework_analysis_polaris-llm.js"
+      ]
+    },
     {
       "data": "2025-04-01",
       "sha": "1a8bb6680368d8883a80c968201ffc44c7899b11",
@@ -8,8 +1051,8 @@ const reworkTtanalytics = {
       "total_changes": 3,
       "rework_changes_total": 3,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 3,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/components/CodeChurnDashboard.tsx"
       ]
@@ -34,8 +1077,8 @@ const reworkTtanalytics = {
       "total_changes": 71,
       "rework_changes_total": 71,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 71,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "static/data/repos/code_churn_polaris-baby.json"
       ]
@@ -47,8 +1090,8 @@ const reworkTtanalytics = {
       "total_changes": 62,
       "rework_changes_total": 62,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 62,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "static/data/repos/code_churn_polaris-llm.json"
       ]
@@ -60,8 +1103,8 @@ const reworkTtanalytics = {
       "total_changes": 61,
       "rework_changes_total": 57,
       "rework_rate_total": 93.44262295081968,
-      "rework_changes_recent": 57,
-      "rework_rate_recent": 93.44262295081968,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/graphs/rework_rate_recent-polaris-llm.html",
         "data/graphs/rework_rate_total-polaris-llm.html",
@@ -91,8 +1134,8 @@ const reworkTtanalytics = {
       "total_changes": 19,
       "rework_changes_total": 19,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 19,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/code-churn.yml"
       ]
@@ -104,8 +1147,8 @@ const reworkTtanalytics = {
       "total_changes": 94,
       "rework_changes_total": 94,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 94,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "static/data/repos/code_churn_polaris-chatbot.json"
       ]
@@ -144,8 +1187,8 @@ const reworkTtanalytics = {
       "total_changes": 31,
       "rework_changes_total": 31,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 31,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-chatbot/_category_.json",
         "docs/polaris-chatbot/code-churn.mdx",
@@ -173,8 +1216,8 @@ const reworkTtanalytics = {
       "total_changes": 334,
       "rework_changes_total": 334,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 334,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "static/data/repos/rework_analysis_polaris-chatbot.json"
       ]
@@ -186,8 +1229,8 @@ const reworkTtanalytics = {
       "total_changes": 36,
       "rework_changes_total": 36,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 36,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/rework-rate.yml"
       ]
@@ -215,8 +1258,8 @@ const reworkTtanalytics = {
       "total_changes": 42,
       "rework_changes_total": 38,
       "rework_rate_total": 90.47619047619048,
-      "rework_changes_recent": 38,
-      "rework_rate_recent": 90.47619047619048,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/graphs/rework_rate_recent-polaris-frontend.html",
         "data/graphs/rework_rate_total-polaris-frontend.html",
@@ -230,8 +1273,8 @@ const reworkTtanalytics = {
       "total_changes": 56,
       "rework_changes_total": 56,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 56,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "static/data/repos/code_churn_polaris-frontend.json"
       ]
@@ -256,8 +1299,8 @@ const reworkTtanalytics = {
       "total_changes": 39,
       "rework_changes_total": 39,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 39,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/code-churn.yml",
         "docs/polaris-frontend/_category_.json",
@@ -272,8 +1315,8 @@ const reworkTtanalytics = {
       "total_changes": 18,
       "rework_changes_total": 18,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 18,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/rework-rate.yml"
       ]
@@ -285,8 +1328,8 @@ const reworkTtanalytics = {
       "total_changes": 168,
       "rework_changes_total": 164,
       "rework_rate_total": 97.61904761904762,
-      "rework_changes_recent": 164,
-      "rework_rate_recent": 97.61904761904762,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/graphs/rework_rate_recent-polaris-baby.html",
         "data/graphs/rework_rate_total-polaris-baby.html",
@@ -313,8 +1356,8 @@ const reworkTtanalytics = {
       "total_changes": 164,
       "rework_changes_total": 164,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 164,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/repos/rework_analysis_polaris-baby.json"
       ]
@@ -326,8 +1369,8 @@ const reworkTtanalytics = {
       "total_changes": 62,
       "rework_changes_total": 62,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 62,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-baby/_category_.json",
         "docs/polaris-baby/code-churn.mdx",
@@ -344,8 +1387,8 @@ const reworkTtanalytics = {
       "total_changes": 125,
       "rework_changes_total": 125,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 125,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "README.md",
         "docs/home.mdx"
@@ -358,8 +1401,8 @@ const reworkTtanalytics = {
       "total_changes": 60,
       "rework_changes_total": 58,
       "rework_rate_total": 96.66666666666667,
-      "rework_changes_recent": 58,
-      "rework_rate_recent": 96.66666666666667,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-api-python/_category_.json",
         "docs/polaris-api-python/code-churn.mdx",
@@ -375,8 +1418,8 @@ const reworkTtanalytics = {
       "total_changes": 8,
       "rework_changes_total": 8,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 8,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/components/ReworkDashboard.tsx"
       ]
@@ -388,8 +1431,8 @@ const reworkTtanalytics = {
       "total_changes": 20,
       "rework_changes_total": 20,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 20,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/components/ReworkDashboard.tsx"
       ]
@@ -414,8 +1457,8 @@ const reworkTtanalytics = {
       "total_changes": 10,
       "rework_changes_total": 10,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 10,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-api-python/code-churn.mdx"
       ]
@@ -427,8 +1470,8 @@ const reworkTtanalytics = {
       "total_changes": 124,
       "rework_changes_total": 124,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 124,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/home.mdx",
         "docs/polaris-api-python/code-churn.mdx",
@@ -447,8 +1490,8 @@ const reworkTtanalytics = {
       "total_changes": 3,
       "rework_changes_total": 3,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 3,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/components/HomepageFeatures/index.tsx"
       ]
@@ -487,8 +1530,8 @@ const reworkTtanalytics = {
       "total_changes": 5,
       "rework_changes_total": 5,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 5,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/components/CodeChurnDashboard.tsx"
       ]
@@ -513,8 +1556,8 @@ const reworkTtanalytics = {
       "total_changes": 14,
       "rework_changes_total": 14,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 14,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-api-python/code-churn.mdx"
       ]
@@ -526,8 +1569,8 @@ const reworkTtanalytics = {
       "total_changes": 5,
       "rework_changes_total": 5,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 5,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-api-python/code-churn.mdx"
       ]
@@ -539,8 +1582,8 @@ const reworkTtanalytics = {
       "total_changes": 92,
       "rework_changes_total": 92,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 92,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-api-python/code-churn.mdx",
         "src/components/CodeChurnDashboard.tsx"
@@ -553,8 +1596,8 @@ const reworkTtanalytics = {
       "total_changes": 85,
       "rework_changes_total": 85,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 85,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "static/data/repos/code_churn_polaris-python-api.json"
       ]
@@ -579,8 +1622,8 @@ const reworkTtanalytics = {
       "total_changes": 4,
       "rework_changes_total": 4,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 4,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/code-churn.yml"
       ]
@@ -619,8 +1662,8 @@ const reworkTtanalytics = {
       "total_changes": 2183,
       "rework_changes_total": 2136,
       "rework_rate_total": 97.8469995419148,
-      "rework_changes_recent": 2136,
-      "rework_rate_recent": 97.8469995419148,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/code-churn.yml",
         "build/404.html",
@@ -714,8 +1757,8 @@ const reworkTtanalytics = {
       "total_changes": 60,
       "rework_changes_total": 60,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 60,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/components/HomepageFeatures/index.tsx"
       ]
@@ -740,8 +1783,8 @@ const reworkTtanalytics = {
       "total_changes": 13,
       "rework_changes_total": 13,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 13,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/deploy.yml"
       ]
@@ -753,8 +1796,8 @@ const reworkTtanalytics = {
       "total_changes": 324,
       "rework_changes_total": 270,
       "rework_rate_total": 83.33333333333334,
-      "rework_changes_recent": 270,
-      "rework_rate_recent": 83.33333333333334,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "build/404.html",
         "build/assets/js/0058b4c6.8912e09a.js",
@@ -886,8 +1929,8 @@ const reworkTtanalytics = {
       "total_changes": 2045,
       "rework_changes_total": 1997,
       "rework_rate_total": 97.65281173594133,
-      "rework_changes_recent": 1997,
-      "rework_rate_recent": 97.65281173594133,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".gitignore",
         "build/404.html",
@@ -980,8 +2023,8 @@ const reworkTtanalytics = {
       "total_changes": 26,
       "rework_changes_total": 26,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 26,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docusaurus.config.ts"
       ]
@@ -1006,8 +2049,8 @@ const reworkTtanalytics = {
       "total_changes": 4,
       "rework_changes_total": 4,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 4,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-python-api.mdx"
       ]
@@ -1045,8 +2088,8 @@ const reworkTtanalytics = {
       "total_changes": 8,
       "rework_changes_total": 8,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 8,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-python-api.mdx",
         "src/components/ReworkDashboard.tsx"
@@ -1059,8 +2102,8 @@ const reworkTtanalytics = {
       "total_changes": 9,
       "rework_changes_total": 9,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 9,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-python-api.mdx"
       ]
@@ -1072,8 +2115,8 @@ const reworkTtanalytics = {
       "total_changes": 4,
       "rework_changes_total": 4,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 4,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-python-api.mdx"
       ]
@@ -1085,8 +2128,8 @@ const reworkTtanalytics = {
       "total_changes": 7,
       "rework_changes_total": 7,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 7,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-python-api.mdx"
       ]
@@ -1098,8 +2141,8 @@ const reworkTtanalytics = {
       "total_changes": 8,
       "rework_changes_total": 8,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 8,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/components/ReworkDashboard.tsx"
       ]
@@ -1111,8 +2154,8 @@ const reworkTtanalytics = {
       "total_changes": 27,
       "rework_changes_total": 27,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 27,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/deploy.yml"
       ]
@@ -1137,8 +2180,8 @@ const reworkTtanalytics = {
       "total_changes": 907,
       "rework_changes_total": 907,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 907,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/index.mdx",
         "docs/polaris-python-api.mdx",
@@ -1157,8 +2200,8 @@ const reworkTtanalytics = {
       "total_changes": 32,
       "rework_changes_total": 32,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 32,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/polaris-python-api.mdx",
         "docusaurus.config.ts",
@@ -1172,8 +2215,8 @@ const reworkTtanalytics = {
       "total_changes": 150,
       "rework_changes_total": 150,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 150,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docusaurus.config.ts",
         "src/components/ReworkDashboard.tsx",
@@ -1187,8 +2230,8 @@ const reworkTtanalytics = {
       "total_changes": 1038,
       "rework_changes_total": 1037,
       "rework_rate_total": 99.90366088631984,
-      "rework_changes_recent": 1037,
-      "rework_rate_recent": 99.90366088631984,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "blog/2019-05-28-first-blog-post.md",
         "blog/2019-05-29-long-blog-post.md",
@@ -1221,8 +2264,8 @@ const reworkTtanalytics = {
       "total_changes": 106,
       "rework_changes_total": 106,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 106,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "docs/README.md"
       ]
@@ -1234,8 +2277,8 @@ const reworkTtanalytics = {
       "total_changes": 961,
       "rework_changes_total": 960,
       "rework_rate_total": 99.89594172736732,
-      "rework_changes_recent": 960,
-      "rework_rate_recent": 99.89594172736732,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "gitpages/.gitignore",
         "gitpages/README.md",
@@ -1269,8 +2312,8 @@ const reworkTtanalytics = {
       "total_changes": 995,
       "rework_changes_total": 994,
       "rework_rate_total": 99.89949748743719,
-      "rework_changes_recent": 994,
-      "rework_rate_recent": 99.89949748743719,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".gitignore",
         "gitpages/.gitignore",
@@ -1307,8 +2350,8 @@ const reworkTtanalytics = {
       "total_changes": 76,
       "rework_changes_total": 76,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 76,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/repos/rework_analysis_polaris-slack.json"
       ]
@@ -1320,8 +2363,8 @@ const reworkTtanalytics = {
       "total_changes": 111,
       "rework_changes_total": 111,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 111,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/repos/rework_analysis_tt-analytics.json"
       ]
@@ -1333,8 +2376,8 @@ const reworkTtanalytics = {
       "total_changes": 132,
       "rework_changes_total": 132,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 132,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/repos/rework_analysis_polaris-llm.json"
       ]
@@ -1346,8 +2389,8 @@ const reworkTtanalytics = {
       "total_changes": 496,
       "rework_changes_total": 496,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 496,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/repos/rework_analysis_polaris-frontend.json"
       ]
@@ -1359,8 +2402,8 @@ const reworkTtanalytics = {
       "total_changes": 103,
       "rework_changes_total": 103,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 103,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py"
       ]
@@ -1372,8 +2415,8 @@ const reworkTtanalytics = {
       "total_changes": 37,
       "rework_changes_total": 37,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 37,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py"
       ]
@@ -1398,8 +2441,8 @@ const reworkTtanalytics = {
       "total_changes": 5,
       "rework_changes_total": 5,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 5,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py"
       ]
@@ -1411,8 +2454,8 @@ const reworkTtanalytics = {
       "total_changes": 76,
       "rework_changes_total": 76,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 76,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py"
       ]
@@ -1424,8 +2467,8 @@ const reworkTtanalytics = {
       "total_changes": 35,
       "rework_changes_total": 35,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 35,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py"
       ]
@@ -1437,8 +2480,8 @@ const reworkTtanalytics = {
       "total_changes": 43,
       "rework_changes_total": 41,
       "rework_rate_total": 95.34883720930233,
-      "rework_changes_recent": 41,
-      "rework_rate_recent": 95.34883720930233,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/commits-rework-rate.yml",
         "main.py"
@@ -1451,8 +2494,8 @@ const reworkTtanalytics = {
       "total_changes": 87,
       "rework_changes_total": 87,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 87,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/repos/rework_analysis_polaris-python-api.json"
       ]
@@ -1464,8 +2507,8 @@ const reworkTtanalytics = {
       "total_changes": 32,
       "rework_changes_total": 32,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 32,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py"
       ]
@@ -1477,8 +2520,8 @@ const reworkTtanalytics = {
       "total_changes": 27,
       "rework_changes_total": 27,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 27,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py"
       ]
@@ -1490,8 +2533,8 @@ const reworkTtanalytics = {
       "total_changes": 199,
       "rework_changes_total": 199,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 199,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/repos/rework_analysis_polaris-python-api.json"
       ]
@@ -1503,8 +2546,8 @@ const reworkTtanalytics = {
       "total_changes": 4,
       "rework_changes_total": 4,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 4,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py"
       ]
@@ -1516,8 +2559,8 @@ const reworkTtanalytics = {
       "total_changes": 591,
       "rework_changes_total": 588,
       "rework_rate_total": 99.49238578680203,
-      "rework_changes_recent": 588,
-      "rework_rate_recent": 99.49238578680203,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/commits-rework-rate.yml",
         ".gitignore",
@@ -1533,8 +2576,8 @@ const reworkTtanalytics = {
       "total_changes": 320,
       "rework_changes_total": 320,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 320,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/repos/rework_analysis_polaris-chatbot.json"
       ]
@@ -1546,8 +2589,8 @@ const reworkTtanalytics = {
       "total_changes": 162,
       "rework_changes_total": 162,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 162,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "data/repos/rework_analysis_polaris-baby.json"
       ]
@@ -1559,8 +2602,8 @@ const reworkTtanalytics = {
       "total_changes": 9,
       "rework_changes_total": 7,
       "rework_rate_total": 77.77777777777779,
-      "rework_changes_recent": 7,
-      "rework_rate_recent": 77.77777777777779,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/commits-rework-rate.yml",
         "main.py"
@@ -1573,8 +2616,8 @@ const reworkTtanalytics = {
       "total_changes": 59,
       "rework_changes_total": 59,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 59,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py",
         "rework_analysis_polaris-python-api.json"
@@ -1601,8 +2644,8 @@ const reworkTtanalytics = {
       "total_changes": 62,
       "rework_changes_total": 62,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 62,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         ".github/workflows/commits-rework-rate.yml",
         "main.py"
@@ -1628,8 +2671,8 @@ const reworkTtanalytics = {
       "total_changes": 89,
       "rework_changes_total": 89,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 89,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py"
       ]
@@ -1641,8 +2684,8 @@ const reworkTtanalytics = {
       "total_changes": 7,
       "rework_changes_total": 7,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 7,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py",
         "rework_analysis_polaris-python-api.json"
@@ -1655,8 +2698,8 @@ const reworkTtanalytics = {
       "total_changes": 4,
       "rework_changes_total": 4,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 4,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "rework_analysis_polaris-python-api.json"
       ]
@@ -1668,8 +2711,8 @@ const reworkTtanalytics = {
       "total_changes": 185,
       "rework_changes_total": 185,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 185,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py",
         "rework_analysis_polaris-baby.json"
@@ -1682,8 +2725,8 @@ const reworkTtanalytics = {
       "total_changes": 43,
       "rework_changes_total": 43,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 43,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "rework_analysis_tt-analytics.json"
       ]
@@ -1695,8 +2738,8 @@ const reworkTtanalytics = {
       "total_changes": 50,
       "rework_changes_total": 50,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 50,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "rework_analysis_polaris-baby.json"
       ]
@@ -1708,8 +2751,8 @@ const reworkTtanalytics = {
       "total_changes": 100,
       "rework_changes_total": 100,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 100,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "main.py"
       ]
@@ -1721,8 +2764,8 @@ const reworkTtanalytics = {
       "total_changes": 50,
       "rework_changes_total": 50,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 50,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "rework_analysis_polaris-baby.json"
       ]
@@ -1734,8 +2777,8 @@ const reworkTtanalytics = {
       "total_changes": 159,
       "rework_changes_total": 159,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 159,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "rework_analysis_polaris-baby.json"
       ]
@@ -1900,4 +2943,4 @@ const reworkTtanalytics = {
   ]
 };
 
-export default reworkTtanalytics;
+export default reworkttanalytics;
