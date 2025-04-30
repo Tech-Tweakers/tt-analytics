@@ -19,6 +19,12 @@ jobs:
         run: |
             export REPOS=${{ github.event.inputs.repo }}
             services/generate-mdx/mdx-gen.sh
+            git config user.name "github-actions"
+            git config user.email "actions@github.com"
+            git pull origin main --rebase || echo "⚠️ Pull falhou, seguindo mesmo assim"
+            git add docs/
+            git commit -m "📊 Cria nova página de métricas" || echo "⚠️ Nenhuma alteração para commitar"
+            git push || echo "⚠️ Nenhuma alteração para push"
 
       - name: ✅ Finalizado
         run: echo "Tudo pronto, comadre!"
