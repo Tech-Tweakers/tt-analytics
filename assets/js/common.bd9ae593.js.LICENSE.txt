@@ -6,12 +6,6 @@ License: MIT
 */
 
 /*!
-  react-datepicker v8.2.1
-  https://github.com/Hacker0x01/react-datepicker
-  Released under the MIT License.
-*/
-
-/*!
  * Determine if an object is a Buffer
  *
  * @author   Feross Aboukhadijeh <https://feross.org>
