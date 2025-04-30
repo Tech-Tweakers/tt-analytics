@@ -1,4 +1,4 @@
-const refactorPolarischatbot = {
+const refactorpolarischatbot = {
   "data": [
     {
       "data": "2024-01-16",
@@ -1258,4 +1258,4 @@ const refactorPolarischatbot = {
   ]
 };
 
-export default refactorPolarischatbot;
+export default refactorpolarischatbot;
