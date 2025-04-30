@@ -1,5 +1,445 @@
-const refactorPolarispythonapi = {
+const refactorpolarispythonapi = {
   "data": [
+    {
+      "data": "2025-04-28",
+      "sha": "766ae7ef34a8cc4265b7e9bed4fa4717e4512b40",
+      "autor": "Andreh1982",
+      "total_lines": 90,
+      "refactor_lines": 90,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "polaris_api/main.py",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-28",
+      "sha": "7458e9871850d424c04ca948e2699774de0d9376",
+      "autor": "Andre Torres",
+      "total_lines": 15,
+      "refactor_lines": 6,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-28",
+      "sha": "f710311ab7f78525b0244099c406486550ebf2a7",
+      "autor": "Andre Torres",
+      "total_lines": 83,
+      "refactor_lines": 83,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "polaris_api/main.py",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "d0db89c2c3f72365e6dc5bffc10a9cd5940c2596",
+      "autor": "Andreh1982",
+      "total_lines": 112,
+      "refactor_lines": 112,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "polaris_api/main.py",
+        "polaris_api/requirements.txt",
+        "polaris_setup/data-flush.py",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "92f843a2f281af89904d691ff541d2b98f77d204",
+      "autor": "Andre Torres",
+      "total_lines": 53,
+      "refactor_lines": 53,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "polaris_setup/data-flush.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "5dcb9fd5818b6f8da262ce719d421b4dc82341df",
+      "autor": "Andre Torres",
+      "total_lines": 59,
+      "refactor_lines": 59,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "polaris_api/main.py",
+        "polaris_api/requirements.txt",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "90795b3e01653a938c3bd7847f39bbc29bf9fd74",
+      "autor": "Andreh1982",
+      "total_lines": 192,
+      "refactor_lines": 83,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/polaris-ci-cd.yml",
+        "polaris_api/main.py",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "ec3fd23e0bc916c4f0a1b98f6ff089446d47f065",
+      "autor": "Andre Torres",
+      "total_lines": 1,
+      "refactor_lines": 1,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "95aa78635dba5c4d47412823161c886954ffdb7e",
+      "autor": "Andre Torres",
+      "total_lines": 5,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/polaris-ci-cd.yml"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "1c74f2c582944d7d958868fbf0e2d16b2bb9ea27",
+      "autor": "Andre Torres",
+      "total_lines": 14,
+      "refactor_lines": 14,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "polaris_api/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "022e8d64ee3a7fba9e5ef78cddf41189bb5877fb",
+      "autor": "Andre Torres",
+      "total_lines": 188,
+      "refactor_lines": 82,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "polaris_api/main.py",
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "9969d3c3a1369eab8745db11507d6f7d1791c31f",
+      "autor": "Andreh1982",
+      "total_lines": 174,
+      "refactor_lines": 94,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py",
+        "telegram_bot/tts_polaris.py"
+      ]
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "34b637b1c0b22193fe54c64a104b7e02bfbe00d7",
+      "autor": "Andre Torres",
+      "total_lines": 4,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-27",
+      "sha": "7dfae3f2575220b14439287c62b4ebd53a91e4c7",
+      "autor": "Andre Torres",
+      "total_lines": 172,
+      "refactor_lines": 94,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py",
+        "telegram_bot/tts_polaris.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "a017053613613314b65cc1d1d1f8669208e0b556",
+      "autor": "Andreh1982",
+      "total_lines": 79,
+      "refactor_lines": 57,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/deploy.yml",
+        "Makefile",
+        "telegram_bot/main.py",
+        "telegram_bot/requirements.txt"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "758f301fef9fa8742ff329fe96933dbcf07ea092",
+      "autor": "Andre Torres",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "5a1f4192ed7d05d9ad05bfdf799643a1905a6a5b",
+      "autor": "Andre Torres",
+      "total_lines": 4,
+      "refactor_lines": 4,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "60c7c46459233f3b7e7732c774290e9071a1bc66",
+      "autor": "Andre Torres",
+      "total_lines": 4,
+      "refactor_lines": 4,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "37f2b56c1317f12f7ace2bc07adeea622e342c9a",
+      "autor": "Andre Torres",
+      "total_lines": 22,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "a7caea04063b25ef73e4a85c0178859ac05e750a",
+      "autor": "Andre Torres",
+      "total_lines": 51,
+      "refactor_lines": 51,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py",
+        "telegram_bot/requirements.txt"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "3cbd168bce8aea720ac2e52c9194a937b9a08792",
+      "autor": "Andre Torres",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/deploy.yml",
+        "Makefile"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "db1934af6c6dc2496ca3f8784d325c83da5bf460",
+      "autor": "Andreh1982",
+      "total_lines": 138,
+      "refactor_lines": 75,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/polaris-ci-cd.yml",
+        "telegram_bot/main.py",
+        "telegram_bot/requirements.txt"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "4b16259d0a122c83a3b49ad91b87fac3735e6a95",
+      "autor": "Andre Torres",
+      "total_lines": 6,
+      "refactor_lines": 6,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "5a15bca4e319ea8b4aee8711f30cc4001a28803d",
+      "autor": "Andre Torres",
+      "total_lines": 2,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "ba93d9c7efb5e30bd2e99714e59edc3c474cd2eb",
+      "autor": "Andre Torres",
+      "total_lines": 14,
+      "refactor_lines": 14,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py",
+        "telegram_bot/requirements.txt"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "0da8b8509437c0447b71054ccb072aec85bc7dc4",
+      "autor": "Andre Torres",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/polaris-ci-cd.yml"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "e2cc7b04a277e0c50f38dbf80ff04bc54caa6ca4",
+      "autor": "Andre Torres",
+      "total_lines": 140,
+      "refactor_lines": 77,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "telegram_bot/main.py",
+        "telegram_bot/requirements.txt"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "53b646876840190c2b7390d07f8e256560edd978",
+      "autor": "Andreh1982",
+      "total_lines": 32,
+      "refactor_lines": 32,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "README.md"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "8aa40d7ca29c28a5b767cdc19cd1360772b783b5",
+      "autor": "Andre Torres",
+      "total_lines": 32,
+      "refactor_lines": 32,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "README.md"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "171935d432bf8134a54a94099273682d84e05396",
+      "autor": "Andreh1982",
+      "total_lines": 41,
+      "refactor_lines": 41,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/deploy.yml"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "bb36d4aa20af12735a0bf64e8bc55f6c92f0c0bd",
+      "autor": "Andre Torres",
+      "total_lines": 41,
+      "refactor_lines": 41,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/deploy.yml"
+      ]
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "70bc2afe98872fae294f7eb75090751100b76d2d",
+      "autor": "Andreh1982",
+      "total_lines": 11,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-18",
+      "sha": "6495b7643fe33a5515a4da8f81602928af9c285a",
+      "autor": "Andre Torres",
+      "total_lines": 11,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-17",
+      "sha": "b0c4bbf4b11296b1522a968bd4f116e5304a99d1",
+      "autor": "Andreh1982",
+      "total_lines": 32,
+      "refactor_lines": 32,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/deploy.yml"
+      ]
+    },
+    {
+      "data": "2025-04-17",
+      "sha": "759ad10afef1a91dbf08015034dd20ec65eb2f3a",
+      "autor": "Andre Torres",
+      "total_lines": 32,
+      "refactor_lines": 32,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/deploy.yml"
+      ]
+    },
+    {
+      "data": "2025-04-17",
+      "sha": "70abcf2efd3b645d5f0d56cb45a59e0e7bd47b81",
+      "autor": "Andreh1982",
+      "total_lines": 160,
+      "refactor_lines": 158,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "README.md",
+        "polaris_setup/docker-compose.yml"
+      ]
+    },
+    {
+      "data": "2025-04-17",
+      "sha": "d3c38f19275b303d750946a607a4633d21da05e7",
+      "autor": "Andre Torres",
+      "total_lines": 157,
+      "refactor_lines": 157,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "README.md",
+        "polaris_setup/docker-compose.yml"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "5e359220c728ee2186ad176f4b2946de182927bb",
+      "autor": "Andre Torres",
+      "total_lines": 3,
+      "refactor_lines": 3,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "README.md"
+      ]
+    },
+    {
+      "data": "2025-04-10",
+      "sha": "328a2f45594a3e0a191d4b626678ddd0cda01996",
+      "autor": "Andre Torres",
+      "total_lines": 2,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
     {
       "data": "2025-03-20",
       "sha": "22786ac89f28b584d9f307ab4fb87c9c4b58b859",
@@ -4412,4 +4852,4 @@ const refactorPolarispythonapi = {
   ]
 };
 
-export default refactorPolarispythonapi;
+export default refactorpolarispythonapi;
