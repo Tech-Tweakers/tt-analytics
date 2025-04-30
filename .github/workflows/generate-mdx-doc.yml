@@ -25,6 +25,8 @@ jobs:
             git add docs/
             git commit -m "📊 Cria nova página de métricas" || echo "⚠️ Nenhuma alteração para commitar"
             git push || echo "⚠️ Nenhuma alteração para push"
-
-      - name: ✅ Finalizado
-        run: echo "Tudo pronto, comadre!"
+      - name: 🚀 Disparar deploy do portal
+        uses: peter-evans/repository-dispatch@v2
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            event-type: deploy-portal
