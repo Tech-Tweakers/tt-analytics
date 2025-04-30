@@ -138,5 +138,8 @@ def save_js(filepath, data, var_name):
 if __name__ == "__main__":
     commits = get_commits(OWNER, REPO, BRANCH)
     churn_data = analyze_churn(commits)
-    save_js(json_file, churn_data, f"churn{REPO.replace('-', '').title().replace('_', '')}")
+
+    # Constante toda minúscula, sem hífens ou underlines
+    clean_repo = REPO.replace("-", "").replace("_", "").lower()
+    save_js(json_file, churn_data, f"churn{clean_repo}")
 

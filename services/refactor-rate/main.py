@@ -151,6 +151,12 @@ if __name__ == "__main__":
     commits = get_commits(OWNER, REPO, BRANCH)
     data, stats = analyze_refactor(commits)
 
+    # Nome da constante 100% minúsculo, sem hífen ou underscore
+    clean_repo = REPO.replace("-", "").replace("_", "").lower()
+    var_name = f"refactor{clean_repo}"
+    js_file = f"src/data/refactor_rate_{REPO}.js"
+    save_as_js(js_file, {"data": data}, var_name)
+
     print("\n📊 RESULTADOS FINAIS:")
     for k, v in stats.items():
         print(f"🔸 {k}: {v}")
