@@ -1,4 +1,4 @@
-const reworkPolarischatbot = {
+const reworkpolarischatbot = {
   "threshold": 3,
   "data": [
     {
@@ -1513,4 +1513,4 @@ const reworkPolarischatbot = {
   ]
 };
 
-export default reworkPolarischatbot;
+export default reworkpolarischatbot;
