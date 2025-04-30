@@ -1,6 +1,6 @@
-const churnPolarischatbot = {
+const churnpolarischatbot = {
   "repo": "polaris-chatbot",
-  "generated_at": "2025-04-08T13:51:20.618120Z",
+  "generated_at": "2025-04-30T02:01:02.279242Z",
   "churn_summary": {
     "total_churn_lines": 9669,
     "total_commits": 96,
@@ -143,4 +143,4 @@ const churnPolarischatbot = {
   ]
 };
 
-export default churnPolarischatbot;
+export default churnpolarischatbot;
