@@ -3,16 +3,14 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Tech Tweakers - TT Analytics',
-  tagline: 'Collabs are cool!',
+  title: 'TT Analytics',
+  tagline: 'Engineering Intelligence for Tech Tweakers',
   favicon: 'img/favicon.ico',
 
-  // 🌐 URL base do site (usado em produção)
   url: 'https://tech-tweakers.github.io/',
   baseUrl: '/tt-analytics/',
   trailingSlash: false,
 
-  // ⚙️ Config de deploy (ajuste pra sua org e repo se necessário)
   organizationName: 'tech-tweakers',
   projectName: 'tt-analytics',
 
@@ -29,13 +27,10 @@ const config: Config = {
       'classic',
       {
         docs: {
-          // 🚀 Mostra os docs na raiz (sem /docs na URL)
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/tech-tweakers/tt-analytics/edit/main/',
         },
-        blog: false, // ❌ Desativa blog
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -44,19 +39,26 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/tt-logo.png',
     navbar: {
-      title: 'Tech Tweakers - TT Analytics - v1.0',
+      title: 'TT Analytics',
       logo: {
-        alt: 'Tech Tweakers Brazil',
+        alt: 'Tech Tweakers',
         src: 'img/tt-logo.png',
       },
-      items: [],
+      items: [
+        {
+          href: 'https://github.com/Tech-Tweakers/tt-analytics',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub',
+        },
+      ],
     },
     footer: {
       style: 'dark',
       links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} Tech Tweakers Brazil. Built with Docusaurus.`,
+      copyright: `Tech Tweakers Brazil — Engineering Intelligence`,
     },
     prism: {
       theme: prismThemes.github,

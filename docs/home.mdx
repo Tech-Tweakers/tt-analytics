@@ -3,54 +3,75 @@ id: home
 title: TT Analytics Dashboard
 slug: /
 hide_title: true
-sidebar_label: 📊 TT Analytics Dashboard
+sidebar_label: TT Analytics
 sidebar_position: 0
 ---
 
-## 📊 TT Analytics Dashboard
+<div className="hero-section">
 
-Bem-vindo ao painel integrado de métricas para monitorar o ciclo de desenvolvimento da sua equipe.
+# TT Analytics
 
-Este dashboard foi desenvolvido para **acompanhar continuamente a qualidade do código-fonte** nos repositórios da organização, permitindo visualizar padrões, antecipar riscos e tomar decisões com base em dados sólidos e organizados visualmente.
+Monitoramento continuo de qualidade de codigo para os repositorios da Tech Tweakers.
+Metricas que ferramentas caras cobram milhares pra fornecer — de graca.
 
-### 🧭 Objetivos
+</div>
 
-- Visualizar a **taxa geral de retrabalho** desde o início do histórico do repositório.
-- Monitorar o retrabalho recente (**últimos 21 dias**), acompanhando evoluções e melhorias.
-- Analisar o volume de **Code Churn** (quantidade de alterações no código), identificando tendências positivas e negativas.
-- Identificar rapidamente os autores que mais geraram retrabalho e churn em períodos específicos.
-- Facilitar a exportação rápida dos dados em formato **CSV** para análises complementares ou relatórios gerenciais.
-- Antecipar instabilidades no código, reduzindo riscos e aumentando a eficiência do processo de desenvolvimento.
+<div className="features-grid">
 
-### 🛠️ Como funciona?
+<div className="feature-card">
+<span className="feature-icon">🔄</span>
 
-As métricas apresentadas são calculadas automaticamente a partir dos dados dos commits obtidos diretamente do GitHub. Dois motores internos analisam:
+### Rework Rate
 
-- **Rework Rate**:
-  - Quantidade total e recente (últimos 21 dias) de retrabalho por autor.
-  - Identificação detalhada dos arquivos e linhas modificadas mais de uma vez.
-  - Métricas históricas organizadas e disponíveis para exportação.
+Identifica retrabalho no codigo — linhas modificadas repetidamente num curto periodo.
+Quanto menor, mais eficiente o ciclo de desenvolvimento.
 
-- **Code Churn**:
-  - Quantidade total de linhas alteradas ao longo do tempo.
-  - Evolução semanal do volume de mudanças (adições e remoções).
-  - Arquivos e autores com maior incidência de churn.
+</div>
 
-### 📁 Organização do Dashboard
+<div className="feature-card">
+<span className="feature-icon">📊</span>
 
-A barra lateral foi cuidadosamente organizada para facilitar a navegação entre os repositórios monitorados, cada um contendo:
+### Code Churn
 
-- **Rework Rate Geral** (desde o início)
-- **Rework Rate Recente** (últimos 21 dias)
-- **Code Churn** (evolução semanal, top arquivos e autores)
+Mede a volatilidade do codigo: volume de adicoes e delecoes ao longo do tempo.
+Picos de churn indicam areas instaveis que precisam de atencao.
 
-Gráficos interativos permitem análises aprofundadas diretamente no dashboard, com possibilidade de exportar os dados visualizados.
+</div>
 
-### ✨ Contribuições e Suporte
+<div className="feature-card">
+<span className="feature-icon">🛠️</span>
 
-Este projeto é uma iniciativa da equipe Tech Tweakers.  
-Novas ideias, sugestões e contribuições são sempre muito bem-vindas!
+### Refactor Rate
 
-Para qualquer dúvida, contribuição ou suporte técnico, entre em contato diretamente com o responsável técnico do projeto.
+Detecta commits de refatoracao vs commits de logica de negocio.
+Ajuda a balancear divida tecnica com entrega de features.
+
+</div>
+
+</div>
 
 ---
+
+### Como funciona
+
+As metricas sao calculadas automaticamente a partir dos commits via GitHub API.
+Pipelines escalonados rodam ao longo da semana, analisando lotes de repositorios
+sem estourar rate limits.
+
+<div className="info-box">
+Cada repositorio tem 3 dashboards interativos com graficos Plotly, tabelas de ranking
+por autor e exportacao CSV. Navegue pela sidebar para explorar.
+</div>
+
+### Repositorios monitorados
+
+Atualmente monitorando **19 repositorios** da organizacao Tech Tweakers,
+incluindo toda a familia Polaris (v1, v2, v3), infra e ferramentas internas.
+
+---
+
+<div style={{textAlign: 'center', opacity: 0.4, fontSize: '0.85rem', marginTop: '2rem'}}>
+
+Tech Tweakers Brazil — Engineering Intelligence
+
+</div>

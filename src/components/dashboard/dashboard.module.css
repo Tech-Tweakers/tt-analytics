@@ -1,36 +1,71 @@
 .table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin-bottom: 2.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .th {
   text-align: left;
-  padding: 8px;
+  padding: 12px 16px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(22, 25, 34, 0.9);
 }
 
 .td {
-  padding: 8px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.exportButton {
-  padding: 6px 16px;
-  margin-bottom: 20px;
+.table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.table tbody tr:hover {
+  background: rgba(56, 189, 248, 0.04);
+}
+
+.chartWrapper {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background: rgba(22, 25, 34, 0.5);
+}
+
+.dashboardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.exportBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
   cursor: pointer;
-  border: 1px solid #555;
-  background: #2a2a2a;
-  color: #eee;
-  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: rgba(56, 189, 248, 0.08);
+  color: #38bdf8;
+  transition: all 0.15s ease;
 }
 
-.exportButton:hover {
-  background: #3a3a3a;
-}
-
-.summary {
-  margin-bottom: 2rem;
-}
-
-.summary strong {
-  margin-right: 4px;
+.exportBtn:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.35);
 }
