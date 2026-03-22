@@ -1,0 +1,165 @@
+name: "[CRON] - Analise Automatica Escalonada"
+
+# Distribui 19 repos em 4 lotes ao longo da semana pra evitar rate limit
+# Cada lote roda em um dia diferente, com delay entre repos
+#
+# Lote 1 (seg): ecaterminal, polaris-baby, polaris-llm, polaris-python-api, tt-analytics
+# Lote 2 (ter): polaris-chatbot, polaris-frontend, polaris-slack, polaris-core, polaris-wrapper
+# Lote 3 (qua): polaris-v1-api, polaris-v1-web, polaris-v1-integrations, polaris-executor
+# Lote 4 (qui): polaris-v2-api, polaris-v2-web, polaris-v3-api, polaris-v3-web, polaris-v3-llm
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Seg 06:00 UTC - Lote 1
+    - cron: '0 6 * * 2'   # Ter 06:00 UTC - Lote 2
+    - cron: '0 6 * * 3'   # Qua 06:00 UTC - Lote 3
+    - cron: '0 6 * * 4'   # Qui 06:00 UTC - Lote 4
+  workflow_dispatch:
+    inputs:
+      batch:
+        description: 'Numero do lote (1-4) ou "all" pra rodar tudo com delay'
+        required: true
+        default: 'all'
+
+env:
+  BATCH_1: 'ecaterminal,polaris-baby,polaris-llm,polaris-python-api,tt-analytics'
+  BATCH_2: 'polaris-chatbot,polaris-frontend,polaris-slack,polaris-core,polaris-wrapper'
+  BATCH_3: 'polaris-v1-api,polaris-v1-web,polaris-v1-integrations,polaris-executor'
+  BATCH_4: 'polaris-v2-api,polaris-v2-web,polaris-v3-api,polaris-v3-web,polaris-v3-llm'
+  DELAY_BETWEEN_REPOS: 120  # 2 minutos entre cada repo
+
+jobs:
+  resolve-batch:
+    runs-on: ubuntu-latest
+    outputs:
+      repos: ${{ steps.resolve.outputs.repos }}
+    steps:
+      - name: Determinar lote de repos
+        id: resolve
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            DOW=$(date -u +%u)  # 1=seg, 2=ter, 3=qua, 4=qui
+            case $DOW in
+              1) REPOS="${{ env.BATCH_1 }}" ;;
+              2) REPOS="${{ env.BATCH_2 }}" ;;
+              3) REPOS="${{ env.BATCH_3 }}" ;;
+              4) REPOS="${{ env.BATCH_4 }}" ;;
+              *) echo "Dia sem analise agendada"; exit 0 ;;
+            esac
+          else
+            BATCH="${{ github.event.inputs.batch }}"
+            case $BATCH in
+              1) REPOS="${{ env.BATCH_1 }}" ;;
+              2) REPOS="${{ env.BATCH_2 }}" ;;
+              3) REPOS="${{ env.BATCH_3 }}" ;;
+              4) REPOS="${{ env.BATCH_4 }}" ;;
+              all) REPOS="${{ env.BATCH_1 }},${{ env.BATCH_2 }},${{ env.BATCH_3 }},${{ env.BATCH_4 }}" ;;
+              *) echo "Lote invalido: $BATCH"; exit 1 ;;
+            esac
+          fi
+          echo "repos=$REPOS" >> $GITHUB_OUTPUT
+          echo "Repos para este lote: $REPOS"
+
+  analyze:
+    needs: resolve-batch
+    if: needs.resolve-batch.outputs.repos != ''
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias Python
+        run: pip install -r requirements.txt
+
+      - name: Configurar git
+        run: |
+          git config user.name 'github-actions'
+          git config user.email 'actions@github.com'
+
+      - name: Analisar repos com delay entre cada um
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          OWNER: Tech-Tweakers
+        run: |
+          REPOS="${{ needs.resolve-batch.outputs.repos }}"
+          DELAY=${{ env.DELAY_BETWEEN_REPOS }}
+          FIRST=true
+
+          for REPO in $(echo "$REPOS" | tr ',' ' '); do
+            if [ "$FIRST" = true ]; then
+              FIRST=false
+            else
+              echo "Aguardando ${DELAY}s antes do proximo repo..."
+              sleep $DELAY
+            fi
+
+            echo ""
+            echo "========================================="
+            echo "Processando: $REPO"
+            echo "========================================="
+
+            # MDX pages
+            export REPOS=$REPO
+            chmod +x services/generate-mdx/mdx-gen.sh
+            services/generate-mdx/mdx-gen.sh
+            git add docs/
+            git commit -m "Paginas atualizadas para $REPO" || echo "Nada para commitar"
+
+            # Analises
+            export REPO=$REPO
+            export BRANCH=main
+            export THRESHOLD=3
+
+            echo "-> Rework Rate..."
+            python services/rework-rate/main.py
+            git add "src/data/rework_rate_${REPO}.js"
+            git commit -m "Rework Rate: $REPO" || echo "Nada novo"
+
+            echo "-> Code Churn..."
+            python services/code-churn/main.py
+            git add "src/data/code_churn_${REPO}.js"
+            git commit -m "Code Churn: $REPO" || echo "Nada novo"
+
+            echo "-> Refactor Rate..."
+            python services/refactor-rate/main.py
+            git add "src/data/refactor_rate_${REPO}.js"
+            git commit -m "Refactor Rate: $REPO" || echo "Nada novo"
+
+            echo "Concluido: $REPO"
+          done
+
+      - name: Regenerar repoMap
+        run: |
+          chmod +x services/generate-mdx/repomap-gen.sh
+          services/generate-mdx/repomap-gen.sh
+          git add src/data/repoMap.js
+          git commit -m "repoMap atualizado" || echo "Nada novo"
+          git push || echo "Nada para push"
+
+  deploy:
+    needs: analyze
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositorio
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Build e Deploy
+        run: npm ci && npm run build
+
+      - name: Deploy no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
