@@ -1,0 +1,22 @@
+---
+title: Code Churn
+hide_title: true
+sidebar_label: Code Churn
+sidebar_position: 2
+---
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+<BrowserOnly fallback={<div>Carregando...</div>}>
+  {() => {
+    const CodeChurnDashboard = require('@site/src/components/CodeChurnDashboard').default;
+    const { repoMap } = require('@site/src/data/repoMap');
+    const repoId = "polaris-core";
+
+    if (!repoMap[repoId] || !repoMap[repoId].churn) {
+      return <div>Dados de churn indisponiveis para: {repoId}</div>;
+    }
+
+    return <CodeChurnDashboard repo={repoId} data={repoMap[repoId].churn} />;
+  }}
+</BrowserOnly>

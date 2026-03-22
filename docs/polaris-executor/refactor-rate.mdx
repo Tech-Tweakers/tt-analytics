@@ -1,0 +1,22 @@
+---
+title: Refactor Rate
+hide_title: true
+sidebar_label: Refactor Rate
+sidebar_position: 3
+---
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+<BrowserOnly fallback={<div>Carregando...</div>}>
+  {() => {
+    const RefactorDashboard = require('@site/src/components/RefactorDashboard').default;
+    const { repoMap } = require('@site/src/data/repoMap');
+    const repoId = "polaris-executor";
+
+    if (!repoMap[repoId] || !repoMap[repoId].refactor) {
+      return <div>Dados de refatoracao indisponiveis para: {repoId}</div>;
+    }
+
+    return <RefactorDashboard repo={repoId} data={repoMap[repoId].refactor} />;
+  }}
+</BrowserOnly>
