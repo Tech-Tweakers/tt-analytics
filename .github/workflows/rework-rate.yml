@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       repo:
-        description: 'Repositório a ser analisado'
+        description: 'Repositorio a ser analisado'
         required: true
         default: 'polaris-python-api'
       branch:
@@ -12,14 +12,14 @@ on:
         required: true
         default: 'main'
       threshold:
-        description: 'Número mínimo de alterações para contar como retrabalho'
+        description: 'Numero minimo de alteracoes para contar como retrabalho'
         required: true
         default: '3'
       start_date:
-        description: 'Data inicial (YYYY-MM-DD) - Deixe em branco para analisar tudo'
+        description: 'Data inicial (YYYY-MM-DD)'
         required: false
       end_date:
-        description: 'Data final (YYYY-MM-DD) - Deixe em branco para analisar até hoje'
+        description: 'Data final (YYYY-MM-DD)'
         required: false
 
 jobs:
@@ -27,62 +27,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🛠️ Checkout do repositório
-        uses: actions/checkout@v3
+      - name: Checkout do repositorio
+        uses: actions/checkout@v4
 
-      - name: 🐍 Configurar Python
-        uses: actions/setup-python@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.11'
 
-      - name: 📦 Instalar dependências
-        run: pip install requests pandas plotly kaleido
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
 
-      - name: 🚀 Rodar análise de retrabalho
+      - name: Rodar analise de retrabalho
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          OWNER: Tech-Tweakers
+          REPO: ${{ github.event.inputs.repo }}
+          BRANCH: ${{ github.event.inputs.branch }}
+          THRESHOLD: ${{ github.event.inputs.threshold }}
+          START_DATE: ${{ github.event.inputs.start_date || '2000-01-01' }}
+          END_DATE: ${{ github.event.inputs.end_date || '' }}
+        run: python services/rework-rate/main.py
+
+      - name: Commitar resultados
         run: |
-          export GITHUB_TOKEN=${{ secrets.GH_PAT }}
-          export OWNER="Tech-Tweakers"
-          export REPO=${{ github.event.inputs.repo }}
-          export BRANCH=${{ github.event.inputs.branch }}
-          export THRESHOLD=${{ github.event.inputs.threshold }}
-          export START_DATE=${{ github.event.inputs.start_date || '2000-01-01' }}
-          export END_DATE=${{ github.event.inputs.end_date || '' }}
-
-          echo "📅 Analisando commits de $START_DATE até $END_DATE"
-          python services/rework-rate/main.py
-
-      - name: 💾 Commitar arquivos .js
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'actions@github.com'
-          git add -f src/data/rework_rate_${{ github.event.inputs.repo }}.js || echo "⚠️ Nada para adicionar"
-          git commit -m "🔄 Atualizando métricas de retrabalho (.js)" || echo "⚠️ Nenhuma alteração para commitar"
-          git push || echo "⚠️ Nenhuma alteração para push"
-
-  deploy_js:
-    needs: analyze_rework
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 📥 Checkout da branch gh-pages
-        uses: actions/checkout@v3
-        with:
-          ref: gh-pages
-
-      - name: 🔁 Sincronizar arquivos JS da main
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git fetch origin main
-          git checkout origin/main -- src/data/rework_rate_${{ github.event.inputs.repo }}.js
-
-          git add src/data/
-          git commit -m "📊 Sync JS de retrabalho na gh-pages" || echo "⚠️ Nada novo pra commitar"
-          git push || echo "⚠️ Nenhuma alteração para push"
-      - name: 🚀 Disparar deploy do portal
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          event-type: deploy-portal
+          git config user.name 'github-actions'
+          git config user.email 'actions@github.com'
+          git add "src/data/rework_rate_${{ github.event.inputs.repo }}.js"
+          git commit -m "Rework Rate atualizado para ${{ github.event.inputs.repo }}" || echo "Nada novo"
+          git push || echo "Nada para push"

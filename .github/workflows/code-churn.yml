@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       repo:
-        description: 'Repositório a ser analisado'
+        description: 'Repositorio a ser analisado'
         required: true
 
 jobs:
@@ -12,55 +12,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout do repositório
-        uses: actions/checkout@v3
+      - name: Checkout do repositorio
+        uses: actions/checkout@v4
 
-      - name: ⚙️ Configurar Python
-        uses: actions/setup-python@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: '3.11'
 
-      - name: 📦 Instalar dependências
-        run: pip install requests
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
 
-      - name: 🚀 Rodar script de churn
+      - name: Rodar script de churn
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           OWNER: Tech-Tweakers
           REPO: ${{ github.event.inputs.repo }}
         run: python services/code-churn/main.py
 
-      - name: 💾 Commitar resultados (.js)
+      - name: Commitar resultados
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git pull origin main --rebase || echo "⚠️ Pull falhou, seguindo mesmo assim"
-          git add src/data/code_churn_*.js
-          git commit -m "📊 Atualiza análise de code churn (.js)" || echo "⚠️ Nenhuma alteração para commitar"
-          git push || echo "⚠️ Nenhuma alteração para push"
-
-  deploy_js:
-    needs: generate-churn
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 📥 Checkout da branch gh-pages
-        uses: actions/checkout@v3
-        with:
-          ref: gh-pages
-
-      - name: 🔁 Sincronizar JS gerado da main
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git fetch origin main
-          git checkout origin/main -- src/data/code_churn_${{ github.event.inputs.repo }}.js
-
-          git add src/data/
-          git commit -m "📊 Sync JS de code churn na gh-pages" || echo "⚠️ Nada novo pra commitar"
-          git push || echo "⚠️ Nenhuma alteração para push"
-      - name: 🚀 Disparar deploy do portal
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          event-type: deploy-portal
+          git add "src/data/code_churn_${{ github.event.inputs.repo }}.js"
+          git commit -m "Code Churn atualizado para ${{ github.event.inputs.repo }}" || echo "Nada novo"
+          git push || echo "Nada para push"

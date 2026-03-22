@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       repos:
-        description: 'Lista de repositórios separados por vírgula'
+        description: 'Lista de repositorios separados por virgula'
         required: true
         default: 'polaris-python-api,ecaterminal'
       branch:
@@ -12,7 +12,7 @@ on:
         required: true
         default: 'main'
       threshold:
-        description: 'Mínimo de alterações p/ retrabalho (Rework Rate)'
+        description: 'Minimo de alteracoes p/ retrabalho (Rework Rate)'
         required: true
         default: '3'
 
@@ -21,68 +21,74 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🛠️ Checkout do repositório
-        uses: actions/checkout@v3
+      - name: Checkout do repositorio
+        uses: actions/checkout@v4
 
-      - name: 🐍 Configurar Python
-        uses: actions/setup-python@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: 📦 Instalar dependências
-        run: pip install requests pandas plotly kaleido
+      - name: Instalar dependencias Python
+        run: pip install -r requirements.txt
 
-      - name: 🔁 Executar pipeline para cada repositório
+      - name: Configurar git
+        run: |
+          git config user.name 'github-actions'
+          git config user.email 'actions@github.com'
+
+      - name: Executar pipeline para cada repositorio
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          OWNER: Tech-Tweakers
         run: |
           REPOS="${{ github.event.inputs.repos }}"
           BRANCH="${{ github.event.inputs.branch }}"
           THRESHOLD="${{ github.event.inputs.threshold }}"
 
           for REPO in $(echo "$REPOS" | tr ',' ' '); do
-            echo "🚀 Processando $REPO..."
+            echo "Processando $REPO..."
 
-            # 🔁 MDX Pages
             export REPOS=$REPO
             chmod +x services/generate-mdx/mdx-gen.sh
             services/generate-mdx/mdx-gen.sh
             git add docs/
-            git commit -m "📊 Cria/atualiza páginas para $REPO" || echo "⚠️ Nada para commitar"
+            git commit -m "Cria/atualiza paginas para $REPO" || echo "Nada para commitar"
 
-            # 🔁 Rework Rate
-            export OWNER="Tech-Tweakers"
             export REPO=$REPO
             export BRANCH=$BRANCH
             export THRESHOLD=$THRESHOLD
 
             python services/rework-rate/main.py
-            git add src/data/rework_rate_${REPO}.js
-            git commit -m "🔄 Rework Rate atualizado para $REPO" || echo "⚠️ Nada novo"
+            git add "src/data/rework_rate_${REPO}.js"
+            git commit -m "Rework Rate atualizado para $REPO" || echo "Nada novo"
 
-            # 🔁 Code Churn
             python services/code-churn/main.py
-            git add src/data/code_churn_${REPO}.js
-            git commit -m "📊 Code Churn atualizado para $REPO" || echo "⚠️ Nada novo"
+            git add "src/data/code_churn_${REPO}.js"
+            git commit -m "Code Churn atualizado para $REPO" || echo "Nada novo"
 
-            # 🔁 Refactor Rate
             python services/refactor-rate/main.py
-            git add src/data/refactor_rate_${REPO}.js
-            git commit -m "🔧 Refactor Rate atualizado para $REPO" || echo "⚠️ Nada novo"
+            git add "src/data/refactor_rate_${REPO}.js"
+            git commit -m "Refactor Rate atualizado para $REPO" || echo "Nada novo"
           done
 
-      - name: 🧠 Regenerar repoMap
+      - name: Regenerar repoMap
         run: |
           chmod +x services/generate-mdx/repomap-gen.sh
           services/generate-mdx/repomap-gen.sh
           git add src/data/repoMap.js
-          git commit -m "🧠 repoMap atualizado após rodada completa" || echo "⚠️ Nada novo"
-          git push || echo "⚠️ Nada para push"
+          git commit -m "repoMap atualizado apos rodada completa" || echo "Nada novo"
+          git push || echo "Nada para push"
 
-      - name: 🏗️ Build do Docusaurus
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Build do Docusaurus
         run: npm ci && npm run build
 
-      - name: 🚀 Deploy no GitHub Pages
+      - name: Deploy no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

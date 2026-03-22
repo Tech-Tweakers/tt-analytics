@@ -1,14 +1,16 @@
 #!/bin/bash
 set -e
 
-echo "🧠 Gerando repoMap dinamicamente..."
+echo "Gerando repoMap dinamicamente..."
 
-echo "// ⚡️ Arquivo gerado automaticamente pelo GitHub Actions" > src/data/repoMap.js
+echo "// Arquivo gerado automaticamente" > src/data/repoMap.js
 echo "" >> src/data/repoMap.js
+
+> temp_map.txt
 
 for file in src/data/*.js; do
   filename=$(basename "$file" .js)
-  if [[ "$filename" == "repomap" ]]; then continue; fi
+  if [[ "$filename" == "repoMap" ]]; then continue; fi
 
   if [[ "$filename" == code_churn_* ]]; then
     prefix="churn"
@@ -23,7 +25,6 @@ for file in src/data/*.js; do
     continue
   fi
 
-  # Tudo em minúsculo e sem hífen/underscore
   repo_key=$(echo "$repo_name" | tr '[:upper:]' '[:lower:]')
   clean_repo=$(echo "$repo_key" | tr -d '_-')
   const_name="${prefix}${clean_repo}"
@@ -35,16 +36,15 @@ done
 echo "" >> src/data/repoMap.js
 echo "export const repoMap = {" >> src/data/repoMap.js
 
-cut -d ';' -f1 temp_map.txt | sort -u | while read repo; do
+while read -r repo; do
   echo "  '$repo': {" >> src/data/repoMap.js
-  grep "^$repo;" temp_map.txt | while IFS=';' read _ type const; do
-    echo "    $type: $const," >> src/data/repoMap.js
+  grep "^${repo};" temp_map.txt | while IFS=';' read -r _ type const_ref; do
+    echo "    $type: $const_ref," >> src/data/repoMap.js
   done
   echo "  }," >> src/data/repoMap.js
-done
+done < <(cut -d ';' -f1 temp_map.txt | sort -u)
 
 echo "};" >> src/data/repoMap.js
-rm temp_map.txt
+rm -f temp_map.txt
 
-echo "// 👻 Forçado pelo pipeline em $(date -u)" >> src/data/repoMap.js
-echo "✅ repoMap.js atualizado com sucesso!"
+echo "repoMap.js atualizado com sucesso!"

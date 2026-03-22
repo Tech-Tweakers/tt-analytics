@@ -1,0 +1,36 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2.5rem;
+}
+
+.th {
+  text-align: left;
+  padding: 8px;
+}
+
+.td {
+  padding: 8px;
+}
+
+.exportButton {
+  padding: 6px 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border: 1px solid #555;
+  background: #2a2a2a;
+  color: #eee;
+  border-radius: 4px;
+}
+
+.exportButton:hover {
+  background: #3a3a3a;
+}
+
+.summary {
+  margin-bottom: 2rem;
+}
+
+.summary strong {
+  margin-right: 4px;
+}

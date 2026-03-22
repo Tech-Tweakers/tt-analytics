@@ -1,4 +1,4 @@
-name: Build Docusaurus to Main
+name: Build & Deploy Docusaurus
 
 on:
   push:
@@ -10,18 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout o código
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: Instala dependências
+      - name: Instalar dependencias
         run: npm ci
 
-      - name: Gera o build
+      - name: Build
         run: npm run build
 
       - name: Deploy to GitHub Pages
