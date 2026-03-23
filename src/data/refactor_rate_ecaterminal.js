@@ -1,4 +1,4 @@
-const refactorEcaterminal = {
+const refactorecaterminal = {
   "data": [
     {
       "data": "2023-07-05",
@@ -282,4 +282,4 @@ const refactorEcaterminal = {
   ]
 };
 
-export default refactorEcaterminal;
+export default refactorecaterminal;
