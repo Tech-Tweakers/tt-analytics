@@ -7,15 +7,16 @@ sidebar_position: 4
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-<BrowserOnly fallback={<div>Carregando gráfico...</div>}>
+<BrowserOnly fallback={<div>Carregando...</div>}>
   {() => {
     const ReworkDashboard = require('@site/src/components/ReworkDashboard').default;
     const { repoMap } = require('@site/src/data/repoMap');
-    return (
-      <ReworkDashboard
-        repo="ecaterminal"
-        data={repoMap["ecaterminal"].rework}
-      />
-    );
+    const repoId = "ecaterminal";
+
+    if (!repoMap[repoId] || !repoMap[repoId].rework) {
+      return <div>Dados de rework indisponiveis para: {repoId}</div>;
+    }
+
+    return <ReworkDashboard repo={repoId} data={repoMap[repoId].rework} />;
   }}
 </BrowserOnly>
