@@ -1,5 +1,55 @@
-const refactorPolarisbaby = {
+const refactorpolarisbaby = {
   "data": [
+    {
+      "data": "2025-07-25",
+      "sha": "99a2a9bbea26f9573f433432243e84b9d2f4ad97",
+      "autor": "Andreh Torres",
+      "total_lines": 79,
+      "refactor_lines": 79,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "generate.py",
+        "main.py",
+        "train_engine.py",
+        "word2vec_model.py"
+      ]
+    },
+    {
+      "data": "2024-05-22",
+      "sha": "fc9a8b6bdd7d915de58c65a59ca4a4650272acb0",
+      "autor": "Andreh1982",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2024-05-22",
+      "sha": "0d193c8fa59f99c3c823d2c653e8144a79fb5ddd",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2024-05-22",
+      "sha": "fdce1f4decdb50a1e5ee1601de8cc444ad61ffe4",
+      "autor": "Andreh1982",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2024-05-22",
+      "sha": "19e0fb7f7cc9286eed972fc715746e0b6905f1ae",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
     {
       "data": "2024-05-22",
       "sha": "5603015328d271313fc57e87b94cf06cfff1832d",
@@ -496,4 +546,4 @@ const refactorPolarisbaby = {
   ]
 };
 
-export default refactorPolarisbaby;
+export default refactorpolarisbaby;
