@@ -1,6 +1,686 @@
 const refactorttanalytics = {
   "data": [
     {
+      "data": "2026-03-22",
+      "sha": "85f41bafe8e37da80a42500ef80f6504dbf1d552",
+      "autor": "Andreh Torres",
+      "total_lines": 253,
+      "refactor_lines": 127,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "build/404.html",
+        "build/assets/js/3edc820b.272b4205.js",
+        "build/assets/js/3edc820b.2de382f7.js",
+        "build/ecaterminal/code-churn.html",
+        "build/ecaterminal/refactor-rate.html",
+        "build/ecaterminal/rework-rate.html",
+        "build/index.html",
+        "build/polaris-baby/code-churn.html",
+        "build/polaris-baby/refactor-rate.html",
+        "build/polaris-baby/rework-rate.html"
+      ]
+    },
+    {
+      "data": "2026-03-22",
+      "sha": "f902a6202dcc8cab9d4b69fa386471e54335557c",
+      "autor": "Andreh Torres",
+      "total_lines": 165,
+      "refactor_lines": 165,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/scheduled-analysis.yml"
+      ]
+    },
+    {
+      "data": "2026-03-22",
+      "sha": "ac441aaf3cb55d6bf0c1504d04ea3f02f7cce761",
+      "autor": "Andreh Torres",
+      "total_lines": 277,
+      "refactor_lines": 86,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "build/404.html",
+        "build/assets/js/3edc820b.272b4205.js",
+        "build/assets/js/3edc820b.ac641fb1.js",
+        "build/assets/js/aba21aa0.6b2b95d5.js",
+        "build/assets/js/aba21aa0.fe4cdd7c.js",
+        "build/polaris-core/code-churn.html",
+        "build/polaris-core/refactor-rate.html",
+        "build/polaris-core/rework-rate.html",
+        "build/polaris-executor/code-churn.html",
+        "build/polaris-executor/refactor-rate.html",
+        "build/polaris-executor/rework-rate.html"
+      ]
+    },
+    {
+      "data": "2026-03-22",
+      "sha": "6bbe587173717c0ca81ae513e8e9c88be8c483dd",
+      "autor": "Andreh Torres",
+      "total_lines": 2963,
+      "refactor_lines": 2477,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/code-churn.yml",
+        ".github/workflows/full-run.yml",
+        ".github/workflows/generate-mdx-doc.yml",
+        ".github/workflows/generate-repomap.yml",
+        ".github/workflows/page-deploy.yml",
+        ".github/workflows/refactor-rate.yml",
+        ".github/workflows/rework-rate.yml",
+        "build/404.html",
+        "build/assets/js/3edc820b.ac641fb1.js",
+        "build/assets/js/aba21aa0.fe4cdd7c.js",
+        "build/assets/js/common.d6a56db9.js.LICENSE.txt",
+        "build/assets/js/main.d72c88af.js.LICENSE.txt",
+        "build/ecaterminal/code-churn.html",
+        "build/ecaterminal/refactor-rate.html",
+        "build/ecaterminal/rework-rate.html",
+        "build/img/logo.svg",
+        "build/index.html",
+        "build/polaris-baby/code-churn.html",
+        "build/polaris-baby/refactor-rate.html",
+        "build/polaris-baby/rework-rate.html",
+        "build/polaris-chatbot/code-churn.html",
+        "build/polaris-chatbot/refactor-rate.html",
+        "build/polaris-chatbot/rework-rate.html",
+        "build/polaris-frontend-vue/code-churn.html",
+        "build/polaris-frontend-vue/refactor-rate.html",
+        "build/polaris-frontend-vue/rework-rate.html",
+        "build/polaris-frontend/code-churn.html",
+        "build/polaris-frontend/refactor-rate.html",
+        "build/polaris-frontend/rework-rate.html",
+        "build/polaris-llm/code-churn.html",
+        "build/polaris-llm/refactor-rate.html",
+        "build/polaris-llm/rework-rate.html",
+        "build/polaris-python-api/code-churn.html",
+        "build/polaris-python-api/refactor-rate.html",
+        "build/polaris-python-api/rework-rate.html",
+        "build/polaris-slack/code-churn.html",
+        "build/polaris-slack/refactor-rate.html",
+        "build/polaris-slack/rework-rate.html",
+        "build/sitemap.xml",
+        "build/tt-analytics/code-churn.html",
+        "build/tt-analytics/refactor-rate.html",
+        "build/tt-analytics/rework-rate.html",
+        "requirements.txt",
+        "services/code-churn/main.py",
+        "services/refactor-rate/main.py",
+        "services/rework-rate/main.py",
+        "services/shared/config.py",
+        "services/shared/github_client.py",
+        "services/shared/output.py",
+        "src/components/CodeChurnDashboard.tsx",
+        "src/components/HomepageFeatures/styles.module.css",
+        "src/components/RefactorDashboard.tsx",
+        "src/components/ReworkDashboard.tsx",
+        "src/components/dashboard/DashboardErrorBoundary.tsx",
+        "src/components/dashboard/DataTable.tsx",
+        "src/components/dashboard/chartTheme.ts",
+        "src/components/dashboard/dashboard.module.css",
+        "src/components/dashboard/index.ts",
+        "src/components/dashboard/useCSVExport.ts",
+        "src/components/dashboard/useDateFilter.ts",
+        "src/types/metrics.ts"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "65a2d012a1fcda0636f701442502ee092880bef9",
+      "autor": "Andre Torres",
+      "total_lines": 108,
+      "refactor_lines": 108,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/full-run.yml"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "350c7a4f66723007a556bd2578e624b0ac1405f4",
+      "autor": "Andre Torres",
+      "total_lines": 43,
+      "refactor_lines": 43,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/components/RefactorDashboard.tsx",
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "669ca487b58d23ce4f032024d9a57417fe774b32",
+      "autor": "Andre Torres",
+      "total_lines": 141,
+      "refactor_lines": 141,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/components/RefactorDashboard.tsx",
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "920659a5d0de0458c46debee686e4332e704c89a",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "5b04f3dfc6b4648e67bb30e3b580b4a5b57ba182",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "87caedc9b4959a87500e46ef14f19f4067ff3033",
+      "autor": "github-actions",
+      "total_lines": 918,
+      "refactor_lines": 918,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/rework_rate_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "89a3b6f01ccda72f2d73ea177a4a9ad07006548f",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "093d58c854f543ec2997a174c3eee9c1d27813f1",
+      "autor": "github-actions",
+      "total_lines": 127,
+      "refactor_lines": 127,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/refactor_rate_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "b4ba42fb8ada097e6c317fc6523295b492f7235c",
+      "autor": "github-actions",
+      "total_lines": 81,
+      "refactor_lines": 81,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "45b6be5285ac7b3015e19657bc974193a626d81a",
+      "autor": "github-actions",
+      "total_lines": 1363,
+      "refactor_lines": 1363,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/rework_rate_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "9c7d85b536ffc5e5094ecf190895b8e31cdaa5ce",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "34c3eb74dccdea07e97dedc19b227ab362369ff6",
+      "autor": "github-actions",
+      "total_lines": 4,
+      "refactor_lines": 4,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/refactor_rate_polaris-chatbot.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "8e7293535f2f26f1d3f8b7ea62d05f1d8f8a8c23",
+      "autor": "github-actions",
+      "total_lines": 6,
+      "refactor_lines": 6,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-chatbot.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "7459cc63176ce4f507582b1b6a1dd4bacfd41152",
+      "autor": "github-actions",
+      "total_lines": 4,
+      "refactor_lines": 4,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/rework_rate_polaris-chatbot.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "c3f21a9fe4be34dab7332c21b55476362ba684e0",
+      "autor": "github-actions",
+      "total_lines": 12,
+      "refactor_lines": 12,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "docs/polaris-chatbot/_category_.json",
+        "docs/polaris-chatbot/rework-rate.mdx"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "14ad99c75ea5e6b386b1307e8e01796afade0db2",
+      "autor": "Andre Torres",
+      "total_lines": 98,
+      "refactor_lines": 98,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/components/CodeChurnDashboard.tsx",
+        "src/components/RefactorDashboard.tsx",
+        "src/components/ReworkDashboard.tsx"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "831b18f6fabc88f29996df9e3425fe8db9f74ca6",
+      "autor": "Andre Torres",
+      "total_lines": 65,
+      "refactor_lines": 65,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "docs/home.mdx",
+        "docs/polaris-api-python/_category_.json",
+        "docs/polaris-api-python/code-churn.mdx",
+        "docs/polaris-api-python/refactor-rate.mdx",
+        "docs/polaris-api-python/rework-rate.mdx"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "c01dcdc8144076275eaaac889e039686b532150e",
+      "autor": "github-actions",
+      "total_lines": 1,
+      "refactor_lines": 1,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "50e8bda1524a8c9ef8f011ae77975a300fbbd091",
+      "autor": "github-actions",
+      "total_lines": 444,
+      "refactor_lines": 444,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/refactor_rate_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "3a61b5bd7abe19453bd567d9e4c104f4e3ea2763",
+      "autor": "github-actions",
+      "total_lines": 64,
+      "refactor_lines": 64,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "f21da45a966c1818ef639377a8808e9395f8d15a",
+      "autor": "github-actions",
+      "total_lines": 572,
+      "refactor_lines": 572,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/rework_rate_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "1871472c10bbf644764c9424d1f165cec7f08e32",
+      "autor": "github-actions",
+      "total_lines": 69,
+      "refactor_lines": 69,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "docs/polaris-python-api/_category_.json",
+        "docs/polaris-python-api/code-churn.mdx",
+        "docs/polaris-python-api/refactor-rate.mdx",
+        "docs/polaris-python-api/rework-rate.mdx"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "c68e802b21132d217756785ceea69cab2d5be5a5",
+      "autor": "Andre Torres",
+      "total_lines": 14,
+      "refactor_lines": 14,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "services/code-churn/main.py",
+        "services/refactor-rate/main.py",
+        "services/rework-rate/main.py"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "b2b09705f92d0202061a9c2ed4d8e9520dd0980e",
+      "autor": "github-actions",
+      "total_lines": 69,
+      "refactor_lines": 69,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "d1b1e26c49c6146207cebed8d4547fec7eea7e0f",
+      "autor": "Andre Torres",
+      "total_lines": 119,
+      "refactor_lines": 119,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "services/generate-mdx/repomap-gen.sh",
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "705fd861ab38382f70b58bd0883e026e2d09695d",
+      "autor": "github-actions",
+      "total_lines": 8,
+      "refactor_lines": 8,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "4b82c942241c122f0ced6eb0aae88c60870e1504",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_ecaterminal.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "414e1e5ef0142e13eace3cc0ad44c82b1df54a84",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_ecaterminal.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "439fa8853c79569d947fed2ab0024ad66790de86",
+      "autor": "Andre Torres",
+      "total_lines": 4,
+      "refactor_lines": 4,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/full-run.yml"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "a15a1188a355b15a9a94304794f73b62bcad8345",
+      "autor": "github-actions",
+      "total_lines": 285,
+      "refactor_lines": 285,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/refactor_rate_ecaterminal.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "af23450da1e5827d3db3685b240e188b82898ac0",
+      "autor": "github-actions",
+      "total_lines": 96,
+      "refactor_lines": 96,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_ecaterminal.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "150cbd7ed23b214ff50f02b1bc7ed7d99138b904",
+      "autor": "github-actions",
+      "total_lines": 346,
+      "refactor_lines": 346,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/rework_rate_ecaterminal.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "91dcc3a735a81ab4e2c1800794a8273d7cecf3da",
+      "autor": "github-actions",
+      "total_lines": 69,
+      "refactor_lines": 69,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "docs/ecaterminal/_category_.json",
+        "docs/ecaterminal/code-churn.mdx",
+        "docs/ecaterminal/refactor-rate.mdx",
+        "docs/ecaterminal/rework-rate.mdx"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "c3aebbf3306847e30e3e0e8a46ace49a23721992",
+      "autor": "Andre Torres",
+      "total_lines": 117,
+      "refactor_lines": 117,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/full-run.yml"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "63c9dc416a755e4951fd6bfb6753d2dee60bca4c",
+      "autor": "Andre Torres",
+      "total_lines": 15,
+      "refactor_lines": 15,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/code-churn.yml",
+        ".github/workflows/refactor-rate.yml",
+        ".github/workflows/rework-rate.yml"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "0b4a1699de53e4167007fde9890d64314824aedf",
+      "autor": "Andre Torres",
+      "total_lines": 8,
+      "refactor_lines": 8,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/generate-mdx-doc.yml"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "7ee25c0ade09594d76b50ed1b0e719b4b84ed584",
+      "autor": "github-actions",
+      "total_lines": 69,
+      "refactor_lines": 69,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "docs/tt-analytics/_category_.json",
+        "docs/tt-analytics/code-churn.mdx",
+        "docs/tt-analytics/refactor-rate.mdx",
+        "docs/tt-analytics/rework-rate.mdx"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "b61d470af5d836663d6f880fa26333662a449af1",
+      "autor": "Andre Torres",
+      "total_lines": 10,
+      "refactor_lines": 10,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "docs/polaris-chatbot/_category_.json",
+        "docs/polaris-frontend-vue/_category_.json",
+        "docs/polaris-frontend/_category_.json",
+        "docs/polaris-llm/_category_.json",
+        "docs/polaris-slack/_category_.json"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "b25431740441904ca51df2f3b927e7ec30d3d87f",
+      "autor": "github-actions",
+      "total_lines": 8,
+      "refactor_lines": 8,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/repoMap.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "0673dc6607f297f8eca148f89c4b3ebaccd30c91",
+      "autor": "github-actions",
+      "total_lines": 135,
+      "refactor_lines": 135,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/refactor_rate_polaris-slack.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "942aae6c7341d9fb6dbad0eb083c1a1d30bac0bd",
+      "autor": "github-actions",
+      "total_lines": 78,
+      "refactor_lines": 78,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-slack.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "a89abdbf6ef81e4f1e806703e108d9c064bd062c",
+      "autor": "github-actions",
+      "total_lines": 69,
+      "refactor_lines": 69,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "docs/polaris-slack/_category_.json",
+        "docs/polaris-slack/code-churn.mdx",
+        "docs/polaris-slack/refactor-rate.mdx",
+        "docs/polaris-slack/rework-rate.mdx"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "9f9e887708ae3bb8836437e13b8b2a52749b8efe",
+      "autor": "github-actions",
+      "total_lines": 153,
+      "refactor_lines": 153,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/rework_rate_polaris-slack.js"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "dbfc87edb446945984f3b98fe0e4bd5c9728aa82",
+      "autor": "github-actions",
+      "total_lines": 69,
+      "refactor_lines": 69,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "docs/polaris-frontend-vue/_category_.json",
+        "docs/polaris-frontend-vue/code-churn.mdx",
+        "docs/polaris-frontend-vue/refactor-rate.mdx",
+        "docs/polaris-frontend-vue/rework-rate.mdx"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "b4dc57bd0ad1611888a1f3f890354e0e399c1c5a",
+      "autor": "Andreh1982",
+      "total_lines": 6,
+      "refactor_lines": 6,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/generate-mdx-doc.yml"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "5d840b06af91a5c347842ba7dae0b39849c5bc7d",
+      "autor": "Andre Torres",
+      "total_lines": 6,
+      "refactor_lines": 6,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".github/workflows/generate-mdx-doc.yml"
+      ]
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "38f6d94c2a1518d2a5710991dd7885b2fa79a565",
+      "autor": "Andreh1982",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-30",
+      "sha": "62f553992ed95ba46fc81e253019a7bf26cbce1e",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
       "data": "2025-04-29",
       "sha": "f770129273b19d80dd4568e17809515d397119d7",
       "autor": "Andreh1982",
@@ -237,6 +917,15 @@ const refactorttanalytics = {
     },
     {
       "data": "2025-04-13",
+      "sha": "89b6fd09ff9411f43c957ec01b14de7744f37069",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-13",
       "sha": "78653c3c8e2dff589356b822a439f46aae7cc47b",
       "autor": "Andre Torres",
       "total_lines": 160,
@@ -463,6 +1152,15 @@ const refactorttanalytics = {
     },
     {
       "data": "2025-04-08",
+      "sha": "e108b3f2816a7d0edd169452874bcd9e9eaec543",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-08",
       "sha": "c517f4c90ce916c54ee0524c34e187940aabbf95",
       "autor": "github-actions",
       "total_lines": 1516,
@@ -543,6 +1241,15 @@ const refactorttanalytics = {
       "arquivos_refatorados": [
         "src/data/repos/rework_rate_polaris-llm.js"
       ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "0fcfc5c2dbabb578b1ddbe4ea20c23eae61e73bc",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
     },
     {
       "data": "2025-04-08",
@@ -708,6 +1415,15 @@ const refactorttanalytics = {
     },
     {
       "data": "2025-04-08",
+      "sha": "8684c045d5c9708b241ed011005e213491d50c60",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-08",
       "sha": "f69a8a976280ce8c0ccfb66f3955cb8e0c478bc1",
       "autor": "Andre Torres",
       "total_lines": 9,
@@ -817,6 +1533,15 @@ const refactorttanalytics = {
     },
     {
       "data": "2025-04-08",
+      "sha": "9483469ef5549d9fc66f8e7193af9d1e0c0b5ad0",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-08",
       "sha": "042d68f93a439de5bdea83001708f10dd5542280",
       "autor": "Andre Torres",
       "total_lines": 399,
@@ -840,6 +1565,24 @@ const refactorttanalytics = {
         "src/data/repos/code_churn_polaris-llm.js",
         "src/data/repos/rework_rate_polaris-llm.js"
       ]
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "d790f91ac969ac3d3e059ce412fcd9e9004feace",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-04-08",
+      "sha": "2b6099bc707474f071dffc6546555727b38fd700",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
     },
     {
       "data": "2025-04-08",
@@ -1821,6 +2564,15 @@ const refactorttanalytics = {
     },
     {
       "data": "2025-03-26",
+      "sha": "29a00a5048062e7ea32a6f36ae2b8dbdee423fc5",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-03-26",
       "sha": "f896a10f1a8f61e448489f8143c7ee26b3f8dc9d",
       "autor": "Andre Torres",
       "total_lines": 1172,
@@ -1881,6 +2633,15 @@ const refactorttanalytics = {
       ]
     },
     {
+      "data": "2025-03-26",
+      "sha": "1274517bac0c4a4f438136848191228e44af945d",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
       "data": "2025-03-19",
       "sha": "f656835adaade065f2cf32b858546d5c77853d59",
       "autor": "github-actions",
@@ -1926,6 +2687,15 @@ const refactorttanalytics = {
     },
     {
       "data": "2025-03-19",
+      "sha": "c89368c58a404dd4396bf06e251dc8a9e4c0dbb8",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-03-19",
       "sha": "9148f20020f4f218f7428ee943e2678491ab4628",
       "autor": "Andre Torres",
       "total_lines": 119,
@@ -1948,6 +2718,15 @@ const refactorttanalytics = {
     },
     {
       "data": "2025-03-19",
+      "sha": "9f359897643bd9957535fac2bb29d8359bcadd7d",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-03-19",
       "sha": "0b49d0281d1bbb538d1ea056f89fa62c8c624acc",
       "autor": "Andre Torres",
       "total_lines": 2,
@@ -1956,6 +2735,15 @@ const refactorttanalytics = {
       "arquivos_refatorados": [
         "main.py"
       ]
+    },
+    {
+      "data": "2025-03-19",
+      "sha": "36883682a1791fe669eb64dd95185324dcb359da",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
     },
     {
       "data": "2025-03-19",
@@ -2025,6 +2813,15 @@ const refactorttanalytics = {
     },
     {
       "data": "2025-03-19",
+      "sha": "a19f6b46dea4a50dec6035943f776d3892d49a83",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-03-19",
       "sha": "1dfc4f0e8816b15c2f1c15df7b484b3d43dbf1cf",
       "autor": "Andre Torres",
       "total_lines": 27,
@@ -2055,6 +2852,15 @@ const refactorttanalytics = {
       "arquivos_refatorados": [
         "main.py"
       ]
+    },
+    {
+      "data": "2025-03-19",
+      "sha": "9c71f7da920fe97c40ca40a662fdeb862cc15566",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
     },
     {
       "data": "2025-03-19",
@@ -2092,6 +2898,15 @@ const refactorttanalytics = {
       "arquivos_refatorados": [
         "data/repos/rework_analysis_polaris-baby.json"
       ]
+    },
+    {
+      "data": "2025-03-19",
+      "sha": "ddad334713c4a82a16431e1a11365b7e240e4c4f",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
     },
     {
       "data": "2025-03-19",
@@ -2139,6 +2954,15 @@ const refactorttanalytics = {
     },
     {
       "data": "2025-03-18",
+      "sha": "5c8313db92c5e2b269af3d24b2a461488f8bac28",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-03-18",
       "sha": "a0bc17b42ce13fd887fa4f0d59af51210aefe7f1",
       "autor": "Andre Torres",
       "total_lines": 2,
@@ -2158,6 +2982,15 @@ const refactorttanalytics = {
       "arquivos_refatorados": [
         "main.py"
       ]
+    },
+    {
+      "data": "2025-03-18",
+      "sha": "dd7ee5c7f1bd7dc8282719a8640c41b7165090dd",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
     },
     {
       "data": "2025-03-18",
@@ -2192,6 +3025,15 @@ const refactorttanalytics = {
       "arquivos_refatorados": [
         "rework_analysis_polaris-baby.json"
       ]
+    },
+    {
+      "data": "2025-03-18",
+      "sha": "85b89d51330c0de6a247f5115421df53d0786789",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
     },
     {
       "data": "2025-03-18",
@@ -2248,6 +3090,15 @@ const refactorttanalytics = {
     },
     {
       "data": "2025-03-18",
+      "sha": "20ed8e80c17ea69dc370ad3beb081552dadd7c16",
+      "autor": "github-actions",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2025-03-18",
       "sha": "09dcd00f6172157a97abea856e01e9ae91806fa6",
       "autor": "Andre Torres",
       "total_lines": 6,
@@ -2283,6 +3134,15 @@ const refactorttanalytics = {
       "arquivos_refatorados": [
         "main.py"
       ]
+    },
+    {
+      "data": "2025-03-18",
+      "sha": "2b415c6ea0b18d14c0418f7d7b38ade758bdc7a7",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
     },
     {
       "data": "2025-03-18",
