@@ -1,5 +1,23 @@
-const refactorPolarisllm = {
+const refactorpolarisllm = {
   "data": [
+    {
+      "data": "2024-02-07",
+      "sha": "6d6c98b35b170198270360b8b6b6eeda5590a7cf",
+      "autor": "Andreh1982",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
+      "data": "2024-02-07",
+      "sha": "dbb8ed4c775c7195f1bf2816b21d67a090c467cc",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
     {
       "data": "2024-02-07",
       "sha": "0b90691915d82ee10eb90a9bc2c52e71f8a59476",
@@ -34,6 +52,15 @@ const refactorPolarisllm = {
         "pdf-to-text.py",
         "train.py"
       ]
+    },
+    {
+      "data": "2024-02-07",
+      "sha": "e05096b4249fee8a955cf46061bea423f0c3f73e",
+      "autor": "Andre Torres",
+      "total_lines": 0,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
     },
     {
       "data": "2024-02-07",
@@ -523,4 +550,4 @@ const refactorPolarisllm = {
   ]
 };
 
-export default refactorPolarisllm;
+export default refactorpolarisllm;
