@@ -1,6 +1,6 @@
-const churnPolarisllm = {
+const churnpolarisllm = {
   "repo": "polaris-llm",
-  "generated_at": "2025-04-08T13:46:43.912505Z",
+  "generated_at": "2026-03-23T07:14:34.498729+00:00",
   "churn_summary": {
     "total_churn_lines": 631157,
     "total_commits": 48,
@@ -92,4 +92,4 @@ const churnPolarisllm = {
   ]
 };
 
-export default churnPolarisllm;
+export default churnpolarisllm;
