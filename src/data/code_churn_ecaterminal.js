@@ -1,6 +1,6 @@
-const churnEcaterminal = {
+const churnecaterminal = {
   "repo": "ecaterminal",
-  "generated_at": "2025-04-30T01:18:28.594224Z",
+  "generated_at": "2026-03-23T07:09:31.127290+00:00",
   "churn_summary": {
     "total_churn_lines": 3389,
     "total_commits": 18,
@@ -93,4 +93,4 @@ const churnEcaterminal = {
   ]
 };
 
-export default churnEcaterminal;
+export default churnecaterminal;
