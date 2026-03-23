@@ -1,4 +1,4 @@
-const reworkEcaterminal = {
+const reworkecaterminal = {
   "threshold": 3,
   "data": [
     {
@@ -343,4 +343,4 @@ const reworkEcaterminal = {
   ]
 };
 
-export default reworkEcaterminal;
+export default reworkecaterminal;
