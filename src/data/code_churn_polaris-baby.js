@@ -1,10 +1,10 @@
-const churnPolarisbaby = {
+const churnpolarisbaby = {
   "repo": "polaris-baby",
-  "generated_at": "2025-04-08T13:42:38.076543Z",
+  "generated_at": "2026-03-23T07:11:59.387413+00:00",
   "churn_summary": {
-    "total_churn_lines": 221796,
-    "total_commits": 47,
-    "average_churn_per_commit": 4719.06
+    "total_churn_lines": 221875,
+    "total_commits": 48,
+    "average_churn_per_commit": 4622.4
   },
   "weekly_churn": [
     {
@@ -36,6 +36,12 @@ const churnPolarisbaby = {
       "week_end": "2024-05-26",
       "churn_lines": 163708,
       "commits": 19
+    },
+    {
+      "week_start": "2025-07-21",
+      "week_end": "2025-07-27",
+      "churn_lines": 79,
+      "commits": 1
     }
   ],
   "top_files_by_churn": [
@@ -86,8 +92,8 @@ const churnPolarisbaby = {
     },
     {
       "file": "main.py",
-      "churn_lines": 197,
-      "modifications": 9
+      "churn_lines": 216,
+      "modifications": 10
     }
   ],
   "top_authors_by_churn": [
@@ -100,8 +106,13 @@ const churnPolarisbaby = {
       "author": "Andreh1982",
       "churn_lines": 109241,
       "commits": 10
+    },
+    {
+      "author": "Andreh Torres",
+      "churn_lines": 79,
+      "commits": 1
     }
   ]
 };
 
-export default churnPolarisbaby;
+export default churnpolarisbaby;
