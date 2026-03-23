@@ -7,15 +7,16 @@ sidebar_position: 3
 
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-<BrowserOnly fallback={<div>Carregando gráfico...</div>}>
+<BrowserOnly fallback={<div>Carregando...</div>}>
   {() => {
     const RefactorDashboard = require('@site/src/components/RefactorDashboard').default;
     const { repoMap } = require('@site/src/data/repoMap');
-    return (
-      <RefactorDashboard
-        repo="polaris-llm"
-        data={repoMap["polaris-llm"].refactor}
-      />
-    );
+    const repoId = "polaris-llm";
+
+    if (!repoMap[repoId] || !repoMap[repoId].refactor) {
+      return <div>Dados de refatoracao indisponiveis para: {repoId}</div>;
+    }
+
+    return <RefactorDashboard repo={repoId} data={repoMap[repoId].refactor} />;
   }}
 </BrowserOnly>
