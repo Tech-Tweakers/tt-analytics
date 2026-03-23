@@ -1,4 +1,4 @@
-const reworkPolarisllm = {
+const reworkpolarisllm = {
   "threshold": 3,
   "data": [
     {
@@ -641,4 +641,4 @@ const reworkPolarisllm = {
   ]
 };
 
-export default reworkPolarisllm;
+export default reworkpolarisllm;
