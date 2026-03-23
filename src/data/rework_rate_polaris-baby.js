@@ -1,6 +1,22 @@
-const reworkPolarisbaby = {
+const reworkpolarisbaby = {
   "threshold": 3,
   "data": [
+    {
+      "data": "2025-07-25",
+      "sha": "99a2a9bbea26f9573f433432243e84b9d2f4ad97",
+      "autor": "Andreh Torres",
+      "total_changes": 69,
+      "rework_changes_total": 67,
+      "rework_rate_total": 97.10144927536231,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "generate.py",
+        "main.py",
+        "train_engine.py",
+        "word2vec_model.py"
+      ]
+    },
     {
       "data": "2024-05-22",
       "sha": "5603015328d271313fc57e87b94cf06cfff1832d",
@@ -643,4 +659,4 @@ const reworkPolarisbaby = {
   ]
 };
 
-export default reworkPolarisbaby;
+export default reworkpolarisbaby;
