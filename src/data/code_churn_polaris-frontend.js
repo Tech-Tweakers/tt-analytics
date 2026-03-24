@@ -1,17 +1,17 @@
-const churnPolarisfrontend = {
+const churnpolarisfrontend = {
   "repo": "polaris-frontend",
-  "generated_at": "2025-04-08T13:49:39.991752Z",
+  "generated_at": "2026-03-24T06:58:50.414906+00:00",
   "churn_summary": {
-    "total_churn_lines": 596810,
+    "total_churn_lines": 597315,
     "total_commits": 45,
-    "average_churn_per_commit": 13262.44
+    "average_churn_per_commit": 13273.67
   },
   "weekly_churn": [
     {
       "week_start": "2023-12-25",
       "week_end": "2023-12-31",
-      "churn_lines": 595732,
-      "commits": 38
+      "churn_lines": 596237,
+      "commits": 39
     },
     {
       "week_start": "2024-01-08",
@@ -85,10 +85,10 @@ const churnPolarisfrontend = {
     },
     {
       "author": "Andre Torres",
-      "churn_lines": 83834,
-      "commits": 32
+      "churn_lines": 84339,
+      "commits": 33
     }
   ]
 };
 
-export default churnPolarisfrontend;
+export default churnpolarisfrontend;
