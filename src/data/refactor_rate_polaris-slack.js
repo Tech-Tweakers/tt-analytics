@@ -1,4 +1,4 @@
-const refactorPolarisslack = {
+const refactorpolarisslack = {
   "data": [
     {
       "data": "2024-01-01",
@@ -132,4 +132,4 @@ const refactorPolarisslack = {
   ]
 };
 
-export default refactorPolarisslack;
+export default refactorpolarisslack;
