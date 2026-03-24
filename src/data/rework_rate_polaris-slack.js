@@ -1,4 +1,4 @@
-const reworkPolarisslack = {
+const reworkpolarisslack = {
   "threshold": 3,
   "data": [
     {
@@ -150,4 +150,4 @@ const reworkPolarisslack = {
   ]
 };
 
-export default reworkPolarisslack;
+export default reworkpolarisslack;
