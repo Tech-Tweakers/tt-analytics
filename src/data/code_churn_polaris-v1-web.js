@@ -1,16 +1,16 @@
 const churnpolarisv1web = {
   "repo": "polaris-v1-web",
-  "generated_at": "2026-03-25T07:13:32.506215+00:00",
+  "generated_at": "2026-04-01T07:32:22.461682+00:00",
   "churn_summary": {
-    "total_churn_lines": 597316,
+    "total_churn_lines": 597315,
     "total_commits": 45,
-    "average_churn_per_commit": 13273.69
+    "average_churn_per_commit": 13273.67
   },
   "weekly_churn": [
     {
       "week_start": "2023-12-25",
       "week_end": "2023-12-31",
-      "churn_lines": 596238,
+      "churn_lines": 596237,
       "commits": 39
     },
     {
@@ -85,7 +85,7 @@ const churnpolarisv1web = {
     },
     {
       "author": "Andre Torres",
-      "churn_lines": 84340,
+      "churn_lines": 84339,
       "commits": 33
     }
   ]
