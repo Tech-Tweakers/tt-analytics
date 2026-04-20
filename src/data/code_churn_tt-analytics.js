@@ -1,10 +1,10 @@
 const churnttanalytics = {
   "repo": "tt-analytics",
-  "generated_at": "2026-04-13T08:21:15.926788+00:00",
+  "generated_at": "2026-04-20T08:23:20.805659+00:00",
   "churn_summary": {
-    "total_churn_lines": 1090969,
-    "total_commits": 345,
-    "average_churn_per_commit": 3162.23
+    "total_churn_lines": 1091489,
+    "total_commits": 361,
+    "average_churn_per_commit": 3023.52
   },
   "weekly_churn": [
     {
@@ -72,6 +72,12 @@ const churnttanalytics = {
       "week_end": "2026-04-12",
       "churn_lines": 476,
       "commits": 16
+    },
+    {
+      "week_start": "2026-04-13",
+      "week_end": "2026-04-19",
+      "churn_lines": 520,
+      "commits": 16
     }
   ],
   "top_files_by_churn": [
@@ -134,8 +140,8 @@ const churnttanalytics = {
     },
     {
       "author": "github-actions",
-      "churn_lines": 204888,
-      "commits": 179
+      "churn_lines": 205408,
+      "commits": 195
     },
     {
       "author": "Andreh Torres",
