@@ -1,6 +1,182 @@
 const refactorttanalytics = {
   "data": [
     {
+      "data": "2026-04-22",
+      "sha": "19abf373405b2528c65660723637dee8a6bfe676",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-executor.js"
+      ]
+    },
+    {
+      "data": "2026-04-22",
+      "sha": "2c40bc4a24426f1cc74ee9639641106f1c0b2f78",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-v1-integrations.js"
+      ]
+    },
+    {
+      "data": "2026-04-22",
+      "sha": "af768a0c687f8346814f8351928866f828501f16",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-v1-web.js"
+      ]
+    },
+    {
+      "data": "2026-04-22",
+      "sha": "2192e6f3fe022a89a3d23be0b559abbfb0877bcb",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-v1-api.js"
+      ]
+    },
+    {
+      "data": "2026-04-21",
+      "sha": "f24a78997858daac1a01ac0184d7e19630b975ef",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-wrapper.js"
+      ]
+    },
+    {
+      "data": "2026-04-21",
+      "sha": "933fa35a23fd6386235cae1d1fb62dd9eb78d9d7",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-core.js"
+      ]
+    },
+    {
+      "data": "2026-04-21",
+      "sha": "836b537d44f1d7fe93680671e4a8bc612286129e",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-slack.js"
+      ]
+    },
+    {
+      "data": "2026-04-21",
+      "sha": "b34a49412bdbab1e9835924d7e35157607f9c9a8",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-frontend.js"
+      ]
+    },
+    {
+      "data": "2026-04-21",
+      "sha": "3941cf63dc996e9b1663f5ef6d1e2ba11caadb10",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-chatbot.js"
+      ]
+    },
+    {
+      "data": "2026-04-20",
+      "sha": "dde5dfa763e26c40997f9b6c74ade127131c08fb",
+      "autor": "github-actions",
+      "total_lines": 176,
+      "refactor_lines": 176,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/refactor_rate_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2026-04-20",
+      "sha": "17b1be77656a5487fd9774451e5da5bef14fcc0b",
+      "autor": "github-actions",
+      "total_lines": 18,
+      "refactor_lines": 18,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2026-04-20",
+      "sha": "8d4bf80918301006559da5ef0906248ca79cc394",
+      "autor": "github-actions",
+      "total_lines": 328,
+      "refactor_lines": 328,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/rework_rate_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2026-04-20",
+      "sha": "e09b7932a491b3b9694f73b2afc1e57c8728600d",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2026-04-20",
+      "sha": "036a1b37c8dc76ba07278a86b8835cf5e65185e2",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-llm.js"
+      ]
+    },
+    {
+      "data": "2026-04-20",
+      "sha": "3f6f1c6ba4680c908769a8f5cb4d5cac61f4dfac",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_polaris-baby.js"
+      ]
+    },
+    {
+      "data": "2026-04-20",
+      "sha": "529d39d0059f7dec929b6722b0cf98fe971560ef",
+      "autor": "github-actions",
+      "total_lines": 2,
+      "refactor_lines": 2,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/data/code_churn_ecaterminal.js"
+      ]
+    },
+    {
       "data": "2026-04-15",
       "sha": "116d8aa3701356682b795209c55569b53b2b603c",
       "autor": "github-actions",
