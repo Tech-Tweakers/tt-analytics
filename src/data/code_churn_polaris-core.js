@@ -1,6 +1,6 @@
 const churnpolariscore = {
   "repo": "polaris-core",
-  "generated_at": "2026-05-05T08:04:07.151256+00:00",
+  "generated_at": "2026-05-12T08:35:20.506692+00:00",
   "churn_summary": {
     "total_churn_lines": 2095,
     "total_commits": 9,
