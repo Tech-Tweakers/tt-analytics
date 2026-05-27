@@ -1,6 +1,6 @@
 const churnpolarisv1integrations = {
   "repo": "polaris-v1-integrations",
-  "generated_at": "2026-05-20T09:46:50.826064+00:00",
+  "generated_at": "2026-05-27T10:05:22.579685+00:00",
   "churn_summary": {
     "total_churn_lines": 2457,
     "total_commits": 8,
