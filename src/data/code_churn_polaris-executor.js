@@ -1,10 +1,10 @@
 const churnpolarisexecutor = {
   "repo": "polaris-executor",
-  "generated_at": "2026-06-03T11:16:47.521860+00:00",
+  "generated_at": "2026-06-10T10:18:37.053928+00:00",
   "churn_summary": {
-    "total_churn_lines": 100416,
-    "total_commits": 95,
-    "average_churn_per_commit": 1057.01
+    "total_churn_lines": 100968,
+    "total_commits": 97,
+    "average_churn_per_commit": 1040.91
   },
   "weekly_churn": [
     {
@@ -60,13 +60,19 @@ const churnpolarisexecutor = {
       "week_end": "2026-02-08",
       "churn_lines": 2123,
       "commits": 6
+    },
+    {
+      "week_start": "2026-06-08",
+      "week_end": "2026-06-14",
+      "churn_lines": 552,
+      "commits": 2
     }
   ],
   "top_files_by_churn": [
     {
       "file": "src/renderer/main.ts",
-      "churn_lines": 25059,
-      "modifications": 80
+      "churn_lines": 25075,
+      "modifications": 81
     },
     {
       "file": "backups/main.ts.original-working",
@@ -127,8 +133,8 @@ const churnpolarisexecutor = {
     },
     {
       "author": "Andreh Torres",
-      "churn_lines": 1088,
-      "commits": 6
+      "churn_lines": 1640,
+      "commits": 8
     }
   ]
 };
