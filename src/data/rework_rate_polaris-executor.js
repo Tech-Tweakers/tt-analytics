@@ -2,6 +2,35 @@ const reworkpolarisexecutor = {
   "threshold": 3,
   "data": [
     {
+      "data": "2026-06-09",
+      "sha": "b45c8934b4bf0dfbb7e324426b694cfbd91567c3",
+      "autor": "Andreh Torres",
+      "total_changes": 397,
+      "rework_changes_total": 397,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 397,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/renderer/agent-loop/detectToolCall.ts",
+        "src/renderer/agent-loop/policy.ts",
+        "src/renderer/agent-loop/v2.ts",
+        "src/renderer/main.ts"
+      ]
+    },
+    {
+      "data": "2026-06-09",
+      "sha": "5ea824f7f40560145d16d4459fcb27d59a64e9ef",
+      "autor": "Andreh Torres",
+      "total_changes": 15,
+      "rework_changes_total": 15,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 15,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/renderer/agent-loop/index.ts"
+      ]
+    },
+    {
       "data": "2026-02-07",
       "sha": "c08973f83622df363fd601d0d0f23d57c6e54c95",
       "autor": "Andreh1982",
