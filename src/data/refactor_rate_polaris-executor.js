@@ -1,6 +1,28 @@
 const refactorpolarisexecutor = {
   "data": [
     {
+      "data": "2026-06-09",
+      "sha": "b45c8934b4bf0dfbb7e324426b694cfbd91567c3",
+      "autor": "Andreh Torres",
+      "total_lines": 537,
+      "refactor_lines": 521,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "src/renderer/agent-loop/detectToolCall.ts",
+        "src/renderer/agent-loop/policy.ts",
+        "src/renderer/agent-loop/v2.ts"
+      ]
+    },
+    {
+      "data": "2026-06-09",
+      "sha": "5ea824f7f40560145d16d4459fcb27d59a64e9ef",
+      "autor": "Andreh Torres",
+      "total_lines": 15,
+      "refactor_lines": 0,
+      "refactor_detected": false,
+      "arquivos_refatorados": []
+    },
+    {
       "data": "2026-02-07",
       "sha": "c08973f83622df363fd601d0d0f23d57c6e54c95",
       "autor": "Andreh1982",
