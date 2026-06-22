@@ -2,6 +2,214 @@ const reworkttanalytics = {
   "threshold": 3,
   "data": [
     {
+      "data": "2026-06-17",
+      "sha": "3ced7eef54c2b775c892f4385ccc7b83ad428b3a",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-executor.js"
+      ]
+    },
+    {
+      "data": "2026-06-17",
+      "sha": "6dd042fc71c957c219cfb29e1396f876f8a16282",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-v1-integrations.js"
+      ]
+    },
+    {
+      "data": "2026-06-17",
+      "sha": "7321a43811981ca2c81121e48f2c7ae1b86428cf",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-v1-web.js"
+      ]
+    },
+    {
+      "data": "2026-06-17",
+      "sha": "ed2e79b13d1c9a33cb3b12b4613c4d502e27e01c",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-v1-api.js"
+      ]
+    },
+    {
+      "data": "2026-06-16",
+      "sha": "673f3486c3415634f0388ed61c417bd56a1075bb",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-wrapper.js"
+      ]
+    },
+    {
+      "data": "2026-06-16",
+      "sha": "0d2b0fbd4d5ab0268dc5e16e00489faefe27a12f",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-core.js"
+      ]
+    },
+    {
+      "data": "2026-06-16",
+      "sha": "a54dc3bf1b7c6e2bee1d433fb3316b3ded9f69f7",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-slack.js"
+      ]
+    },
+    {
+      "data": "2026-06-16",
+      "sha": "21be7729e2349eb1222bc2c44bf9bfe34bc38a06",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-frontend.js"
+      ]
+    },
+    {
+      "data": "2026-06-16",
+      "sha": "3ad1310cc871487ccd72fea5c7551194950a8a85",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-chatbot.js"
+      ]
+    },
+    {
+      "data": "2026-06-15",
+      "sha": "dd26b5e2f0e622f0b9397083fc6e025e98ad8ab4",
+      "autor": "github-actions",
+      "total_changes": 57,
+      "rework_changes_total": 57,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 57,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/refactor_rate_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2026-06-15",
+      "sha": "092919676993543a21ed0f6e5e97be4d65768d8e",
+      "autor": "github-actions",
+      "total_changes": 18,
+      "rework_changes_total": 18,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 18,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2026-06-15",
+      "sha": "9675a4fcc6c31b49a7192d7cd428d2408a298994",
+      "autor": "github-actions",
+      "total_changes": 70,
+      "rework_changes_total": 70,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 70,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        "src/data/rework_rate_tt-analytics.js"
+      ]
+    },
+    {
+      "data": "2026-06-15",
+      "sha": "9d65cdb9031067c7751f3a090f954d12d2678fd3",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-python-api.js"
+      ]
+    },
+    {
+      "data": "2026-06-15",
+      "sha": "8e65a5b13b5b856a8f17cd3af45a845a4cf8452e",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-llm.js"
+      ]
+    },
+    {
+      "data": "2026-06-15",
+      "sha": "858291602ee485b3dc6b96f63ca1ba259feb30c6",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_polaris-baby.js"
+      ]
+    },
+    {
+      "data": "2026-06-15",
+      "sha": "d928ac0dcbc183ce15c354d48e23374124c54525",
+      "autor": "github-actions",
+      "total_changes": 2,
+      "rework_changes_total": 0,
+      "rework_rate_total": 0.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "src/data/code_churn_ecaterminal.js"
+      ]
+    },
+    {
       "data": "2026-06-10",
       "sha": "88fe92ac6394f7ad511f3302703e7b0d24066605",
       "autor": "github-actions",
@@ -359,8 +567,8 @@ const reworkttanalytics = {
       "total_changes": 49,
       "rework_changes_total": 49,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 49,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/data/refactor_rate_tt-analytics.js"
       ]
@@ -372,8 +580,8 @@ const reworkttanalytics = {
       "total_changes": 18,
       "rework_changes_total": 18,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 18,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/data/code_churn_tt-analytics.js"
       ]
@@ -385,8 +593,8 @@ const reworkttanalytics = {
       "total_changes": 60,
       "rework_changes_total": 60,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 60,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/data/rework_rate_tt-analytics.js"
       ]
