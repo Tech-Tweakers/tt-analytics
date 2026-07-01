@@ -8,8 +8,8 @@ const reworkpolarisexecutor = {
       "total_changes": 397,
       "rework_changes_total": 397,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 397,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/renderer/agent-loop/detectToolCall.ts",
         "src/renderer/agent-loop/policy.ts",
@@ -24,8 +24,8 @@ const reworkpolarisexecutor = {
       "total_changes": 15,
       "rework_changes_total": 15,
       "rework_rate_total": 100.0,
-      "rework_changes_recent": 15,
-      "rework_rate_recent": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
       "arquivos_modificados": [
         "src/renderer/agent-loop/index.ts"
       ]
