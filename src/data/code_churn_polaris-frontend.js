@@ -1,6 +1,6 @@
 const churnpolarisfrontend = {
   "repo": "polaris-frontend",
-  "generated_at": "2026-07-07T09:28:12.474234+00:00",
+  "generated_at": "2026-07-14T07:51:26.252685+00:00",
   "churn_summary": {
     "total_churn_lines": 597315,
     "total_commits": 45,
