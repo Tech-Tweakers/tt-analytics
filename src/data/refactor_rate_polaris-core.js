@@ -1,6 +1,33 @@
 const refactorpolariscore = {
   "data": [
     {
+      "data": "2026-07-20",
+      "sha": "ea0e3e6e47ed0acc4a945f02e669b7bcb7a1a0ec",
+      "autor": "Your Name",
+      "total_lines": 32,
+      "refactor_lines": 22,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        ".gitignore",
+        "CMakeLists.txt"
+      ]
+    },
+    {
+      "data": "2026-03-12",
+      "sha": "479019d10cc2ff303207bbf42e0f681a4dad327f",
+      "autor": "Andreh Torres",
+      "total_lines": 349,
+      "refactor_lines": 349,
+      "refactor_detected": true,
+      "arquivos_refatorados": [
+        "CMakeLists.txt",
+        "build-polaris-core.sh",
+        "polaris_bind.cpp",
+        "xct-server/CMakeLists.txt",
+        "xct-server/build-xct-server.sh"
+      ]
+    },
+    {
       "data": "2026-02-20",
       "sha": "33e01f0933e8ccee993387f33f5adc0e492b34f6",
       "autor": "Andreh Torres",
