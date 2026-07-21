@@ -2,6 +2,38 @@ const reworkpolariscore = {
   "threshold": 3,
   "data": [
     {
+      "data": "2026-07-20",
+      "sha": "ea0e3e6e47ed0acc4a945f02e669b7bcb7a1a0ec",
+      "autor": "Your Name",
+      "total_changes": 32,
+      "rework_changes_total": 32,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 32,
+      "rework_rate_recent": 100.0,
+      "arquivos_modificados": [
+        ".gitignore",
+        "CMakeLists.txt",
+        "polaris_bind.cpp"
+      ]
+    },
+    {
+      "data": "2026-03-12",
+      "sha": "479019d10cc2ff303207bbf42e0f681a4dad327f",
+      "autor": "Andreh Torres",
+      "total_changes": 258,
+      "rework_changes_total": 258,
+      "rework_rate_total": 100.0,
+      "rework_changes_recent": 0,
+      "rework_rate_recent": 0.0,
+      "arquivos_modificados": [
+        "CMakeLists.txt",
+        "build-polaris-core.sh",
+        "polaris_bind.cpp",
+        "xct-server/CMakeLists.txt",
+        "xct-server/build-xct-server.sh"
+      ]
+    },
+    {
       "data": "2026-02-20",
       "sha": "33e01f0933e8ccee993387f33f5adc0e492b34f6",
       "autor": "Andreh Torres",
