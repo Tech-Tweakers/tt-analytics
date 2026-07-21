@@ -1,10 +1,10 @@
 const churnpolariscore = {
   "repo": "polaris-core",
-  "generated_at": "2026-07-14T07:56:12.852209+00:00",
+  "generated_at": "2026-07-21T08:17:18.726500+00:00",
   "churn_summary": {
-    "total_churn_lines": 2095,
-    "total_commits": 9,
-    "average_churn_per_commit": 232.78
+    "total_churn_lines": 2545,
+    "total_commits": 13,
+    "average_churn_per_commit": 195.77
   },
   "weekly_churn": [
     {
@@ -12,13 +12,25 @@ const churnpolariscore = {
       "week_end": "2026-02-22",
       "churn_lines": 2095,
       "commits": 9
+    },
+    {
+      "week_start": "2026-03-09",
+      "week_end": "2026-03-15",
+      "churn_lines": 349,
+      "commits": 1
+    },
+    {
+      "week_start": "2026-07-20",
+      "week_end": "2026-07-26",
+      "churn_lines": 101,
+      "commits": 3
     }
   ],
   "top_files_by_churn": [
     {
       "file": "polaris_bind.cpp",
-      "churn_lines": 491,
-      "modifications": 1
+      "churn_lines": 641,
+      "modifications": 5
     },
     {
       "file": "README.md",
@@ -52,17 +64,17 @@ const churnpolariscore = {
     },
     {
       "file": "CMakeLists.txt",
-      "churn_lines": 109,
-      "modifications": 1
+      "churn_lines": 117,
+      "modifications": 3
     },
     {
-      "file": "copy-to-project.sh",
-      "churn_lines": 74,
-      "modifications": 1
+      "file": "build-polaris-core.sh",
+      "churn_lines": 105,
+      "modifications": 2
     },
     {
-      "file": "legacy/arg_compat.h",
-      "churn_lines": 38,
+      "file": "xct-server/CMakeLists.txt",
+      "churn_lines": 103,
       "modifications": 1
     }
   ],
@@ -74,8 +86,13 @@ const churnpolariscore = {
     },
     {
       "author": "Andreh Torres",
-      "churn_lines": 198,
-      "commits": 6
+      "churn_lines": 547,
+      "commits": 7
+    },
+    {
+      "author": "Your Name",
+      "churn_lines": 101,
+      "commits": 3
     }
   ]
 };
